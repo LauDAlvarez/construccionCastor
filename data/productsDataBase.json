@@ -1,0 +1,74 @@
+[
+    {
+        "id":"1",
+        "categoria":"",
+        "nombre" : "Andamios",
+        "precio": "AR$ 800",
+        "descripcion": "1/4mt",
+        "nombreImagen": "andamios.webp"
+    },
+    {
+        "id":"2",
+        "categoria":"",
+        "nombre" : "Ladrillos",
+        "precio": "AR$ 500",
+        "descripcion": "100u.",
+        "nombreImagen": "ladrillos.webp"
+    },
+    {
+        "id":"3",
+        "categoria":"",
+        "nombre" : "Arena",
+        "precio": "AR$ 1000",
+        "descripcion": "mt^3",
+        "nombreImagen": "arenaEmbolsada.webp"
+    },
+    {
+        "id":"4",
+        "categoria":"",
+        "nombre" : "Cemento",
+        "precio": "AR$ 1000",
+        "descripcion": "bolsa",
+        "nombreImagen": "cemento.webp"
+    },
+    {
+        "id":"5",
+        "categoria":"",
+        "nombre" : "Hormigonera",
+        "precio": "AR$ 15.000",
+        "descripcion": "unidad",
+        "nombreImagen": "hormigonera.webp"
+    },
+    {
+        "id":"6",
+        "categoria":"",
+        "nombre" : "Martillo neumatico",
+        "precio": "AR$ 15.000",
+        "descripcion": "unidad",
+        "nombreImagen": "martilloNeumatico.webp"
+    },
+    {
+        "id":"7",
+        "categoria":"",
+        "nombre" : "Varillas",
+        "precio": "AR$ 3500",
+        "descripcion": "1mt",
+        "nombreImagen": "varillas.webp"
+    },
+    {
+        "id":"8",
+        "categoria":"",
+        "nombre" : "Ventanas",
+        "precio": "AR$ 3500",
+        "descripcion": "unidad",
+        "nombreImagen": "ventanas.webp"
+    },
+    {
+        "id":"9",
+        "categoria":"",
+        "nombre" : "Vigas Metalicas",
+        "precio": "AR$ 3000",
+        "descripcion": "5mts",
+        "nombreImagen": "vigasMetalicas.webp"
+    }
+]

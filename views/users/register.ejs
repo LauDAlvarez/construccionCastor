@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("../partials/head")%>
+
+<body>
+
+    <%- include("../partials/header")%>
+    <main>
+        <h1>Registro</h1>
+
+        <form action="#" method="POST" class="form-registro">
+            <p class="contenedor-bloque">
+                <!-- <label>Nombre</label> -->
+                <input type="text" name="nombre" placeholder="Nombre" required="">
+            </p>
+            <p class="contenedor-bloque">
+                <!-- <label>Apellido</label> -->
+                <input type="text" name="apellido" placeholder="Apellido" required="">
+            </p>
+            <p class="contenedor-bloque">
+                <!-- <label>email</label> -->
+                <input type="email" name="email" placeholder="email" required="">
+            </p>
+            <p class="contenedor-bloque">
+                <!-- <label>email</label> -->
+                <input type="number" name="numero-telefono" placeholder="Número de teléfono" required="">
+            </p>
+            <p class="contenedor-bloque">
+                <!-- <label>Contraseña</label> -->
+                <input type="password" name="contrasena" placeholder="Contraseña" min-length="8" required="">
+            </p>
+            <p class="contenedor-bloque">
+                <!-- <label>Repite la contraseña</label> -->
+                <input type="password" name="repite-contrasena" placeholder="Repetí la contraseña" required="">
+            </p>
+            <div class="contenedor-bloque">
+                <ul>
+                    <li>1 mayúscula</li>
+                    <li>8 caracteres mínimo</li>
+                    <li>1 número</li>
+                </ul>
+            </div>
+            <div class="contenedor-bloque">
+                <div class="politica-privacidad">
+                    <input type="checkbox" value="Registrarme" class="check-acepta">
+                    <label> He leído y acepto el Aviso Legal y la Política de Privacidad </label>
+                </div>
+            </div>
+            <div class="contenedor-bloque">
+                <button class="boton-registro">Registrarme</button>
+
+            </div>
+        </form>
+    </main>
+    
+    <%- include("../partials/footer")%>
+
+</body>
+
+</html>

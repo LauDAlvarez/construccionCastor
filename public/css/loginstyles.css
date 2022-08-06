@@ -1,0 +1,248 @@
+:root {
+    /* El root se utiliza para declarar variables dentro del Css */
+    --paleta-a: #ff5400;
+    --paleta-b: #252422;
+    --paleta-c: #403d39;
+    --paleta-d: #ccc5b9;
+    --paleta-e: #fffcf2;
+    --fuente-principal: 'Hind Madurai', sans-serif;
+    /* Las variables usualmente se declaran de esta manera('--'+nombre de variable) y los espacios se remplazan por '-'*/ 
+}
+/*HEADER DEL BODY*/
+
+header{
+    height: 10vh;
+    width: 100%;
+    background-color: red;
+}
+/* IMAGEN FONDO DEL MAIN*/
+.imagenContenedora{
+    height: 70vh;
+    width: 100vw;
+    background-size: cover;
+}
+/*TITULO MAIN*/
+
+.tituloPrincipal{
+    text-align: center;
+    font-size: 15px;
+
+}
+/*CAJA CONTENEDORA DEL FORM Y DEMAS DIVS */
+.card{
+    height: 60%;
+    width: 50%;
+    margin: auto;
+    background-color: var(--paleta-d);
+    border-radius: 20px;
+    box-shadow: 0 0 20px 2px var(--paleta-d);
+    background-size: auto;
+    opacity: 80%;
+}
+/*TITULO/PREGUNTA CAJA CONTENEDORA ¿CLIENTE REGISTRADO?*/
+.clienteRegistrado{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    font-size: 12px;
+}
+/*CAJA CONTENEDORA DE FORMULARIOS*/
+form.formularios{
+    margin-top: 5vh;
+    margin-left: 15px;
+    position: relative;
+
+}
+/* TRANSICIONES*/
+#email-login:hover,#password-login:hover{
+    background-color:var(--paleta-d);
+    color:var(--paleta-b);
+    border-radius: 2.5px;
+}
+
+#email-login:focus,#password-login:focus{
+    border: none;
+    outline: none;
+    box-shadow: 0 2px 0 #000;
+    background-color: #fffcf2;
+    
+}
+/*FORMULARIOS*/
+
+#email-login,#password-login{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 70%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    transition: all 0.4s;
+    background: transparent;
+}
+
+/*CAJACONTENEDORADECHECKBOX Y BOTONINICIARSESION*/
+.footerCard{
+    display: flex;
+    margin-top: 7vh;
+    justify-content: space-between;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    flex-wrap: wrap;
+    
+}
+.footerCard label{
+    align-self: flex-end;
+    margin-bottom: 3%;
+}
+/*LABEL DEL CHECKBOX RECORDAR*/
+#cbox1:hover{
+color: #000;
+}
+/* transicion de boton iniciar sesion*/
+
+.botoncito:hover{
+    background-color: #ff1e00;
+}
+/*BOTON INICIAR SESION*/
+
+.botoncito{
+    color:var(--paleta-e);
+	background-color:var(--paleta-a);
+    border: 0;
+    color: #fff;
+	padding:10px 20px;
+	text-transform:uppercase;
+	border-radius:5px;
+	cursor:pointer;
+	position:relative;
+    transition: all 0.2s;
+
+/*border-radius: 30px;
+padding: 1% 10%;*/
+}
+/*CAJA CONTENEDORA FOOTERS MAIN*/
+.footerImagenContenedora{
+    background-color: var(--paleta-d);
+    margin-top: 40px;
+}
+/*SUBCAJA CONTENEDORA 1ER FOOTER DEL MAIN (ADENTRO)*/
+.clienteNuevo{
+    display: flex;
+}
+/*TEXTO 1ER FOOTER DEL MAIN*/
+div.clienteNuevo p{
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: var(--paleta-d);
+}
+/*SUBCAJA CONTENEDORA 2DO FOOTER DEL MAIN (ADENTRO)*/
+.footerMain {
+    display: flex;
+justify-content: space-around;
+padding-bottom: 20px;
+}
+/*BOTON 2DO FOOTERMAIN*/
+.buttonRegistarClienteNuevo button{
+    padding: 2vh 2vw;
+    border-radius: 10px;
+    color: var(--paleta-e);
+    background-color: var(--paleta-a);
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+.header{
+    height: 15vh;
+    width: 100vw;
+    background-color: aqua;
+
+}
+.contenedorFlexCentral{
+    display: flex;
+    background-color: red;
+    width: 70vw;
+    height:80vh;
+    flex-direction: column;
+}
+.headerCard_title h2{
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.main{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+background-size: cover;
+justify-content: center;
+align-items: center;
+}
+.headercard{
+
+}
+.headerCard-title-CrearUnaCuenta{
+    align-self: flex-end;
+}
+.footer{
+    width: 100vw;
+    height: 15vh;
+    background-color: blue;
+}
+.tituloPrincipal{
+    text-align: center;
+}
+
+
+<div class="contenedorFlexCentral"><!--tarjeta abarcativa de form,titulo y "footer"-->
+
+
+
+                <!--DE ACA PARA ABAJO ES EL TITULO DEL BODY-->
+                <div class="headerCard">
+                    <section class="headerCard_title">
+                        <!---->
+                        <h2>
+                            <span id="headerCard-title-login">Inicio de sesión</span>
+                            <br>
+                            <a class="headerCard-title-CrearUnaCuenta" href="null">Crear una cuenta</a>
+                        </h2>
+                        <!---->
+                    </section>
+                </div>
+                <!--HASTA ACA-->
+
+
+                <!--DE ACA PARA ABAJOSOL LOS FORMULARIOS-->
+                <div class="formCard">
+                    <label for="AuthEmail">Dirección de correo electrónico</label>
+
+                        <input type="email" autocomplete="email" class="form-control ng-untouched ng-pristine ng-invalid" id="AuthEmail" >
+                        
+
+                        </i><!----><!----></div>
+                </div>
+                <!--HASTA ACA-->
+                <!--DE ACA PARA ABAJO ES EL FOOTER DEL BODY-->
+                <div class="footerCard">
+
+                </div>
+                <!--HASTA ACA-->
+            </div>

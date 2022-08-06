@@ -1,0 +1,296 @@
+:root {
+    /* El root se utiliza para declarar variables dentro del Css */
+    --paleta-a: #ff5400;
+    --paleta-b: #252422;
+    --paleta-c: #403d39;
+    --paleta-d: #ccc5b9;
+    --paleta-e: #fffcf2;
+    --fuente-principal: 'Hind Madurai', sans-serif;
+    --curva-de-bordeado: 1.5rem;
+    --separador-elementos: 1rem;
+    /* Las variables usualmente se declaran de esta manera('--'+nombre de variable) y los espacios se remplazan por '-'*/
+}
+
+html {
+    font-family: var(--fuente-principal);
+}
+
+body {
+    margin: 0 auto;
+}
+
+body .contenedor-carruselImg {
+    width: 95vw;
+    margin: var(--separador-elementos) auto;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 5px;
+    background: #ccc5b9;
+    box-shadow: inset 10px 10px 0px #7e7a73,
+        inset -10px -10px 0px #ffffff;
+}
+
+/*CARRUSELL INICIO*/
+.contenedor-carruselImg .tarjeta-foto {
+    height: 100%;
+    position: relative;
+
+}
+
+.tarjeta-foto .imagenCarrusel {
+    width: 100%;
+    height: 100%;
+}
+
+.imagenCarrusel img {
+    width: 100%;
+    height: 100%;
+}
+
+#imagenCarrusel1{
+    background-image: url(/images/fotoCarrusel1.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#imagenCarrusel2{
+    background-image: url(/images/fotoCarrusel2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#imagenCarrusel3{
+    background-image: url(/images/fotoCarrusel4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.flechasCarrusel {
+    position: absolute;
+    top: 0%;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.flechasCarrusel a {
+    background-color: #403d3932;
+    width: 30px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+/*CARRUSEL FIN*/
+
+body .contenedor-prodDestacado {
+    background-color: #eeebe3;
+    border: 1px solid #d6d3cc;
+    margin: var(--separador-elementos) auto;
+    width: 98%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor-prodDestacado h3 {
+    padding: .5rem;
+    text-align: center;
+    margin: 15px auto;
+}
+
+body .contenedor-articulo-prodDestacado {
+    width: 99%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor-articulo-prodDestacado article {
+    width: 200px;
+    height: 100%;
+    border-radius: 2.5px;
+    background: #fffcf2;
+    border: .5px solid #f5f3ec;
+    position: relative;
+    transition: .2s;
+}
+
+
+.contenedor-prodDestacado img {
+    width: 95%;
+    height: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.contenedor-marcas {
+    width: 95%;
+    height: max-content;
+    margin: var(--separador-elementos) auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.contenedor-marcas article {
+    border: 1px solid var(--paleta-a);
+    margin: 10px;
+    width: 10rem;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+body .contenedor-novedades {
+    background-image: url(/images/fotoCarrusel3.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 98vw;
+    height: 30rem;
+    padding: 2rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor-novedades .contenedor-p-novedades {
+    height: 70%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.contenedor-novedades .contenedor-btn-novedades {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: end;
+    background-color: transparent;
+}
+
+.contenedor-novedades .contenedor-btn-novedades button {
+    background-color: transparent;
+    border: transparent;
+    cursor: pointer;
+}
+.contenido-decripcion-prodDestacado{
+    position: absolute;
+}
+
+.contenedor-articulo-prodDestacado article {
+    width: 70%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+    border: 1 solid rgb(179, 175, 162);
+
+}
+.contenedor-articulo-prodDestacado article:hover{
+    height: 45%;
+    box-shadow: 10px 10px 3px 0px rgb(179, 175, 162);
+} 
+
+footer {
+    margin-top: 5rem;
+}
+
+@media (min-width: 361px) {
+    body .contenedor-articulo-prodDestacado {
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 1rem .5rem;
+        height: max-content;
+        flex-wrap: wrap
+    }
+
+    body .contenedor-prodDestacado {
+        height: max-content;
+        display: flex;
+    }
+
+    .contenedor-prodDestacado img {
+        width: 95%;
+        height: 95%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .contenedor-articulo-prodDestacado article {
+        width: 25%;
+        height: 15%;
+        margin: .5rem;
+    }
+    .contenedor-articulo-prodDestacado article:hover{
+        box-shadow: 7.5px 7.5px 3px 0px rgb(179, 175, 162);
+        height: 15.5rem;
+        width: 26%;
+    } 
+
+    .contenedor-marcas article {
+        width: 7.5rem;
+        height: 7.5rem;
+    }
+
+    .contenedor-marcas {
+        height: 20rem;
+    }
+}
+
+@media (min-width: 769px) {
+    body .contenedor-articulo-prodDestacado {
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 1rem .5rem;
+        height: max-content;
+        flex-wrap: wrap
+    }
+
+    .contenedor-prodDestacado img {
+        width: 95%;
+        height: 95%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .contenedor-articulo-prodDestacado article {
+        width: 25%;
+        height: 21.5rem;
+        margin: 1rem;
+    }
+    .contenedor-articulo-prodDestacado article:hover{
+        width: 26%;
+        height: 225px;
+        box-shadow: 10px 10px 3px 0px rgb(179, 175, 162);
+    }
+    
+
+    .contenedor-marcas article {
+        width: 12rem;
+        height: 12rem;
+    }
+
+    .contenedor-marcas {
+        height: 25rem;
+    }
+}

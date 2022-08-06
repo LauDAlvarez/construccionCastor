@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("../partials/head")%>
+
+    <body>
+        <section class="contenedor-prodDestacado">
+            <h3>Productos Destacados</h3>
+            <div class="contenedor-articulo-prodDestacado">
+                <% products.forEach( (producto)=>{ %>
+                    <article class="contenido-prodDestacado">
+                        <img src="./images/products/<%= producto.nombreImagen %>" alt="<%= producto.nombreImagen %>">
+                        <div class="contenido-decripcion-prodDestacado">
+                            <p>
+                                <%= producto.nombre %>
+                            </p>
+                            <p>
+                                <%= producto.precio %>
+                            </p>
+                            <p>
+                                <%= producto.descripcion %>
+                            </p>
+                        </div>
+                    </article>
+                    <%});%>
+            </div>
+        </section>
+    </body>
+
+</html>

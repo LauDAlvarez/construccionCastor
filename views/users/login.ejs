@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("../partials/head")%>
+<body>
+    <%- include("../partials/header")%>
+<main>
+    <div class="imagenContenedora"
+        style="background-image: url(https://apliqa.es/wp-content/uploads/2022/03/TYDKSTNAORGC3AE2AJFLLZEE3Y.jpg)">
+        <!--fondo-->
+        <br>
+        <p class="tituloPrincipal">INICIO DE CUENTA</p>
+        <br>
+        <div class="card"style="background-image: url(https://img.freepik.com/vector-gratis/coleccion-herramientas-siluetas_39690-144.jpg?w=740)"><br>
+            <h3 class="clienteRegistrado"> Cliente registado </h3>
+                <form class="formularios">
+                    <br>
+
+                    <div class="divFormEmail">
+                        <!--<label for="email-login" class="email">Email</label>-->
+                        <br>
+                        <input type="email" name="email" id="email-login" placeholder="EMAIL">
+                        <br>
+                    </div>
+
+                    <div class="divFormPassword">
+                        <br>
+                        <!--<label for="password-login" class="contraseña">Constraseña</label>-->
+                        <br>
+                        <input type="password" name="password" id="password-login" placeholder="CONTRASEÑA">
+                        <br>
+                    </div>
+                </form>
+            
+            <div class="footerCard">
+                <label><input type="checkbox" id="cbox1" value="first_checkbox"> RECORDAR</label>
+                <button class="botoncito" type="submit">Iniciar Sesión</button>
+            </div>
+        </div>
+    <div class="footerImagenContenedora">
+        <div class="clienteNuevo">
+            <p>¿CLIENTE NUEVO?</p>
+        </div>
+
+        <div class="footerMain">
+            <p>Crear una cuenta tiene muchos beneficios:<br>
+                Pago más rápido, guardar más de una dirección,<br>
+                 seguimiento de pedidos y mucho más.
+            </p>
+            <div class="buttonRegistarClienteNuevo">
+                    <button type="button" name="RCN">REGISTRAR CLIENTE NUEVO</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+    
+
+</main>
+<%- include("../partials/footer")%>
+</body>
+
+
+
+</html>

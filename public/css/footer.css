@@ -1,0 +1,152 @@
+:root {
+    /* El root se utiliza para declarar variables dentro del Css */
+    --paleta-a: #ff5400;
+    --paleta-b: #252422;
+    --paleta-c: #403d39;
+    --paleta-d: #ccc5b9;
+    --paleta-e: #fffcf2;
+    --fuente-principal: 'Hind Madurai', sans-serif;
+    /* Las variables usualmente se declaran de esta manera('--'+nombre de variable) y los espacios se remplazan por '-'*/
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    /* 1rem == 10px */
+    background-color: var(--paleta-e);
+}
+
+
+/* ####################################################################################### */
+
+/* Footer */
+.contenedor-footer {
+    background-color: var(--paleta-a);
+    padding-top: 1rem;
+    padding-bottom: 7rem;
+    font-size: 1.2rem;
+}
+
+.titulos-footer {
+    text-align: center;
+    width: 100%;
+    margin-top: 1rem;
+    color: var(--paleta-e);
+}
+
+.contenedor-links-footer {
+    width: 100%;
+}
+
+.contenedor-links-footer a {
+    width: 100%;
+    text-decoration: none;
+    color: var(--paleta-e);
+}
+
+.contenedor-links-footer li {
+    text-align: center;
+    margin: 0.5rem;
+}
+
+.contenedor-links-footer ul {
+    list-style: none;
+}
+
+.form-suscripcion {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+}
+
+.contenedor-suscripcion-footer {
+    color: var(--paleta-e);
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+.frase-footer {
+    width: 80%;
+    text-align: center;
+    margin: auto;
+}
+
+#suscripcion,
+#boton-suscripciones {
+    border: none;
+    border-radius: 0.5rem;
+    padding: .5rem;
+    margin-top: 1rem;
+    width: 80%;
+    max-width: 50rem;
+    font-size: 1.2rem;
+}
+
+#boton-suscripciones {
+    font-weight: bold;
+}
+
+
+
+/* media queries */
+
+/** Dispositivo tablet **/
+/* footer */
+@media (min-width: 480px) {
+    .contenedor-footer {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 1.2rem;
+        justify-content: center;
+    }
+
+    .contenedor-links-footer {
+        width: 33.3%;
+        padding-left: 3rem;
+        max-width: 25rem;
+    }
+
+    .contenedor-suscripcion-footer {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .form-suscripcion {
+        max-width: 40rem;
+
+    }
+}
+
+/** desktop **/
+@media (min-width: 769px) {
+
+    .contenedor-links-footer,
+    .contenedor-suscripcion-footer {
+        width: 25%;
+        padding-left: 3rem;
+        max-width: 35rem;
+    }
+
+    .contenedor-links-footer li,
+    .titulos-footer,
+    .frase-footer {
+        text-align: left;
+        margin-left: 0;
+    }
+
+    .frase-footer {
+        margin-top: 0.5rem;
+    }
+
+    .form-suscripcion {
+        justify-content: flex-start;
+    }
+}

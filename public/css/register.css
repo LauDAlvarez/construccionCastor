@@ -1,0 +1,153 @@
+:root {
+    /* El root se utiliza para declarar variables dentro del Css */
+    --paleta-a: rgb(255, 84, 0);
+    --paleta-b: #252422;
+    --paleta-c: #403d39;
+    --paleta-d: #ccc5b9;
+    --paleta-e: #fffcf2;
+    --fuente-principal: 'Hind Madurai', sans-serif;
+    /* Las variables usualmente se declaran de esta manera('--'+nombre de variable) y los espacios se remplazan por '-'*/
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    /* 1rem == 10px */
+    background-color: var(--paleta-e);
+}
+
+
+h1 {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.form-registro {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: auto;
+    padding-bottom: 5rem;
+
+}
+
+.contenedor-bloque {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 2rem;
+    justify-content: center;
+}
+
+label,
+input {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+/*Para que no se vean las flechitas a la derecha del input de número */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+input {
+    border: none;
+    border-bottom: solid .1rem var(--paleta-a);
+    border-radius: 0.5rem;
+    padding: .5rem;
+    margin-top: .5rem;
+    width: 100%;
+    max-width: 40rem;
+}
+
+.contenedor-bloque ul {
+    color: var(--paleta-a);
+    font-size: 1.2rem;
+    width: 100%;
+    max-width: 40rem;
+}
+
+.contenedor-bloque li {
+    list-style: none;
+    margin-left: 0.5rem;
+}
+
+.politica-privacidad {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    max-width: 40rem;
+    align-items: baseline;
+
+}
+
+.check-acepta {
+    width: 2rem;
+}
+
+.politica-privacidad label {
+    font-size: 1.2rem;
+    color: var(--paleta-a);
+    justify-content: flex-start;
+    margin-left: .5rem;
+}
+
+.boton-registro {
+    border: none;
+    border-radius: .5rem;
+    width: 100%;
+    max-width: 35rem;
+    background-color: var(--paleta-d);
+    color: var(--paleta-a);
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 1.5rem;
+    cursor: pointer;
+    margin-top: 3rem;
+    transition-property: all;
+    transition: .3s;
+}
+
+.boton-registro:hover {
+    background-color: var(--paleta-c);
+    color: var(--paleta-e);
+    box-shadow: 1px 2px 2px 0 rgba(255 84 0 / 50%);
+
+}
+
+
+
+/* media queries */
+
+/** Dispositivo tablet **/
+
+@media (min-width: 480px) {}
+
+/** desktop **/
+@media (min-width: 769px) {
+    .form-registro {
+        display: flex;
+        justify-content: space-around;
+        width: 60rem;
+        border: 1px solid #d8d8d8;
+        box-shadow: 1px 2px 2px 0 rgba(255 84 0 / 50%);
+        margin-bottom: 18rem;
+        margin-top: 4rem;
+    }
+
+    .contenedor-bloque {
+        width: 40%;
+    }
+
+}
