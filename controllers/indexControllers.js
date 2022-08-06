@@ -27,8 +27,9 @@ const mainControllers = {
         }
 
         res.render('products/results', { productsFilter, search });
-
-
+    },
+    login: (req, res)=>{
+        res.render('users/login')
     }
 }
 
