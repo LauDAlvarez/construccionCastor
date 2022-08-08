@@ -8,8 +8,22 @@
     <%- include("../partials/header")%>
     <main>
         <h1>Registro</h1>
-
-        <form action="/" method="POST" class="form-registro">
+        <% if( errors ){ %>
+    
+                <ul style="text-align: center;">
+                    <% errors.forEach( (elemento)=> { %>
+                        <li>
+                            <%= elemento.msg %>
+                        </li>
+                        <% }) %>
+                </ul>
+        
+                <br><br>
+        
+                <% } %>
+        <form action="/userIndex" method="POST" class="form-registro">
+            
+            
             <p class="contenedor-bloque">
                 <!-- <label>Nombre</label> -->
                 <input type="text" name="nombre" placeholder="Nombre" required="">

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("./partials/head")%>
+<%- include("./partials/header")%>
+<body class="contenedor-body centrar-margin">
+        
+        <div>
+            <h2>Hola <%= user.nombre%> vamos a comprar!</h2>
+        </div>
+        <div class="tarjeta-foto" id="tarjetaFoto2">
+            <div class="imagenCarrusel" id="imagenCarrusel2">
+                
+            </div>
+            <div class="flechasCarrusel">
+                <a href="#tarjetaFoto1"><i class="fa-solid fa-angle-left"></i></a>
+                <a href="#tarjetaFoto3"><i class="fa-solid fa-angle-right"></i></a>
+            </div>
+        </div>
+        <div class="tarjeta-foto" id="tarjetaFoto3">
+            <div class="imagenCarrusel" id="imagenCarrusel3">
+            </div>
+            <div class="flechasCarrusel">
+                <a href="#tarjetaFoto2"><i class="fa-solid fa-angle-left"></i></a>
+                <a href="#tarjetaFoto1"><i class="fa-solid fa-angle-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <section class="contenedor-prodDestacado">
+        <h3>Productos Destacados</h3>
+        <div class="contenedor-articulo-prodDestacado">
+            <% products.forEach( (producto)=>{ %>
+                <article class="contenido-prodDestacado">
+                    <img src="/images/products/<%= producto.nombreImagen %>" alt="<%= producto.nombreImagen %>">
+                    <div class="contenido-decripcion-prodDestacado">
+                        <p><%= producto.nombre %></p>
+                        <p><%= producto.precio %></p>
+                        <p><%= producto.descripcion %></p>
+                    </div>
+                </article>
+            <%});%>
+        </div>
+    </section>
+
+    <section class="contenedor-marcas">
+        <article class="contenido-marcas"><span>Marca1</span></article>
+        <article class="contenido-marcas"><span>Marca2</span></article>
+        <article class="contenido-marcas"><span>Marca3</span></article>
+        <article class="contenido-marcas"><span>Marca4</span></article>
+    </section>
+
+    <section class="contenedor-novedades">
+        <div class="contenedor-p-novedades">
+            <p>Categorias para elegir Amplia variedad!!</p>
+            <p>¡Comprá desde casa en simples pasos!</p>
+        </div>
+        <div class="contenedor-btn-novedades">
+            <button>VER PRODUCTOS>></button>
+        </div>
+    </section>
+</body>
+<%- include("./partials/footer")%>
+</html>

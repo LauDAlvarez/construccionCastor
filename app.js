@@ -17,7 +17,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(publicPath));
-app.use(session({secret: 'secretitoCastor'}));
+app.use(session({secret: 'secretitoCastor', resave: false,
+saveUninitialized: false}));
+
 
 // Rutas
 const mainRoute = require('./routes/indexRoutes');
