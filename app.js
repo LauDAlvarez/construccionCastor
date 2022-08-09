@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const publicPath = path.resolve(__dirname, './public')
 const session = require('express-session');
+const methodOverride =  require('method-override');
 
 
 var app = express();
@@ -19,12 +20,12 @@ app.use(cookieParser());
 app.use(express.static(publicPath));
 app.use(session({secret: 'secretitoCastor', resave: false,
 saveUninitialized: false}));
-
+app.use(methodOverride('_method'));
 
 // Rutas
-const mainRoute = require('./routes/indexRoutes');
-const userRoute = require('./routes/usersRoutes');
-const productRoute = require('./routes/productsRoutes');
+const mainRoute = require('./src/routes/indexRoutes');
+const userRoute = require('./src/routes/usersRoutes');
+const productRoute = require('./src/routes/productsRoutes');
 
 
 app.use('/', mainRoute);

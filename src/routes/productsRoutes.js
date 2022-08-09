@@ -1,0 +1,46 @@
+const express = require('express');
+const router = express.Router();
+const multer = require('multer');
+
+const productsControllers = require('../controllers/productsControllers');
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, 'public/images/products')
+    },
+    filename: function (req, file, cb) {
+        cb(null, Date.now() + '-' + file.originalname)
+    }
+})
+
+function fileFilter (req, file, cb) {
+    const validFormat = [ 'image/jpeg', 'image/jpg' ]
+    // La función debe llamar a `cb` usando una variable del tipo boolean
+    // para indicar si el archivo debería ser aceptado o no
+    if(validFormat.includes(file.mimetype) ){
+      // Para aceptar el archivo es necesario pasar `true`, de la siguiente forma:
+        cb(null, true)
+    }else{
+      // Para rechazar el archivo es necesario pasar `false`, de la siguiente forma:
+        cb(null, false)
+    }
+}
+
+var upload = multer({ storage: storage, fileFilter: fileFilter})
+
+// Ruta verProuctos
+router.get('/', productsControllers.vistaIndex)
+
+// Obtener producto
+// /*** GET ONE PRODUCT ***/ 
+router.get('/detail/:id/', productsControllers.detail); 
+
+
+// Crear Producto
+router.get('/create', productsControllers.create) 
+router.post('/', upload.single('nombreImagen') , productsControllers.store)  
+
+// Modificar Producto
+
+
+module.exports = router;
