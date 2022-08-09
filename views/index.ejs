@@ -35,9 +35,7 @@
     <section class="contenedor-prodDestacado">
         <h3>Productos Destacados</h3>
         <% products.forEach( (product)=>{ %>
-            <div class="contenedor-articulo-prodDestacado">
                 <%- include('partials/product', { product }) %>
-            </div>
         <%});%>
     </section>
 
