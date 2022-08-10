@@ -79,5 +79,21 @@
   "precio": "AR$ 3000",
   "descripcion": "5mts",
   "nombreImagen": "vigasMetalicas.webp"
+ },
+ {
+  "nombre": "DESTORNILLADOR",
+  "precio": "1231",
+  "descripcion": "sdad",
+  "oferta": "12",
+  "id": 1660091954412,
+  "nombreImagen": "1660091954407-Duke-1-758x463.jpg"
+ },
+ {
+  "nombre": "DESTORNILLADOR",
+  "precio": "1231",
+  "descripcion": "sdad",
+  "oferta": "12",
+  "id": 1660091954791,
+  "nombreImagen": "1660091954785-Duke-1-758x463.jpg"
  }
 ]
