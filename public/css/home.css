@@ -21,8 +21,11 @@ body {
 }
 
 body .contenedor-carruselImg {
-    width: 95vw;
-    margin: var(--separador-elementos) auto;
+    width: 100vw;
+    /* Margen superior para inmovilización del header */
+    margin-top: 10rem;
+    /*****************************************************/
+    /* margin: var(--separador-elementos) auto; */
     height: 200px;
     overflow: hidden;
     border-radius: 5px;
