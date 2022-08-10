@@ -30,14 +30,13 @@ const controlador = {
 		res.redirect('/', { products })
 	},
 	detail: (req, res) => {
-		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 		const idProduc = req.params.id;
 
 		const product = products.find( (elemento) => { 
 			return elemento.id == idProduc 
 		} );
-
-		res.redirect('productDetail', { products: product });//renderiza el elemento que se encuentra!!
+		console.log(product)
+		res.render('products/productDetail',{ product: product }  );//renderiza el elemento que se encuentra!!
 	}
 }
 

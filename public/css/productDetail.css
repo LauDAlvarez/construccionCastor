@@ -11,35 +11,62 @@
     /* Las variables usualmente se declaran de esta manera('--'+nombre de variable) y los espacios se remplazan por '-'*/
 }
 
-body .contenedor-productdetail{
-    height: 75vh;
-    width: 80%;
-    margin: 0 auto;
-    padding: 15rem 0;
-}
-
-.contenedor-productdetail .producto-foto{
-    height: 20rem;
+body .contenedor-detallado-product{
+    height: 70rem;
+    width: 95%;
+    margin: 15rem auto;
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: flex-end;
     align-items: center;
-    
 }
-
-.foto-nombre .foto-producto{
+.contenedor-product{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 75%;
+    margin: auto;
+}
+.contenedor-fotoDesc-product .foto-product{
     width: 60%;
     height: 70%;
     margin: 0 auto;
 }
+.foto-product img{
+    width: 100%;
+}
 
-.contenedor-productdetail .producto-disponibilidad{
+.product-barraDesc{
+    height: 32rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-
 }
-.producto-foto .foto-nombre{
-    width: 60%;
-    height: 80%;
 
+.cant-disponibilidad{
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.contenedor-botonera{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 7.5rem;
+}
+.contenedor-botonera p{
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    width: 4.5rem;
+    font-size: medium;
+}
+.contenedor-botonera p button{
+    border: transparent;
+    background-color: transparent;
+    width: 1rem;
+    border-radius: 5px;
+    font-size: large;
 }

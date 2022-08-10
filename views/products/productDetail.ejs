@@ -3,23 +3,23 @@
     <%- include("../partials/head")%>
     <body>
     <%- include("../partials/header")%>
-    <div class="contenedor-productdetail ">
-        <section class="producto-foto">  
-            <section class="foto-nombre">
-                <div class="foto-producto">
-
+    <div class="contenedor-detallado-product ">
+        <section class="contenedor-product">  
+            <section class="contenedor-fotoDesc-product">
+                <div class="foto-product">
+                    <img src="/images/products/<%= product.nombreImagen %>" alt="">
                 </div>
-                <h4>Nombre de Producto</h4>
+                <h4><%= product.descripcion %></h4>
             </section>
-            <div class="producto-disponibilidad">
+            <div class="product-barraDesc">
                 <section class="cant-disponibilidad">
-                    <h3>Nombre del Producto</h3>
+                    <h3><%= product.nombre %></h3>
                     <div class="codigo-disponibilidad">
-                        <p>Disponibilidad: Stock</p> <p>SKU: ------</p>
+                        <p>Disponibilidad: <%= product.stock %></p> <p>SKU: <%= product.id %></p>
                     </div>
-                    <h2>9999.9</h2>
+                    <h2><%= product.precio %></h2>
                 </section>
-                <div class="btn">
+                <div class="contenedor-botonera">
                     <p>
                         <button>-</button>
                         <label for="">0</label>

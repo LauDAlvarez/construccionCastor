@@ -1,6 +1,7 @@
 [
  {
   "id": "1",
+  "stock":"23",
   "categoria": "",
   "ofertas": "false",
   "nombre": "Andamios",
@@ -10,6 +11,7 @@
  },
  {
   "id": "2",
+  "stock":"23",
   "categoria": "",
   "ofertas": "false",
   "nombre": "Ladrillos",
@@ -19,6 +21,7 @@
  },
  {
   "id": "3",
+  "stock":"23",
   "categoria": "",
   "ofertas": "false",
   "nombre": "Arena",
@@ -28,6 +31,7 @@
  },
  {
   "id": "4",
+  "stock":"23",
   "categoria": "",
   "ofertas": "false",
   "nombre": "Cemento",
@@ -37,6 +41,7 @@
  },
  {
   "id": "5",
+  "stock":"23",
   "categoria": "",
   "ofertas": "false",
   "nombre": "Hormigonera",
@@ -46,6 +51,7 @@
  },
  {
   "id": "6",
+  "stock":"23",
   "categoria": "",
   "ofertas": "false",
   "nombre": "Martillo neumatico",
@@ -55,6 +61,7 @@
  },
  {
   "id": "7",
+  "stock":"23",
   "categoria": "",
   "ofertas": "false",
   "nombre": "Varillas",
@@ -64,6 +71,7 @@
  },
  {
   "id": "8",
+  "stock":"23",
   "categoria": "",
   "ofertas": "false",
   "nombre": "Ventanas",
@@ -73,6 +81,7 @@
  },
  {
   "id": "9",
+  "stock":"23",
   "categoria": "",
   "ofertas": "false",
   "nombre": "Vigas Metalicas",
