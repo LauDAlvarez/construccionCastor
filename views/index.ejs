@@ -34,9 +34,11 @@
 
     <section class="contenedor-prodDestacado">
         <h3>Productos Destacados</h3>
-        <% products.forEach( (product)=>{ %>
-                <%- include('partials/product', { product }) %>
-        <%});%>
+        <div class="contenedor-allProducts">
+            <% products.forEach( (product)=>{ %>
+                    <%- include('partials/product', { product }) %>
+            <%});%>
+        </div>
     </section>
 
     <section class="contenedor-marcas">

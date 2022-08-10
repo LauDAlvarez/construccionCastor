@@ -103,16 +103,15 @@ section figure{
 }
 
 section figure img{
-    width: 80%;
+    width: 65%;
     position: relative;
     left: -15%;
 }
 
 .links-prduct-contenedor{
     color: var(--paleta-a);
-    font-size: 700;
     display: flex;
-    width: 75%;
+    width: 100%;
     min-width: 275px;
     max-width: 390px;
     height: 80%;
@@ -128,7 +127,9 @@ section figure img{
 }
 
 .contenedor-prod-index{
-    width: inherit;
+    width: 100%;
+    min-width: 270px;
+    max-width: 390px;
     height: 25vh;
     display: flex;
     justify-content: center;
@@ -215,6 +216,20 @@ footer {
 }
 
 @media (min-width: 361px) {
+    .contenedor-prodDestacado{
+        width: 98%;
+        height: max-content;
+    }
+
+    .contenedor-allProducts{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .contenedor-prod-index{
+        max-width: 420px;
+    }
 
     .contenedor-marcas article {
         width: 7.5rem;
