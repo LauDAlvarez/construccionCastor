@@ -5,8 +5,36 @@
     <body>
         <%- include("../partials/header")%>
             <main class="main">
+                <form action="/products?_method=PUT" method="POST" class="form-registro" enctype="multipart/form-data">
+            
+            
+                    <p class="contenedor-bloque">
+                        <!-- <label>Nombre</label> -->
+                        <input type="text" name="nombre" placeholder="Nombre" required="">
+                    </p>
+                    <p class="contenedor-bloque">
+                        <!-- <label>Apellido</label> -->
+                        <input type="number" name="precio" placeholder="Precio" required="">
+                    </p>
+                    <p class="contenedor-bloque">
+                        <!-- <label>email</label> -->
+                        <input type="text" name="descripcion" placeholder="Descripcion" required="">
+                    </p>
+                    <p class="contenedor-bloque">
+                        <!-- <label>Contraseña</label> -->
+                        <input type="number" name="oferta" placeholder="% de descuento" max="100" min="0" required="">
+                    </p>
+                    <p>
+                        <!-- FOTO DEL PRODUCTO -->
+                        <input type="file" name="nombreImagen">
+                    </p>
+                    <div class="contenedor-bloque">
+                        <button type="submit" class="boton-registro">Actualizar Producto</button>
+        
+                    </div>
+                </form>
 
-                <section class="productos-seleccionados">
+                <!-- <section class="productos-seleccionados">
                     <ul class="titulos">
                         <li>Articulo</li>
                         <li>Precio</li>
@@ -21,7 +49,7 @@
                 </section>
                 <section class="totales">
 
-                </section>
+                </section> -->
             </main>
 
             <%- include("../partials/footer")%>

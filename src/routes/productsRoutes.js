@@ -33,7 +33,7 @@ router.get('/', productsControllers.vistaIndex)
 
 // Obtener producto
 // /*** GET ONE PRODUCT ***/ 
-router.get('/detail/:id/', productsControllers.detail); 
+router.get('/:id', productsControllers.detail); 
 
 
 // Crear Producto
@@ -41,6 +41,8 @@ router.get('/create', productsControllers.create)
 router.post('/', upload.single('nombreImagen') , productsControllers.store)  
 
 // Modificar Producto
+router.get('/:id/edit', productsControllers.edit) 
+router.put('/:id', productsControllers.update) 
 
 
 module.exports = router;
