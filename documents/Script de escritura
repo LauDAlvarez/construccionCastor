@@ -7,3 +7,16 @@ CREATE TABLE `productos-construccion`.`user` (
   `photo` VARCHAR(500) NOT NULL,
   `category_id` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`id`));
+
+
+
+CREATE TABLE `productos-construccion`.`products` (
+  `id` INT NOT NULL,
+  `name` VARCHAR(100) NOT NULL,
+  `desctiption` TEXT NOT NULL,
+  `photo` VARCHAR(500) NOT NULL,
+  `price` DECIMAL(10,2) NOT NULL,
+  `discount` DECIMAL(5,2) NOT NULL,
+  `stock` INT NOT NULL,
+  `category_id` INT NOT NULL,
+  PRIMARY KEY (`id`));
