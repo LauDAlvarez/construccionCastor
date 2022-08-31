@@ -1,0 +1,9 @@
+CREATE TABLE `productos-construccion`.`user` (
+  `id` INT NULL AUTO_INCREMENT,
+  `first_name` VARCHAR(100) NOT NULL,
+  `last_name` VARCHAR(100) NOT NULL,
+  `email` VARCHAR(100) NOT NULL,
+  `password` VARCHAR(100) NOT NULL,
+  `photo` VARCHAR(500) NOT NULL,
+  `category_id` VARCHAR(100) NOT NULL,
+  PRIMARY KEY (`id`));
