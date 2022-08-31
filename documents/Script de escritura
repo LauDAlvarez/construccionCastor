@@ -20,3 +20,22 @@ CREATE TABLE `productos-construccion`.`products` (
   `stock` INT NOT NULL,
   `category_id` INT NOT NULL,
   PRIMARY KEY (`id`));
+
+
+CREATE TABLE `productos-construccion`.`user_x_products` (
+  `id` INT NOT NULL,
+  `user_id` INT NOT NULL,
+  `product_id` INT NOT NULL,
+  `comentarios` TEXT NULL,
+  `fecha_comentario` DATETIME NULL,
+  PRIMARY KEY (`id`),
+  CONSTRAINT `user_id`
+    FOREIGN KEY ()
+    REFERENCES `productos-construccion`.`user` ()
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `product_id`
+    FOREIGN KEY ()
+    REFERENCES `productos-construccion`.`products` ()
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
