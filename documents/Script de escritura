@@ -1,4 +1,4 @@
-CREATE TABLE `productos-construccion`.`user` (
+CREATE TABLE `castorconstrucciones_db`.`user` (
   `id` INT NULL AUTO_INCREMENT,
   `first_name` VARCHAR(100) NOT NULL,
   `last_name` VARCHAR(100) NOT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE `productos-construccion`.`user` (
 
 
 
-CREATE TABLE `productos-construccion`.`products` (
+CREATE TABLE `castorconstrucciones_db`.`products` (
   `id` INT NOT NULL,
   `name` VARCHAR(100) NOT NULL,
   `desctiption` TEXT NOT NULL,
@@ -22,7 +22,7 @@ CREATE TABLE `productos-construccion`.`products` (
   PRIMARY KEY (`id`));
 
 
-CREATE TABLE `productos-construccion`.`user_x_product` ( 
+CREATE TABLE `castorconstrucciones_db`.`user_x_product` ( 
   `id` INT NOT NULL AUTO_INCREMENT , 
   `user_id` INT NOT NULL , 
   `product_id` INT NOT NULL , 
