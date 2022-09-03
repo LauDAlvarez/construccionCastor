@@ -17,6 +17,7 @@ header{
 }
 /* IMAGEN FONDO DEL MAIN*/
 .imagenContenedora{
+    margin-top: 13rem;
     height: 70vh;
     width: 100vw;
     background-size: cover;
