@@ -1,36 +1,59 @@
 const fs = require('fs');
 const path = require('path');
 const { validationResult }  = require('express-validator');
-const productsFilePath = path.join(__dirname, '../data/userDataBase.json');
-const user = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
-
+const db = require('../database/models');
+const { use } = require('../routes/usersRoutes');
+const User = db.User
+const Product = db.Product
+const UserProduct = db.User_x_Product
 
 const usersControllers = {
     loginMain: (req, res) => {
             res.render('users/login');
     },
-    register: (req, res) => {
-        const validations = validationResult(req);   
-        const usuario = req.body;
+    loginEnter: async (req, res)=> {
+        try {
+            const [user, products, userProduct] = await Promise.all([
+                User.findOne({      
+                    where:{
+                        email: req.body.email,
+                        password: req.body.password
+                    }
+                }),
+                Product.findAll(),
+                UserProduct.findAll(),
+            ]);
 
-        console.log(usuario)
-
-        if(!validations.isEmpty()){
-            return res.render('users/register', {errors: validations.errors});
-        }      
-         // USERdata validacion de que no se encuentre en el base
-        user.forEach(elemento => {
-            if( (elemento.nombre == usuario.nombre)&&(elemento.email == usuario.email) ){
-                res.send('El usuario '+ elemento.nombre +' ya existe!')
-            }else{
-                res.render('users/userIndex', {user: elemento})
-            }
-        });  
+            res.rendirect('users/indexUser', {user , products, userProduct})
+        } catch (error) {
+            console.log({ error });
+        }
     },
-    registerPass:(req, res)=>{
-        const usuario = req.body;
-        res.render('user/userIndex');
+    registerOff: async (req, res)=> {
+        res.render('users/register')
+    },
+    registerOn: async (req, res)=>{
+        try {
+            const [user, products, userProduct] = await Promise.all([
+                User.create({
+                    first_name: req.body.first_name,
+                    last_name: req.body.last_name,
+                    email: req.body.email,
+                    password: req.bode.password,
+                    // photo: req.body.photo,
+                    category_id: 1,
+                    logic_delete: 1,
+                }),
+                Product.findAll(),
+                UserProduct.findAll(),
+            ]);
+
+            
+
+            res.rendirect('users/indexUser', {user , products, userProduct})
+        } catch (error) {
+            console.log(error);
+        }
     }
 }
 

@@ -5,8 +5,10 @@ const createUser = require('../middlewares/createUser');
 const registerValidation = require('../middlewares/userValidation');
 
 
-router.get('/login',  usersControllers.loginMain);
-router.get('/register', registerValidation ,  usersControllers.register);
-router.post('/register', createUser , usersControllers.registerPass)
-
+// LOGGING
+router.get('/loggin', usersControllers.loginMain)
+router.post('/loggin/checked', usersControllers.loginMain)
+// REGISTER
+router.get('/registerOff', usersControllers.registerOff);
+router.post('/registerOn', usersControllers.registerOn);
 module.exports = router;
