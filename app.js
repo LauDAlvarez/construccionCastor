@@ -25,12 +25,12 @@ app.use(methodOverride('_method'));
 // Rutas
 const mainRoute = require('./src/routes/indexRoutes');
 const userRoute = require('./src/routes/usersRoutes');
-const productRoute = require('./src/routes/productsRoutes');
+// const productRoute = require('./src/routes/productsRoutes');
 
 
 app.use('/', mainRoute);
 app.use('/users', userRoute);
-app.use('/products', productRoute);
+// app.use('/products', productRoute);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

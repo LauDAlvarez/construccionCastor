@@ -9,11 +9,6 @@
     /* Las variables usualmente se declaran de esta manera('--'+nombre de variable) y los espacios se remplazan por '-'*/
 }
 
-* {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-}
 
 html {
     font-size: 62.5%;
@@ -44,8 +39,8 @@ h1 {
     justify-content: center;
 }
 
-label,
-input {
+label.labelRegister,
+input.inputRegister {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
