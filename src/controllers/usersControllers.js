@@ -8,7 +8,7 @@ const user = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const usersControllers = {
     loginMain: (req, res) => {
-        res.render('./users/login')
+            res.render('users/login');
     },
     register: (req, res) => {
         const validations = validationResult(req);   

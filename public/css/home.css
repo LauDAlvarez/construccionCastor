@@ -158,6 +158,11 @@ section figure img{
     align-items: center;
     padding: 0 10px 0 0;
     font-size: medium;
+    transition: .5s;
+}
+
+.links-prduct-contenedor:hover .contenido-decripcion-prodDestacado{
+    width: 125px;
 }
 
 .contenedor-marcas {
