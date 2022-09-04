@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("../partials/head")%>
+
+<body>
+
+    <%- include("../partials/header")%>
+    <main>
+        <h1>Edición usuario</h1>
+        <% if( errors ){ %>
+    
+                <ul style="text-align: center;">
+                    <% errors.forEach( (elemento)=> { %>
+                        <li>
+                            <%= elemento.msg %>
+                        </li>
+                        <% }) %>
+                </ul>
+        
+                <br><br>
+        
+                <% } %>
+        <form action="/userIndex" method="POST" class="form-registro">
+            
+            
+            <p class="contenedor-bloque">
+                <input type="text" name="nombre" placeholder="Nombre" required="" class="inputRegister">
+            </p>
+            <p class="contenedor-bloque">
+                <input type="text" name="apellido" placeholder="Apellido" required="" class="inputRegister">
+            </p>
+            <p class="contenedor-bloque">
+                <input type="email" name="email" placeholder="email" required="" class="inputRegister">
+            </p>
+            <div class="contenedor-bloque">
+                <button class="boton-registro">Actualizar datos</button>
+            </div>
+        </form>
+    </main>
+    
+    <%- include("../partials/footer")%>
+
+</body>
+
+</html>
