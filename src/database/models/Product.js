@@ -1,46 +1,61 @@
-const { Model } = require("sequelize/types");
-const { FOREIGNKEYS } = require("sequelize/types/query-types");
+
 
 module.exports = (sequelize, dataTypes) => {
     let alias = 'Product';
     let cols = {
         id: {
-            type: dataTypes.BIGINT(10).UNSIGNED,
+            type: dataTypes.INTEGER(10).UNSIGNED,
             primaryKey: true,
             autoIncrement: true
         },
         name: {
-            type: dataTypes.VARCHAR(100),
+            type: dataTypes.STRING(100),
             allowNull: false
+        },
+        brand: {
+            type: dataTypes.STRING(50),
+            allowNull: true
         },
         description: {
             type: dataTypes.TEXT,
             allowNull: false
         },
         photo: {
-            type: dataTypes.VARCHAR(500),
-            allowNull: false
-        },
-        discount: {
-            type: dataTypes.DECIMAL(5,2),
+            type: dataTypes.STRING(500),
             allowNull: false
         },
         stock: {
-            type: dataTypes.INTEGER,
+            type: dataTypes.INTEGER(10).UNSIGNED,
             allowNull: false
         },
+        price: {
+            type: dataTypes.DECIMAL(10,2).UNSIGNED,
+            allowNull: false
+        },
+        discount: {
+            type: dataTypes.DECIMAL(5,2).UNSIGNED,
+            allowNull: false
+        },
+        created_at: {
+            type: dataTypes.DATEONLY,
+            allowNull: true
+        },
+        updated_at: {
+            type: dataTypes.DATEONLY,
+            allowNull: true
+        },
         category_id: {
-            type: dataTypes.INTEGER,
+            type: dataTypes.INTEGER(10).UNSIGNED,
             allowNull: false
         },
         logic_delete: {
-            type: dataTypes.INTEGER,
+            type: dataTypes.TINYINT(4).UNSIGNED,
             allowNull: false
         },
     };
     let config = {
-        tableName:"product",
-        timestamps: true,
+        tableName:"products",
+        timestamps: false,
     }
     const Product = sequelize.define(alias, cols, config); 
 

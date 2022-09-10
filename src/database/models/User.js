@@ -1,47 +1,53 @@
-const e = require("express");
-const { Model } = require("sequelize/types");
-const { FOREIGNKEYS } = require("sequelize/types/query-types");
+
 
 module.exports = (sequelize, dataTypes) => {
     let alias = 'User';
     let cols = {
         id: {
-            type: dataTypes.BIGINT(10).UNSIGNED,
+            type: dataTypes.INTEGER(10).UNSIGNED,
             primaryKey: true,
             autoIncrement: true
         },
         first_name: {
-            type: dataTypes.VARCHAR(100),
+            type: dataTypes.STRING(100),
             allowNull: false
         },
         last_name: {
-            type: dataTypes.VARCHAR(100),
+            type: dataTypes.STRING(100),
             allowNull: false
         },
         email: {
-            type: dataTypes.VARCHAR(100),
+            type: dataTypes.STRING(100),
             allowNull: false
         },
         password : {
-            type: dataTypes.VARCHAR(100),
+            type: dataTypes.STRING(50),
             allowNull: false
         },
         photo: {
-            type: dataTypes.VARCHAR(500),
+            type: dataTypes.STRING(500),
             allowNull: false
         },
+        created_at: {
+            type: dataTypes.DATEONLY,
+            allowNull: true
+        },
+        updated_at: {
+            type: dataTypes.DATEONLY,
+            allowNull: true
+        },
         category_id: {
-            type: dataTypes.INTEGER,
+            type: dataTypes.INTEGER(10),
             allowNull: false
         },
         logic_delete: {
-            type: dataTypes.INTEGER,
+            type: dataTypes.TINYINT(4),
             allowNull: false
         },
     };
     let config = {
-        tableName:"user",
-        timestamps: true,
+        tableName:"users",
+        timestamps: false,
     }
     const User = sequelize.define(alias, cols, config); 
 
