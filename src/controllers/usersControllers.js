@@ -5,7 +5,6 @@ const db = require('../database/models');
 const { use } = require('../routes/usersRoutes');
 const User = db.User
 const Product = db.Product
-const UserProduct = db.User_x_Product
 
 const usersControllers = {
     loginMain: (req, res) => {

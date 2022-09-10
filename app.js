@@ -23,12 +23,12 @@ saveUninitialized: false}));
 app.use(methodOverride('_method'));
 
 // Rutas
-const mainRoute = require('./src/routes/indexRoutes');
+const productRoute = require('./src/routes/productsRoutes')
 const userRoute = require('./src/routes/usersRoutes');
 // const productRoute = require('./src/routes/productsRoutes');
 
 
-app.use('/', mainRoute);
+app.use('/', productRoute);
 app.use('/users', userRoute);
 // app.use('/products', productRoute);
 

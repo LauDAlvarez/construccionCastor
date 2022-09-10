@@ -28,13 +28,14 @@ function fileFilter (req, file, cb) {
 
 var upload = multer({ storage: storage, fileFilter: fileFilter})
 
+//BUSCADOR
+router.get('/search', productsControllers.search);
+
 // Ruta verProuctos
-router.get('/', productsControllers.vistaIndex)
+router.get('/', productsControllers.index)
 
 // Obtener producto
-// /*** GET ONE PRODUCT ***/ 
 router.get('/:id', productsControllers.detail); 
-
 
 // Crear Producto
 router.get('/create', productsControllers.create) 
