@@ -49,8 +49,12 @@ const controlador = {
 		console.log(product)
 		res.render('products/productDetail',{ product: product }  );//renderiza el elemento que se encuentra!!
 	},
+	delete: (req, res)=>{
+        
+    },
+    destroy: (req, res)=>{
 
-
+    },
 // HICIMOS COPIAR Y PEGAR - HAY REVISAR EL EDIT Y EL UPDATE
 
 	edit: (req, res) => {

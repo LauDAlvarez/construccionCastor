@@ -45,5 +45,9 @@ router.post('/', upload.single('nombreImagen') , productsControllers.store)
 router.get('/:id/edit', productsControllers.edit) 
 router.put('/:id', productsControllers.update) 
 
+// DELETE
+router.get('/delete/:id', productsControllers.delete);
+router.delete('/delete/:id', productsControllers.destroy)
+
 
 module.exports = router;

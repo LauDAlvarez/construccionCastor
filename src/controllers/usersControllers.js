@@ -33,7 +33,7 @@ const usersControllers = {
     },
     registerOn: async (req, res)=>{
         try {
-            const [user, products, userProduct] = await Promise.all([
+            const [user, products] = await Promise.all([
                 User.create({
                     first_name: req.body.first_name,
                     last_name: req.body.last_name,
@@ -44,15 +44,21 @@ const usersControllers = {
                     logic_delete: 1,
                 }),
                 Product.findAll(),
-                UserProduct.findAll(),
+                
             ]);
 
             
 
-            res.rendirect('users/indexUser', {user , products, userProduct})
+            res.rendirect('users/indexUser', {user , products})
         } catch (error) {
             console.log(error);
         }
+    },
+    delete: (req, res)=>{
+        
+    },
+    destroy: (req, res)=>{
+
     }
 }
 
