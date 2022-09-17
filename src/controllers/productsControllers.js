@@ -1,6 +1,7 @@
 const path = require('path');
 const db = require('../database/models');
 const Sequelize = require('sequelize');
+const { where } = require('sequelize');
 const Op = Sequelize.Op;
 
 
@@ -40,14 +41,19 @@ const controlador = {
 	store: (req, res) => {
 
 	},
-	detail: (req, res) => {
-		const idProduc = req.params.id;
+	detail: async (req, res) => {
+		try{
+			const product = await db.Product.findOne({
+				where:{
+					id: req.params.id
+				}
+			});
 
-		const product = products.find( (elemento) => { 
-			return elemento.id == idProduc 
-		} );
-		console.log(product)
-		res.render('products/productDetail',{ product: product }  );//renderiza el elemento que se encuentra!!
+			console.log(product)
+			res.render('products/productDetail',{ product: product }  );//renderiza el elemento que se encuentra!!
+		}catch{
+
+		}
 	},
 	delete: (req, res)=>{
         

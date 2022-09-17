@@ -6,18 +6,18 @@
     <div class="contenedor-detallado-product ">
         <section class="contenedor-product">  
             <section class="contenedor-fotoDesc-product">
-                <div class="foto-product">
-                    <img src="/images/products/<%= product.nombreImagen %>" alt="">
-                </div>
-                <h4><%= product.descripcion %></h4>
+                <figure class="contenedor-img-product">
+                    <img src="<%= product.photo %>" alt="<%= product.name %>">
+                </figure>
+                <h2><%= product.name %></h2>
             </section>
             <div class="product-barraDesc">
                 <section class="cant-disponibilidad">
-                    <h3><%= product.nombre %></h3>
+                    <h2><%= product.nombre %></h2>
                     <div class="codigo-disponibilidad">
                         <p>Disponibilidad: <%= product.stock %></p> <p>SKU: <%= product.id %></p>
                     </div>
-                    <h2><%= product.precio %></h2>
+                    <h2><%= product.price %></h2>
                 </section>
                 <div class="contenedor-botonera">
                     <p>
@@ -31,7 +31,7 @@
         </section>
         <section class="descripcion-producto">
             <h2>DETALLE DEL PRODUCTO</h2>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus qui esse excepturi odit aspernatur aliquam deserunt iusto harum est fugiat minima magni hic amet soluta, laudantium mollitia illo incidunt nesciunt?</p>
+            <p><%= product.description %></p>
         </section>
     </div>
 </body>

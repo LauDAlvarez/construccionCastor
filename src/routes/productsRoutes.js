@@ -35,11 +35,11 @@ router.get('/search', productsControllers.search);
 router.get('/', productsControllers.index)
 
 // Obtener producto
-router.get('/:id', productsControllers.detail); 
+router.get('/products/:id', productsControllers.detail); 
 
 // Crear Producto
 router.get('/create', productsControllers.create) 
-router.post('/', upload.single('nombreImagen') , productsControllers.store)  
+router.post('/createImg', upload.single('nombreImagen') , productsControllers.store)  
 
 // Modificar Producto
 router.get('/:id/edit', productsControllers.edit) 
