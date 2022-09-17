@@ -6,28 +6,27 @@
 <body>
     <main>
         <h1>Crear Producto</h1>
-        <form action="/products" method="POST" class="form-registro" enctype="multipart/form-data">
-            
+        <form action="/createImg" method="POST" class="form-registro" enctype="multipart/form-data">
             
             <p class="contenedor-bloque">
                 <!-- <label>Nombre</label> -->
-                <input type="text" name="nombre" placeholder="Nombre" required="">
+                <input type="text" name="name" placeholder="Nombre" required="">
             </p>
             <p class="contenedor-bloque">
                 <!-- <label>Apellido</label> -->
-                <input type="number" name="precio" placeholder="Precio" required="">
+                <input type="number" name="price" placeholder="Precio" required="">
             </p>
             <p class="contenedor-bloque">
                 <!-- <label>email</label> -->
-                <input type="text" name="descripcion" placeholder="Descripcion" required="">
+                <input type="text" name="description" placeholder="Descripcion" required="">
             </p>
             <p class="contenedor-bloque">
                 <!-- <label>Contraseña</label> -->
-                <input type="number" name="oferta" placeholder="% de descuento" max="100" min="0" required="">
+                <input type="number" name="discount" placeholder="% de descuento" max="100" min="0" required="">
             </p>
             <p>
                 <!-- FOTO DEL PRODUCTO -->
-                <input type="file" name="nombreImagen">
+                <input type="file" name="photo">
             </p>
             <div class="contenedor-bloque">
                 <button type="submit" class="boton-registro">Agregar Producto</button>

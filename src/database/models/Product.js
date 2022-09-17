@@ -46,7 +46,7 @@ module.exports = (sequelize, dataTypes) => {
         },
         category_id: {
             type: dataTypes.INTEGER(10).UNSIGNED,
-            allowNull: false
+            allowNull: true
         },
         logic_delete: {
             type: dataTypes.TINYINT(4).UNSIGNED,

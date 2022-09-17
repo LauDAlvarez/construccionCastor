@@ -38,8 +38,23 @@ const controlador = {
 		res.render('products/createProduct');
 	},
     // Create -  Method to store
-	store: (req, res) => {
+	store: async (req, res) => {
+		try{
+			const product = await db.Product.create({
+				name: req.body.name,
+				price: req.body.price,
+				description: req.body.description,
+				discount: req.body.discount,
+				photo: '/images/default-image.png',
+				stock: 500,
+				logic_delete: 1
+			})
+			console.log(product)
 
+			res.redirect('index')
+		}catch{
+
+		}
 	},
 	detail: async (req, res) => {
 		try{
@@ -50,13 +65,13 @@ const controlador = {
 			});
 
 			console.log(product)
-			res.render('products/productDetail',{ product: product }  );//renderiza el elemento que se encuentra!!
+			res.render('products/productDetail',{ product: product }  ); //renderiza el elemento que se encuentra!!
 		}catch{
 
 		}
 	},
 	delete: (req, res)=>{
-        
+        res.render('')
     },
     destroy: (req, res)=>{
 
