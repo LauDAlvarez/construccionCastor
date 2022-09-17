@@ -13,6 +13,6 @@ router.get('/registerOff', usersControllers.registerOff);
 router.post('/registerOn', usersControllers.registerOn);
 // DELETE
 router.get('/delete/:id', usersControllers.delete);
-router.update('/delete/:id', usersControllers.destroy)
+router.delete('/delete/:id', usersControllers.destroy)
 
 module.exports = router;
