@@ -4,17 +4,14 @@
     --paleta-b: #252422;
     --paleta-c: #403d39;
     --paleta-d: #ccc5b9;
-    --paleta-e: #fffcf2;
+    --paleta-e: #ebebeb;
+    --paleta-f: #ffffff;
     --fuente-principal: 'Hind Madurai', sans-serif;
     /* Las variables usualmente se declaran de esta manera('--'+nombre de variable) y los espacios se remplazan por '-'*/ 
 }
 /*HEADER DEL BODY*/
 
-header{
-    height: 10vh;
-    width: 100%;
-    background-color: red;
-}
+
 /* IMAGEN FONDO DEL MAIN*/
 .imagenContenedora{
     margin-top: 13rem;

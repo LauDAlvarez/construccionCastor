@@ -1,12 +1,16 @@
-<section class="contenedor-prod-index">
-        <a href="/products/<%= product.id%>" class="links-prduct-contenedor">
-            <figure class="contenedor-img-product">
-                <img src="<%= product.photo %>" alt="<%= product.name %>">
-            </figure>
-            <article class="contenido-decripcion-prodDestacado">
-                <p><%= product.name %></p>
-                <p><%= product.price %></p>
-                <p><%= product.description %></p>
-            </article>
-        </a>
-</section>
+<div class="producto">
+    <a href="/products/<%= product.id%>" class="links-prduct-contenedor">
+        <img src="<%= product.photo %>" alt="<%= product.name %>">
+        <article class="articulo">
+            <p class="nombre-producto">
+                <%= product.name %>
+            </p>
+            <p class="precio">
+                <%= product.price %>
+            </p>
+            <p class="descripcion-producto">
+                <%= product.description %>
+            </p>
+        </article>
+    </a>
+</div>
