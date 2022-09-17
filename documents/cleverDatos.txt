@@ -1,0 +1,9 @@
+Database Name: btwuucrgayngbcfigu5u
+
+Host: btwuucrgayngbcfigu5u-mysql.services.clever-cloud.com
+
+User: uxi74tvfbhml2lus
+
+Password: h2cBYfInQeDiyXzWY6BO
+
+Port: 3306
