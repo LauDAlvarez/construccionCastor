@@ -160,8 +160,7 @@ main {
     background-color: var(--paleta-f);
     margin: 15px;
     justify-content: center;
-    /* border: 1px solid var(--paleta-d); */
-
+border-radius: 0.5rem;
 }
 
 .producto img {
