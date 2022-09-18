@@ -1,73 +1,135 @@
-:root {
-    /* El root se utiliza para declarar variables dentro del Css */
-    --paleta-a: #ff5400;
-    --paleta-b: #252422;
-    --paleta-c: #403d39;
-    --paleta-d: #ccc5b9;
-    --paleta-e: #ebebeb;
-    --paleta-f: #ffffff;
-    --fuente-principal: 'Hind Madurai', sans-serif;
-    --curva-de-bordeado: 1.5rem;
-    --separador-elementos: 1rem;
-    /* Las variables usualmente se declaran de esta manera('--'+nombre de variable) y los espacios se remplazan por '-'*/
-}
-
-body .contenedor-detallado-product{
-    height: 70rem;
-    width: 95%;
-    margin: 15rem auto;
+.producto-seccion {
+    width: 70vw;
+    margin: 9rem auto auto auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
 }
-.contenedor-product{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 75%;
+
+.producto-seccion img {
+    width: 80%;
     margin: auto;
 }
-.contenedor-fotoDesc-product .foto-product{
-    width: 60%;
-    height: 70%;
-    margin: 0 auto;
-}
-.foto-product img{
-    width: 100%;
+
+.producto-seccion h2 {
+    font-size: 2.5rem;
 }
 
-.product-barraDesc{
-    height: 32rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+.producto-layout {
+    text-align: center;
+    font-size: 1.5rem;
 }
 
-.cant-disponibilidad{
-    height: 100px;
+.contenedor-botonera {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.contenedor-botonera{
-    display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    width: 70%;
+    max-width: 10rem;
+    justify-content: center;
     height: 7.5rem;
+    margin: 2rem auto;
 }
-.contenedor-botonera p{
-    height: 2.5rem;
-    display: flex;
+
+.btn-izq,
+.btn-der {
+    background-color: var(--paleta-a);
     align-items: center;
-    width: 4.5rem;
-    font-size: medium;
+    width: 2rem;
+    font-size: 2rem;
+    border: 1px solid var(--paleta-a);
+    color: var(--paleta-e);
+
 }
-.contenedor-botonera p button{
-    border: transparent;
-    background-color: transparent;
-    width: 1rem;
-    border-radius: 5px;
-    font-size: large;
+
+.btn-der {
+    border-radius: 0 50% 50% 0;
+}
+
+.btn-izq {
+    border-radius: 50% 0 0 50%;
+}
+
+.cantidad {
+    width: 3rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.btn-agregar {
+    border: 1px solid var(--paleta-a);
+    width: 80%;
+    border-radius: 2rem;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+}
+
+.producto-descripcion {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.producto-descripcion h2 {
+    font-size: 1.5rem;
+}
+
+@media (min-width: 361px) {
+    .contenedor-botonera {
+        justify-content: center;
+        max-width: 20rem;
+    }
+
+    .btn-agregar {
+        width: 10rem;
+    }
+
+}
+
+@media (min-width: 769px) {
+    .producto-seccion {
+        height: 70vh;
+        margin-top: 10rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .producto-seccion h2,
+    .producto-info {
+        margin-left: 3rem;
+        text-align: start;
+    }
+
+    .producto-seccion img {
+        width: 40%;
+    }
+
+    .producto-layout {
+        display: flex;
+        flex-direction: column;
+        align-content: flex-start;
+        height: 28rem;
+        width: 50%;
+        justify-content: center;
+        border-left: 1px solid var(--paleta-a);
+    }
+
+    .contenedor-botonera {
+        width: 100%;
+        height: 5rem;
+        margin-left: 3rem;
+        max-width: 20rem;
+        justify-content: space-around;
+    }
+
+    .producto-descripcion {
+        width: 100%;
+    }
+
+    .producto-descripcion h2,
+    .producto-descripcion p {
+        margin-left: 0;
+        text-align: center;
+    }
+
 }

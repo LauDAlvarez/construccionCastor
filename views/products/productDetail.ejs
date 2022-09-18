@@ -1,40 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include("../partials/head")%>
-    <body>
+<%- include("../partials/head")%>
+
     <%- include("../partials/header")%>
-    <div class="contenedor-detallado-product ">
-        <section class="contenedor-product">  
-            <section class="contenedor-fotoDesc-product">
-                <figure class="contenedor-img-product">
-                    <img src="<%= product.photo %>" alt="<%= product.name %>">
-                </figure>
-                <h2><%= product.name %></h2>
-            </section>
-            <div class="product-barraDesc">
-                <section class="cant-disponibilidad">
-                    <h2><%= product.nombre %></h2>
-                    <div class="codigo-disponibilidad">
-                        <p>Disponibilidad: <%= product.stock %></p> <p>SKU: <%= product.id %></p>
-                    </div>
-                    <h2><%= product.price %></h2>
-                </section>
-                <div class="contenedor-botonera">
-                    <p>
-                        <button>-</button>
-                        <label for="">0</label>
-                        <button>+</button>
+        <section class="producto-seccion">
+            <img src="<%= product.photo %>" alt="<%= product.name %>">
+            <div class="producto-layout">
+                <h2>
+                    <%= product.name %>
+                </h2>
+                <div class="producto-info">
+                    <p>Disponibilidad: <%= product.stock %>
                     </p>
-                    <button>AGREGAR</button>
+                    <p>SKU: <%= product.id %>
+                    </p>
+                </div>
+                <h2>
+                    <%= product.price %>
+                </h2>
+                <div class="contenedor-botonera">
+                    <button class="btn-izq">-</button>
+                    <label class="cantidad" for="">0</label>
+                    <button class="btn-der">+</button>
+                    <button class="btn-agregar">AGREGAR</button>
                 </div>
             </div>
+            <div class="producto-descripcion">
+                <h2>Detalles del producto</h2>
+                <p>
+                    <%= product.description %>
+                </p>
+            </div>
         </section>
-        <section class="descripcion-producto">
-            <h2>DETALLE DEL PRODUCTO</h2>
-            <p><%= product.description %></p>
-        </section>
-    </div>
-</body>
 
-<%- include("../partials/footer")%>
+        <%- include("../partials/footer")%>
+
 </html>
