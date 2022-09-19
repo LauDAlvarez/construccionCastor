@@ -76,6 +76,14 @@ const controlador = {
     destroy: (req, res)=>{
 
     },
+	list: async(req, res)=>{
+		try{
+			const data = await db.Product.findAll()
+			res.render('products/productos', { products:data })
+		}catch{
+
+		}
+	},
 // HICIMOS COPIAR Y PEGAR - HAY REVISAR EL EDIT Y EL UPDATE
 
 	edit: (req, res) => {

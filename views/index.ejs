@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<%- include("./partials/head")%>
 <body>
-    <%- include("./partials/head")%>
+    
         <%- include("./partials/header")%>
 
             <main>
@@ -35,7 +35,7 @@
                     </div>
                 </div>
 
-                <!-- <section class="contenedor-prodDestacado"> -->
+                <section class="contenedor-prodDestacado">
                 <h3>Productos Destacados</h3>
                 <h2>Resultados de la Busqueda:</h2>
                 <div class="productos">
@@ -47,11 +47,11 @@
                             <% if(products) {%>
                                 <% products.forEach( (product)=>{ %>
                                     <%- include('partials/product', { product }) %>
-                                        <%});%>
-                                            <%}%>
+                                <%});%>
+                            <%}%>
 
                 </div>
-                <!-- </section> -->
+                </section>
 
                 <section class="contenedor-marcas">
                     <article class="contenido-marcas"><img src="./images/marcas/marca_fv.webp" alt=""></article>

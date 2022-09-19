@@ -23,7 +23,7 @@ html {
 }
 
 body .contenedor-carruselImg {
-    width: 100vw;
+    width: 100%;
     /* Margen superior para inmovilización del header */
     margin-top: 10rem;
     /*****************************************************/

@@ -5,23 +5,10 @@
     <body>
         <section class="contenedor-prodDestacado_productos">
             <h3>Lista de productos</h3>
-            <div class="contenedor-articulo-prodDestacado_productos">
-                <% products.forEach( (producto)=>{ %>
-                    <article class="contenido-prodDestacado_productos">
-                        <img src="./images/products/<%= producto.nombreImagen %>" alt="<%= producto.nombreImagen %>">
-                        <div class="contenido-decripcion-prodDestacado_productos">
-                            <p>
-                                <%= producto.nombre %>
-                            </p>
-                            <p>
-                                <%= producto.precio %>
-                            </p>
-                            <p>
-                                <%= producto.descripcion %>
-                            </p>
-                        </div>
-                    </article>
-                    <%});%>
+            <div class="productos">
+                <% products.forEach( (productos)=>{ %>
+                    <%- include('../partials/product', { product: productos }) %>
+                <%});%>
             </div>
         </section>
         <a href="/products/create">Crear nuevo producto</a>
