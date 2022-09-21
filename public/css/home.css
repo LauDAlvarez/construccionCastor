@@ -25,7 +25,7 @@ html {
 body .contenedor-carruselImg {
     width: 100%;
     /* Margen superior para inmovilización del header */
-    margin-top: 10rem;
+    margin-top: 14rem;
     /*****************************************************/
     /* margin: var(--separador-elementos) auto; */
     height: 200px;
@@ -143,7 +143,7 @@ body .contenedor-carruselImg {
 
 main {
     max-width: 90vw;
-    margin: auto;
+    margin: 15vh auto;
 }
 
 /* .links-prduct-contenedor:hover{
@@ -226,8 +226,8 @@ border-radius: 0.5rem;
 }
 
 .contenedor-marcas article img:hover {
-    width: 15rem;
-    height: 15rem;
+    width: 12rem;
+    height: 12rem;
 }
 
 
@@ -235,7 +235,7 @@ body .contenedor-novedades {
     background-image: url(/images/fotoCarrusel3.webp);
     background-repeat: no-repeat;
     background-size: cover;
-    width: 98vw;
+    width: 98%;
     height: 30rem;
     padding: 2rem;
     margin: 0 auto;

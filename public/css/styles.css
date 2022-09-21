@@ -129,14 +129,16 @@ img.logo{
 
 .navbar li {
     list-style: none;
+    
 }
 .navbar li a{
     transition: .5S;
+    padding: 0px 2px;
 }
 
 .navbar li:hover a{
     font-size: 1.6rem;
-    padding: 2px;
+    padding: 2px 4px;
     border-radius: 5px;
     background-color: var(--paleta-a);
     color: var(--paleta-c);

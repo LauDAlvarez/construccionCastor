@@ -1,10 +1,10 @@
-const fs = require('fs');
-const path = require('path');
 const { validationResult }  = require('express-validator');
 const db = require('../database/models');
-const { use } = require('../routes/usersRoutes');
 const User = db.User
 const Product = db.Product
+const comprador = {
+    "name": 'Comprador anonimo',
+}
 
 const usersControllers = {
     loginMain: (req, res) => {
@@ -12,7 +12,8 @@ const usersControllers = {
     },
     loginEnter: async (req, res)=> {
         try {
-            const [user, products, userProduct] = await Promise.all([
+            const errors = validationResult(req)
+            const [user, products] = await Promise.all([
                 User.findOne({      
                     where:{
                         email: req.body.email,
@@ -20,19 +21,31 @@ const usersControllers = {
                     }
                 }),
                 Product.findAll(),
-                UserProduct.findAll(),
             ]);
 
-            res.rendirect('users/indexUser', {user , products, userProduct})
+
+            if(errors.isEmpty()){
+                // if(user.category_id == 1){
+                   
+                    res.render('users/userIndex', {user , products})
+                // }else{
+                //     res.render('indexUser', { user: comprador , products})
+                // }
+            }else{
+                console.log("USUARIO: "+ user )
+                res.render('users/userIndex', {user: comprador, products ,errors});
+            }
+
         } catch (error) {
             console.log({ error });
         }
     },
     registerOff: async (req, res)=> {
-        res.render('users/register')
+        res.render('register')
     },
     registerOn: async (req, res)=>{
         try {
+            
             const [user, products] = await Promise.all([
                 User.create({
                     first_name: req.body.first_name,
@@ -44,12 +57,9 @@ const usersControllers = {
                     logic_delete: 1,
                 }),
                 Product.findAll(),
-                
             ]);
-
             
 
-            res.rendirect('users/indexUser', {user , products})
         } catch (error) {
             console.log(error);
         }

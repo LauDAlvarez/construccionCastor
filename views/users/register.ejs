@@ -8,19 +8,18 @@
     <%- include("../partials/header")%>
     <main>
         <h1>Registro</h1>
-        <% if( errors ){ %>
-    
+            <% if( locals && locals.errors ){ %>
+            <div class="contenedor-errors">
                 <ul style="text-align: center;">
                     <% errors.forEach( (elemento)=> { %>
                         <li>
                             <%= elemento.msg %>
                         </li>
-                        <% }) %>
+                    <% }) %>
                 </ul>
-        
-                <br><br>
-        
-                <% } %>
+            </div>
+            <br><br>
+        <% } %>
         <form action="/userIndex" method="POST" class="form-registro">
             
             
