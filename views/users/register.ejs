@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include("../partials/head")%>
-
+    
+    <%- include("../partials/head")%>
 <body>
 
     <%- include("../partials/header")%>
@@ -25,26 +25,26 @@
             
             <p class="contenedor-bloque">
                 <!-- <label>Nombre</label> -->
-                <input type="text" name="nombre" placeholder="Nombre" required="" class="inputRegister">
+                <input type="text" name="nombre" placeholder="Nombre"  class="inputRegister" id="nombreRegister">
             </p>
             <p class="contenedor-bloque">
                 <!-- <label>Apellido</label> -->
-                <input type="text" name="apellido" placeholder="Apellido" required="" class="inputRegister">
+                <input type="text" name="apellido" placeholder="Apellido"  class="inputRegister" id="apellidoRegister">
             </p>
             <p class="contenedor-bloque">
                 <!-- <label>email</label> -->
-                <input type="email" name="email" placeholder="email" required="" class="inputRegister">
+                <input type="email" name="email" placeholder="email"  class="inputRegister" id="emailRegister">
             </p>
             <p class="contenedor-bloque">
                 <!-- <label>Contraseña</label> -->
-                <input type="password" name="contrasena" placeholder="Contraseña" min-length="8" required="" class="inputRegister">
+                <input type="password" name="contrasena" placeholder="Contraseña" min-length="8"  class="inputRegister" id="passwordRegister">
             </p>
             <p class="contenedor-bloque">
                 <!-- <label>Repite la contraseña</label> -->
-                <input type="password" name="repite-contrasena" placeholder="Repetí la contraseña" required="" class="inputRegister">
+                <input type="password" name="repite-contrasena" placeholder="Repetí la contraseña"  class="inputRegister" id="passwordRegisterConfirm">
             </p>
             <div class="contenedor-bloque">
-                <ul>
+                <ul class="ulErrores">
                     <li>1 mayúscula</li>
                     <li>8 caracteres mínimo</li>
                     <li>1 número</li>
@@ -57,14 +57,14 @@
                 </div>
             </div>
             <div class="contenedor-bloque">
-                <button class="boton-registro">Registrarme</button>
+                <input type="submit"class="boton-registro" value="Registrarme" >
 
             </div>
         </form>
     </main>
     
     <%- include("../partials/footer")%>
-
+<script src="/js/register.js"></script>
 </body>
 
 </html>

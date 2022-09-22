@@ -121,6 +121,14 @@ input {
     box-shadow: 1px 2px 2px 0 rgba(255 84 0 / 50%);
 
 }
+/* para js de front */
+.is-valid {
+    background-color: #a5ff9d;
+}
+
+.is-invalid {
+    background-color: #ff9c9c;
+}
 
 
 
@@ -145,5 +153,5 @@ input {
     .contenedor-bloque {
         width: 40%;
     }
-
+    
 }

@@ -41,7 +41,7 @@ const usersControllers = {
         }
     },
     registerOff: async (req, res)=> {
-        res.render('register')
+        res.render('users/register')
     },
     registerOn: async (req, res)=>{
         try {
