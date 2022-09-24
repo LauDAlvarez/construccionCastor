@@ -181,10 +181,10 @@ border-radius: 0.5rem;
     flex-wrap: wrap;
     justify-content: center; */
 }
-
-
 .precio,
-.nombre-producto {
+.nombre-producto,
+.marca-producto
+ {
     width: 50%;
     font-size: 18px;
     margin: auto;
