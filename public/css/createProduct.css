@@ -13,6 +13,9 @@
     margin-top: 2rem;
     justify-content: center;
 }
+.contenedor-agregar-producto input {
+    font-size: 1.5rem;
+}
 
 .contenedor-agregar-producto select {
     border: none;
@@ -22,6 +25,8 @@
     margin-top: .5rem;
     width: 100%;
     max-width: 40rem;
+    font-size: 1.5rem;
+
 }
 
 
