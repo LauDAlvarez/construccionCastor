@@ -96,6 +96,11 @@ img.logo{
     flex: 1;
     justify-content: space-around;
 }
+.icon-user a {
+    text-decoration: none;
+    color: var(--paleta-b);
+    font-size: 1.5rem;
+}
 .icon-user,
 .icon-cart {
     align-self: center;
@@ -113,8 +118,6 @@ img.logo{
     font-size: 2.2rem;
     color: var(--paleta-b);
 }
-
-
 .navbar {
     display: none;
 }
@@ -206,6 +209,7 @@ img.logo{
     .adress-bar{
     display: flex;
     flex-wrap: nowrap;
+    max-width: 40rem;
     align-items: center;
     padding: 1rem;
     flex: 2;
@@ -222,8 +226,10 @@ img.logo{
 @media (min-width: 769px) {
     .iconos {
         justify-content: space-between;
-        flex: 0.5;
-        padding-left: 12vw;
+        width: 100%;
+        flex-wrap: nowrap;
+        /* flex: 0.5;
+        padding-left: 12vw; */
     }
     .navbar ul {
         width: 70vw;
@@ -234,11 +240,15 @@ img.logo{
         width: 80vw;
     } 
     .adress-bar {
-        display: flex;
-        flex-wrap: nowrap;
+        /* display: flex;
+        flex-wrap: nowrap; */
         align-items: center;
         padding: 1rem;
         flex: 2;
-        padding-left: 15vw;
+        /* padding-left: 15vw; */
 }
+.buscador {
+    margin: auto;
+}
+
 }
