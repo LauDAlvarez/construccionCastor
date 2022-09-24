@@ -40,7 +40,7 @@ router.get('/products/:id', productsControllers.detail);
 
 // Crear Producto
 router.get('/create', productsControllers.create) 
-router.post('/createImg', upload.single('photo') , productsControllers.store)  
+router.post('/createSuccessful', upload.single('photo') , productsControllers.store)  
 
 // Modificar Producto
 router.get('/:id/edit', productsControllers.edit) 

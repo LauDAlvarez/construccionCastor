@@ -42,11 +42,15 @@ const controlador = {
 		try{
 			const product = await db.Product.create({
 				name: req.body.name,
-				price: req.body.price,
+				brand: null,
 				description: req.body.description,
-				discount: req.body.discount,
 				photo: '/images/default-image.png',
 				stock: 500,
+				price: req.body.price,
+				discount: req.body.discount,
+				created_at: new Date(),
+				updated_at:'',
+				category_id:'1',
 				logic_delete: 1
 			})
 			console.log(product)
