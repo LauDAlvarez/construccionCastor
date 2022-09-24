@@ -73,8 +73,32 @@
 .producto-descripcion h2 {
     font-size: 1.5rem;
 }
+.administrar-producto {
+    margin: auto;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    text-align: center;
+    border-top: 1px solid var(--paleta-a);
+}
+.administrar-producto h2 {
+    font-size: 1.5rem;
+}
+.administrar-producto button {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    background-color: var(--paleta-a);
+    color: var(--paleta-e);
+    width: 8rem;
+    border: none;
+    border-radius: .5rem;
+    padding: 1rem;
+}
 
 @media (min-width: 361px) {
+    .producto-seccion {
+        margin-top: 15rem;
+    }
+
     .contenedor-botonera {
         justify-content: center;
         max-width: 20rem;
@@ -83,12 +107,14 @@
     .btn-agregar {
         width: 10rem;
     }
-
+    .administrar-producto button {
+        width: 10rem;
+    }
 }
 
 @media (min-width: 769px) {
     .producto-seccion {
-        height: 70vh;
+        height: 95vh;
         margin-top: 10rem;
         flex-direction: row;
         flex-wrap: wrap;
@@ -129,6 +155,16 @@
     .producto-descripcion h2,
     .producto-descripcion p {
         margin-left: 0;
+        text-align: center;
+    }
+    .administrar-producto {
+        width: 70vw;
+    }
+    .administrar-producto h2 {
+        margin: auto;
+        text-align: center;
+    }
+    .administrar-producto button {
         text-align: center;
     }
 
