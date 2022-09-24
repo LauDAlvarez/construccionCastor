@@ -26,7 +26,7 @@ const usersControllers = {
 
             if(errors.isEmpty()){
                 // if(user.category_id == 1){
-                   
+
                     res.render('users/userIndex', {user , products})
                 // }else{
                 //     res.render('indexUser', { user: comprador , products})

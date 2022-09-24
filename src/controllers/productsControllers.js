@@ -2,6 +2,8 @@ const path = require('path');
 const db = require('../database/models');
 const Sequelize = require('sequelize');
 const { where } = require('sequelize');
+const { render } = require('ejs');
+const Product = require('../database/models/Product');
 const Op = Sequelize.Op;
 
 
@@ -90,13 +92,61 @@ const controlador = {
 		}
 	},
 // HICIMOS COPIAR Y PEGAR - HAY REVISAR EL EDIT Y EL UPDATE
-
-	edit: (req, res) => {
-		
+//COMO PONER UN CAMPO DEFAULT PARA HACER UN UPDATE ASI NO OCURRE ESTO 'realseDate' y 'photo'?
+	edit: async(req, res) => {
+		try {
+			const product = await db.Product.findOne({
+				where:{
+					id: req.params.id
+				}
+			})
+			
+			res.render('products/editProduct', {product});
+		} catch (error) {
+			
+		}
 	},
 	// Update - Method to update
-	update: (req, res) => {
-		
+	update:  async(req, res) => {
+		const product = await db.Product.findOne({
+			where:{
+				id: req.params.id
+			}
+		})
+		const date = new Date(product.created_at);
+		const day = date.getDate() < 10 ? `0${date.getDate()}` : date.getDate();
+		const month = date.getMonth() < 10 ? `0${date.getMonth() + 1}` : date.getMonth() + 1;
+		const fullYear = date.getFullYear();
+		product.created_at = `${fullYear}-${month}-${day}`;
+
+
+		console.log(product.created_at);
+
+		try {
+			const productUpd = await db.Product.update({
+					name: req.body.name,
+					brand: req.body.brand,
+					description: req.body.description,
+					photo: '/images/default-image.png',
+					stock: 500,
+					price: req.body.price,
+					discount: req.body.discount,
+					created_at: db.Product.created_at ,
+					updated_at: new Date(),
+					category_id:'1',
+					logic_delete: 1
+			},
+			{
+				where:{
+					id: req.params.id
+				}
+			})
+			console.log(productUpd)
+
+			res.redirect('/') 
+		} catch (error) {
+			
+		}
 	}
 }
 
