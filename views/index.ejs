@@ -39,16 +39,11 @@
                 <h3>Productos Destacados</h3>
                 <h2>Resultados de la Busqueda:</h2>
                 <div class="productos">
-                    <% if(notFound) {%>
-                        <p>
-                            <%= notFound %>
-                        </p>
-                        <%}%>
-                            <% if(products) {%>
-                                <% products.forEach( (product)=>{ %>
-                                    <%- include('partials/product', { product }) %>
-                                <%});%>
-                            <%}%>
+                    <% if(products) {%>
+                        <% products.forEach( (product)=>{ %>
+                            <%- include('partials/product', { product }) %>
+                        <%});%>
+                    <%}%>
 
                 </div>
                 </section>

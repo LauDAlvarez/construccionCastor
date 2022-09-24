@@ -40,22 +40,23 @@ const controlador = {
     // Create -  Method to store
 	store: async (req, res) => {
 		try{
-			const product = await db.Product.create({
-				name: req.body.name,
-				brand: null,
-				description: req.body.description,
-				photo: '/images/default-image.png',
-				stock: 500,
-				price: req.body.price,
-				discount: req.body.discount,
-				created_at: new Date(),
-				updated_at:'',
-				category_id:'1',
-				logic_delete: 1
-			})
+			const product  = await db.Product.create({
+					name: req.body.name,
+					brand: req.body.brand,
+					description: req.body.description,
+					photo: '/images/default-image.png',
+					stock: 500,
+					price: req.body.price,
+					discount: req.body.discount,
+					created_at: new Date(),
+					updated_at:'',
+					category_id:'1',
+					logic_delete: 1
+				})
+
 			console.log(product)
 
-			res.redirect('index')
+			res.redirect('/') 
 		}catch{
 
 		}
