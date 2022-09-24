@@ -9,6 +9,9 @@
                 <h2>
                     <%= product.name %>
                 </h2>
+                <h2>
+                    <%= product.brand %>
+                </h2>
                 <div class="producto-info">
                     <p>Disponibilidad: <%= product.stock %>
                     </p>
@@ -31,6 +34,15 @@
                     <%= product.description %>
                 </p>
             </div>
+            <div class="administrar-producto">
+                <h2>Administrar producto</h2>
+                <button>Modificar</button>
+                <button>Borrar</button>
+            </div>
+
+
+
+
         </section>
 
         <%- include("../partials/footer")%>
