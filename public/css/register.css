@@ -75,7 +75,7 @@ input {
 }
 
 .contenedor-bloque li {
-    list-style: none;
+    list-style:circle ;
     margin-left: 0.5rem;
 }
 

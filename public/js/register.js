@@ -7,15 +7,18 @@ window.addEventListener('load', ()=>{
     let passwordInput = document.querySelector('#passwordRegister');
     let passwordInputConfirm = document.querySelector('#passwordRegisterConfirm');
     let ulListaErrores= document.querySelector('.ulErrores');
-    let liElementos= document.querySelectorAll('.ulErrores li')
+
     let errores= []
+    
     formulario.addEventListener('submit',(e)=>{
         ulListaErrores.innerHTML = ""
-        
+        e.preventDefault()
         if (errores.length > 0){
-            errores = []}
-
+            errores = []
+            // ulListaErrores=""
+        }
         if(nombreInput.value==""){
+            console.log(nombreInput.value);
             nombreInput.classList.add ('is-invalid')
             nombreInput.classList.remove ('is-valid')
             errores.push('debe escribir su nombre')
@@ -42,15 +45,16 @@ window.addEventListener('load', ()=>{
             emailInput.classList.remove('is-invalid')
         }
         //condiciones contraseña
-        let errorVacio = errores.push('debe escribir su constraseña')
+
         if(passwordInput.value==""){
             passwordInput.classList.add ('is-invalid')
             passwordInput.classList.remove ('is-valid')
-            errorVacio()
+            errores.push('debe escribir su constraseña')
         }else{
             passwordInput.classList.add('is-valid')
             passwordInput.classList.remove('is-invalid')
         }
+
         if (passwordInput.value.length < 8){
             passwordInput.classList.add ('is-invalid')
             passwordInput.classList.remove ('is-valid')
@@ -66,9 +70,7 @@ window.addEventListener('load', ()=>{
                 errores.push("tu contraseña debe contener al menos un numero")
         }
             
-        
-
-        if( passwordInputConfirm.value==""){
+        if(passwordInputConfirm.value !== passwordInput.value || passwordInputConfirm.value =="" ){
             passwordInputConfirm.classList.add ('is-invalid')
             passwordInputConfirm.classList.remove ('is-valid')
             errores.push('la confirmacion de su constraseña debe ser la misma que su constraseña')
@@ -76,13 +78,14 @@ window.addEventListener('load', ()=>{
             passwordInputConfirm.classList.add('is-valid')
             passwordInputConfirm.classList.remove('is-invalid')
         }
+        
         if(errores.length > 0){
-            e.preventDefault()
-            errores.innerHTML=""
+            
             for(i=0 ; i < errores.length ; i ++)
                 ulListaErrores.innerHTML +='<li>'+ errores[i] +'</li>'
             }else{
                 alert('su registro ha sido satisfactorio')
+                formulario.submit()
             }
     })
 

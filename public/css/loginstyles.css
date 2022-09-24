@@ -145,12 +145,14 @@ padding-bottom: 20px;
     color: var(--paleta-e);
     background-color: var(--paleta-a);
 
-} 
+}
+/* FRONT JS  */
+
+
 /* MEDIA QUERIES */
 @media (min-width: 360px){
 
 }
-    
 
 
 
