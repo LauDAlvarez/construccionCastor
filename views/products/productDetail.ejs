@@ -36,8 +36,10 @@
             </div>
             <div class="administrar-producto">
                 <h2>Administrar producto</h2>
-                <button>Modificar</button>
-                <button>Borrar</button>
+                <a href="/<%= product.id %>/edit"><button>Modificar</button></a>
+                <form action="/delete/<%= product.id %>?_method=PUT" method="post">
+                    <button type="submit">Eliminar</button>
+                </form>
             </div>
 
 
