@@ -1,6 +1,6 @@
 .producto-seccion {
     width: 70vw;
-    margin: 9rem auto auto auto;
+    margin: 15rem auto auto auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -95,10 +95,6 @@
 }
 
 @media (min-width: 361px) {
-    .producto-seccion {
-        margin-top: 15rem;
-    }
-
     .contenedor-botonera {
         justify-content: center;
         max-width: 20rem;
@@ -115,7 +111,6 @@
 @media (min-width: 769px) {
     .producto-seccion {
         height: 95vh;
-        margin-top: 10rem;
         flex-direction: row;
         flex-wrap: wrap;
     }

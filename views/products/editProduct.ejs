@@ -5,30 +5,31 @@
     <body>
         <%- include("../partials/header")%>
             <main class="main">
-                <form action="/<%= product.id %>?_method=PUT" method="POST" class="form-registro" enctype="multipart/form-data">
+                <form action="/<%= product.id %>?_method=PUT" method="POST" class="form-agregar-producto" enctype="multipart/form-data">
+                    <h1 class="encabezado-formularios">Editar producto</h1>
+
             
-            
-                    <p class="contenedor-bloque">
+                    <p class="contenedor-agregar-producto">
                         <!-- <label>Nombre</label> -->
                         <input type="text" name="name" placeholder="Nombre" required="" value="<%= product.name %>">
                     </p>
-                    <p class="contenedor-bloque">
+                    <p class="contenedor-agregar-producto">
                         <!-- <label>Apellido</label> -->
                         <input type="number" name="price" placeholder="Precio" required="" value="<%= product.price %>">
                     </p>
-                    <p class="contenedor-bloque">
+                    <p class="contenedor-agregar-producto">
                         <!-- <label>email</label> -->
                         <input type="text" name="description" placeholder="Descripcion" required="" value="<%= product.description %>">
                     </p>
-                    <p class="contenedor-bloque">
+                    <p class="contenedor-agregar-producto">
                         <!-- <label>email</label> -->
                         <input type="text" name="brand" placeholder="Marca" value="<%= product.brand %>">
                     </p>
-                    <p class="contenedor-bloque">
+                    <p class="contenedor-agregar-producto">
                         <!-- <label>Contraseña</label> -->
                         <input type="number" name="discount" placeholder="% de descuento" max="100" min="0" required="" value="<%= product.discount %>">
                     </p>
-                    <p>
+                    <p class="contenedor-agregar-producto">
                         <!-- FOTO DEL PRODUCTO -->
                         <input type="file" name="photo">
                     </p>

@@ -1,4 +1,4 @@
-.encabezado-registro {
+.encabezado-formularios {
     text-align: center;
     margin-top: 4rem;
 }
@@ -121,7 +121,7 @@ input {
 
 /** desktop **/
 @media (min-width: 769px) {
-    .encabezado-registro {
+    .encabezado-formularios {
         width: 100%;
     }
     .form-registro {
