@@ -1,24 +1,4 @@
-:root {
-    /* El root se utiliza para declarar variables dentro del Css */
-    --paleta-a: #ff5400;
-    --paleta-b: #252422;
-    --paleta-c: #403d39;
-    --paleta-d: #ccc5b9;
-    --paleta-e: #ebebeb;
-    --paleta-f: #ffffff;
-    --fuente-principal: 'Hind Madurai', sans-serif;
-    /* Las variables usualmente se declaran de esta manera('--'+nombre de variable) y los espacios se remplazan por '-'*/
-}
-
-
-html {
-    font-size: 62.5%;
-    /* 1rem == 10px */
-    background-color: var(--paleta-e);
-}
-
-
-h1 {
+.encabezado-registro {
     text-align: center;
     margin-top: 4rem;
 }
@@ -26,6 +6,8 @@ h1 {
 .form-registro {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    background-color: var(--paleta-f);
     width: 80%;
     margin: auto;
     padding-bottom: 5rem;
@@ -35,7 +17,7 @@ h1 {
 .contenedor-bloque {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
+    width: 90%;
     margin-top: 2rem;
     justify-content: center;
 }
@@ -102,15 +84,15 @@ input {
 .boton-registro {
     border: none;
     border-radius: .5rem;
-    width: 100%;
+    width: 90%;
     max-width: 35rem;
-    background-color: var(--paleta-d);
+    background-color: var(--paleta-e);
     color: var(--paleta-a);
     font-size: 1.5rem;
     font-weight: bold;
     padding: 1.5rem;
     cursor: pointer;
-    margin-top: 3rem;
+    margin-top: 1rem;
     transition-property: all;
     transition: .3s;
 }
@@ -119,7 +101,6 @@ input {
     background-color: var(--paleta-c);
     color: var(--paleta-e);
     box-shadow: 1px 2px 2px 0 rgba(255 84 0 / 50%);
-
 }
 /* para js de front */
 .is-valid {
@@ -134,12 +115,14 @@ input {
 
 /* media queries */
 
-/** Dispositivo tablet **/
 
-@media (min-width: 480px) {}
+
 
 /** desktop **/
 @media (min-width: 769px) {
+    .encabezado-registro {
+        width: 100%;
+    }
     .form-registro {
         display: flex;
         justify-content: space-around;
@@ -147,11 +130,9 @@ input {
         border: 1px solid #d8d8d8;
         box-shadow: 1px 2px 2px 0 rgba(255 84 0 / 50%);
         margin-bottom: 18rem;
-        margin-top: 4rem;
+        margin-top: 1rem;
     }
-
     .contenedor-bloque {
         width: 40%;
-    }
-    
+    }  
 }

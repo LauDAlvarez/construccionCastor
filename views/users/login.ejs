@@ -1,67 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include("../partials/head")%>
-<body>
-    <%- include("../partials/header")%> 
-<main>
-    <div class="imagenContenedora"
-        style="background-image: url(https://apliqa.es/wp-content/uploads/2022/03/TYDKSTNAORGC3AE2AJFLLZEE3Y.jpg)">
-        <!--fondo-->
-        <br>
-        <p class="tituloPrincipal">INICIO DE CUENTA</p>
-        <br>
-        <div class="card"style="background-image: url(https://img.freepik.com/vector-gratis/coleccion-herramientas-siluetas_39690-144.jpg?w=740)"><br>
-            <h3 class="clienteRegistrado"> Cliente registado </h3>
-            <div>
+<%- include("../partials/head")%>
 
-            </div>
-                <form action="./loggin/checked" class="formularios" method="post">
-                    <br>
-
-                    <div class="divFormEmail">
-                        <!--<label for="email-login" class="email">Email</label>-->
-                        <br>
-                        <input type="email" name="email" id="email-login" placeholder="EMAIL">
-                        <br>
+    <body>
+        <%- include("../partials/header")%>
+            <main>
+                <form action="./loggin/checked" class="form-login" method="post">
+                    <h1 class="encabezado-login">Iniciar sesión</h1>
+                    <div class="contenedor-bloque-login">
+                        <input class="input-login" type="email" name="email" id="email-login" placeholder="email">
                     </div>
+                    <div class="contenedor-bloque-login">
 
-                    <div class="divFormPassword">
-                        <br>
-                        <!--<label for="password-login" class="contraseña">Constraseña</label>-->
-                        <br>
-                        <input type="password" name="password" id="password-login" placeholder="CONTRASEÑA">
-                        <br>
+                        <input class="input-login" type="password" name="password" id="password-login"
+                            placeholder="Contraseña">
                     </div>
-                    <div class="footerCard">
-                        <label><input type="checkbox" id="cbox1" value="first_checkbox"> RECORDAR</label>
-                        <button class="botoncito" type="submit">Iniciar Sesión</button>
+                    <div class="contenedor-bloque-login">
+                        <div class="politica-privacidad">
+                            <input type="checkbox" id="cbox1" value="first_checkbox" class="check-acepta">
+                            <label class="labelRegister">Recordar</label>
+                        </div>
+                        <div class="contenedor-bloque-login">
+                            <button class="boton-login" type="submit">Iniciar Sesión</button>
+                        </div>
                     </div>
                 </form>
-            
-            
-        </div>
-    <div class="footerImagenContenedora">
-        <div class="clienteNuevo">
-            <p>¿CLIENTE NUEVO?</p>
-        </div>
+                <div class="clienteNuevo">
+                    <h3>¿Cliente nuevo?</h3>
+                    <div class="contenedor-bloque-login_clienteNuevo">
+                        <p>Crear una cuenta tiene muchos beneficios:<br>
+                            Pago más rápido, guardar más de una dirección,
+                            seguimiento de pedidos y mucho más.
+                        </p>
+                    </div>
+                    <div class="contenedor-bloque-login_clienteNuevo contenedor-bloque-login">
+                        <input type="submit"class="boton-registro" value="Registrarme" >
+                    </div>
+                </div>
 
-        <div class="footerMain">
-            <p>Crear una cuenta tiene muchos beneficios:<br>
-                Pago más rápido, guardar más de una dirección,<br>
-                seguimiento de pedidos y mucho más.
-            </p>
-            <div class="buttonRegistarClienteNuevo">
-                    <a href="registerOff">REGISTRAR CLIENTE NUEVO</a>
-            </div>
-        </div>
-
-    </div>
-</div>
-    
-
-</main>
-<%- include("../partials/footer")%>
-</body>
+            </main>
+            <%- include("../partials/footer")%>
+    </body>
 
 
 

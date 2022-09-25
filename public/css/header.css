@@ -33,7 +33,7 @@ img.logo{
     padding-top: 1rem;
 }
 .main-header {
-    background-color: var(--paleta-d);
+    background-color: var(--paleta-a);
     display: flex;
     padding: 2rem;
     width: 100vw;
@@ -191,7 +191,6 @@ img.logo{
 
     }
     .main-header {
-        background-color: var(--paleta-d);
         display: flex;
         padding: 2rem;
         width: 100vw;
