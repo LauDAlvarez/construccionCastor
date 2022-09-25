@@ -84,10 +84,11 @@ input {
 .boton-registro {
     border: none;
     border-radius: .5rem;
-    width: 90%;
+    width: 80%;
     max-width: 35rem;
     background-color: var(--paleta-e);
     color: var(--paleta-a);
+    text-decoration: none;
     font-size: 1.5rem;
     font-weight: bold;
     padding: 1.5rem;
