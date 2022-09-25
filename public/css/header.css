@@ -34,11 +34,10 @@ img.logo{
 .main-header {
     background-color: var(--paleta-a);
     display: flex;
-    padding: 2rem;
+    padding: 1rem;
     width: 100vw;
     position: fixed;
     top: 0px;
-    padding-right: 1rem;
     z-index: 100;
 }   
 
@@ -199,9 +198,6 @@ img.logo{
     } */
  
     .adress-bar{
-    display: flex;
-    flex-wrap: nowrap;
-    max-width: 40rem;
     align-items: center;
     padding: 1rem;
     padding-left: 2rem;
@@ -219,7 +215,7 @@ img.logo{
         width: 90%;
     }
     a.hipervinculoLogo{
-        width: 20%;
+        width: 7%;
     }
 
     img.logo {
@@ -236,15 +232,15 @@ img.logo{
         width: 70vw;
         justify-content: space-around;
     }
+    .adress-bar input {
+        width: 80rem;
+    }
     .adress-bar input,
     .boton-lupa {
 height: 5rem;    }
     .icon-user i,
 .icon-cart i {
     font-size: 3rem;
-}
-    .adress-bar {
-       width: 60%;
 }
 /* .buscador {
     margin: auto;
