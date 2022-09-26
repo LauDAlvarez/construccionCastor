@@ -72,7 +72,7 @@ CREATE TABLE `product_category` (
 --
 
 INSERT INTO `product_category` (`id`, `type`) VALUES
-(1, 'Materiales de construción'),
+(1, 'Materiales de construcción'),
 (2, 'Herramientas'),
 (3, 'Máquinas'),
 (4, 'Grifería'),

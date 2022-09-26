@@ -2,45 +2,61 @@
 <html lang="en">
 
 <%- include("../partials/head")%>
-<%- include("../partials/header")%>
-<body>
-    <main>
-        <h1>Crear Producto</h1>
-        <form action="/createSuccessful" method="POST" class="form-registro" enctype="multipart/form-data">
-            
-            <p class="contenedor-bloque">
-                <!-- <label>Nombre</label> -->
-                <input type="text" name="name" placeholder="Nombre" required="">
-            </p>
-            <p class="contenedor-bloque">
-                <!-- <label>Apellido</label> -->
-                <input type="number" name="price" placeholder="Precio" required="">
-            </p>
-            <p class="contenedor-bloque">
-                <!-- <label>email</label> -->
-                <input type="text" name="description" placeholder="Descripcion" required="">
-            </p>
-            <p class="contenedor-bloque">
-                <!-- <label>email</label> -->
-                <input type="text" name="brand" placeholder="Marca">
-            </p>
-            <p class="contenedor-bloque">
-                <!-- <label>Contraseña</label> -->
-                <input type="number" name="discount" placeholder="% de descuento" max="100" min="0" required="">
-            </p>
-            <p>
-                <!-- FOTO DEL PRODUCTO -->
-                <input type="file" name="photo">
-            </p>
-            <div class="contenedor-bloque">
-                <button type="submit" class="boton-registro">Agregar Producto</button>
+    <%- include("../partials/header")%>
 
-            </div>
-        </form>
-    </main>
-    
-    <%- include("../partials/footer")%>
+        <body>
+            <main>
+                <form action="/createSuccessful" method="POST" class="form-agregar-producto"
+                enctype="multipart/form-data">
+                <h1 class="encabezado-formularios">Crear Producto</h1>
 
-</body>
+                    <p class="contenedor-agregar-producto">
+                        <!-- <label>Nombre</label> -->
+                        <input type="text" name="name" placeholder="Nombre" required="">
+                    </p>
+                    <p class="contenedor-agregar-producto">
+                        <!-- <label>Apellido</label> -->
+                        <input type="number" name="price" placeholder="Precio" required="">
+                    </p>
+                    <p class="contenedor-agregar-producto">
+                        <!-- <label>email</label> -->
+                        <input type="text" name="description" placeholder="Descripción" required="">
+                    </p>
+                    <p class="contenedor-agregar-producto">
+                        <!-- <label>email</label> -->
+                        <input type="text" name="brand" placeholder="Marca">
+                    </p>
+                    <p class="contenedor-agregar-producto">
+                        <select name="category_id" placeholder="Categoría">
+                            <option value="">Seleccionar categoría</option>
+                            <option value="">Materiales de construcción</option>
+                            <option value="">Herramientas</option>
+                            <option value="">Máquinas</option>
+                            <option value="">Grifería</option>
+                            <option value="">Sanitarios</option>
+                        </select>
+                    </p>
+                    <p class="contenedor-agregar-producto">
+                        <!-- <label>email</label> -->
+                        <input type="number" name="stock" placeholder="Stock">
+                    </p>
+                    <p class="contenedor-agregar-producto">
+                        <!-- <label>Contraseña</label> -->
+                        <input type="number" name="discount" placeholder="% de descuento" max="100" min="0" required="">
+                    </p>
+                    <!-- FOTO DEL PRODUCTO -->
+                    <p class="contenedor-agregar-producto">
+                        <input type="file" name="photo">
+                    </p>
+                    <div class="contenedor-agregar-producto">
+                        <button type="submit" class="boton-registro">Agregar Producto</button>
+
+                    </div>
+                </form>
+            </main>
+
+            <%- include("../partials/footer")%>
+
+        </body>
 
 </html>

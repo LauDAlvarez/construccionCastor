@@ -7,18 +7,18 @@ window.addEventListener('load', ()=>{
     let passwordInput = document.querySelector('#passwordRegister');
     let passwordInputConfirm = document.querySelector('#passwordRegisterConfirm');
     let ulListaErrores= document.querySelector('.ulErrores');
-
     let errores= []
-    
     formulario.addEventListener('submit',(e)=>{
-        ulListaErrores.innerHTML = ""
-        e.preventDefault()
+        
+        ulListaErrores.innerHTML = "";
+
+        e.preventDefault();
+
         if (errores.length > 0){
             errores = []
             // ulListaErrores=""
         }
         if(nombreInput.value==""){
-            console.log(nombreInput.value);
             nombreInput.classList.add ('is-invalid')
             nombreInput.classList.remove ('is-valid')
             errores.push('debe escribir su nombre')
@@ -83,6 +83,7 @@ window.addEventListener('load', ()=>{
             
             for(i=0 ; i < errores.length ; i ++)
                 ulListaErrores.innerHTML +='<li>'+ errores[i] +'</li>'
+                ulListaErrores.setAttribute("id", "errores")
             }else{
                 alert('su registro ha sido satisfactorio')
                 formulario.submit()
