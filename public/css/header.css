@@ -6,7 +6,8 @@
     --paleta-d: #ccc5b9;
     --paleta-e: #ebebeb;
     --paleta-f: #ffffff;
-    --fuente-principal: 'Hind Madurai', sans-serif;    /* Las variables usualmente se declaran de esta manera('--'+nombre de variable) y los espacios se remplazan por '-'*/
+    --fuente-principal: 'Hind Madurai', sans-serif;
+    /* Las variables usualmente se declaran de esta manera('--'+nombre de variable) y los espacios se remplazan por '-'*/
 }
 
 * {
@@ -24,39 +25,41 @@ html {
 body {
     font-family: var(--fuente-principal);
 }
-a.hipervinculoLogo{
+
+/* a.hipervinculoLogo{
     height: 7rem;
+} */
+img.logo {
+    height: 12rem;
 }
-img.logo{
-    height: 6rem;
-    padding-top: 1rem;
-}
+
 .main-header {
     background-color: var(--paleta-a);
     display: flex;
+    justify-content: center;
     padding: 1rem;
     width: 100vw;
     position: fixed;
     top: 0px;
     z-index: 100;
-}   
+}
 
 .header-contenedor {
-    /* margin: auto;
-    margin-top: -1rem; */
-    height: 13rem;
-
+    height: 20rem;
+    width: 90%;
 }
 
 .main-header-top-bar {
-    display: flex;
+    text-align: center;
 }
+
 .adress-bar {
-    display:flex;
+    display: flex;
     flex-wrap: nowrap;
     align-items: center;
-    padding: 1rem;
+    margin-top: 1rem;
 }
+
 .adress-bar input {
     margin-top: 0;
 }
@@ -84,16 +87,20 @@ img.logo{
     font-size: 1.5rem;
     border-radius: 0 .4rem .4rem 0;
 }
+
 .iconos {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-around;
+    margin-top: 2rem;
 }
+
 .icon-user a {
     text-decoration: none;
     color: var(--paleta-b);
     font-size: 1.5rem;
 }
+
 .icon-user,
 .icon-cart {
     align-self: center;
@@ -106,11 +113,12 @@ img.logo{
     color: white;
 }
 
-.iconos div:hover i{
+.iconos div:hover i {
     filter: drop-shadow(2px 2px 2px var(--paleta-c));
     font-size: 2.2rem;
     color: var(--paleta-b);
 }
+
 .navbar {
     display: none;
 }
@@ -125,10 +133,10 @@ img.logo{
 .navbar li {
     padding-top: 1.5rem;
     list-style: none;
-    
+
 }
 
-.navbar li:hover a{
+.navbar li:hover a {
     /* font-size: 1.6rem; */
     /* padding: 2px 4px; */
     border-radius: 5px;
@@ -141,54 +149,21 @@ img.logo{
 
 .burger-menu {
     background-color: var(--paleta-a);
-    color: var(--paleta-c);
+    color: var(--paleta-f);
     display: block;
-    max-width: 2.1em;
-    padding: .4em 0;
-    border-radius: .45em;
+    max-width: 2.1rem;
+    border-radius: .45rem;
     text-align: center;
-    font-size: 1.4em;
+    font-size: 2rem;
     margin: auto;
+    margin-top: -2rem;
 }
 
 @media (min-width: 361px) {
-    .main-header-top-bar {
-        justify-content: space-around;
-        margin: auto;
-        width: 80vw;
-    }
-
     .burger-menu {
         display: none;
     }
 
-    img.logo {
-        height: 13rem;
-        margin-left: -4rem;
-        margin-top: -1rem;
-    }
-    .navbar {
-        width: 100vw;
-        display: flex;
-        justify-content: center;
-        margin-top: 2rem;
-    }
-    .navbar ul{
-        display: flex;
-        flex-wrap: nowrap;
-
-    }
-    .navbar a {
-        margin: 1em 2em;
-    }
-    .iconos {
-        width: 18%;
-        /* width: 10vw;
-        justify-content: space-around;
-        flex: 1;
-        padding-right: 1rem; */
-
-    }
     /* .main-header {
         display: flex;
         padding: 2rem;
@@ -197,14 +172,71 @@ img.logo{
         top: 0px;
         padding-right: 3rem;
     } */
- 
-    .adress-bar{
-    align-items: center;
-    padding: 1rem;
-    padding-left: 2rem;
-    
+    .main-header-top-bar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-content: center;
+        height: 14rem;
+        margin: auto;
+        margin-top: 1rem;
+        width: 80vw;
     }
-    .contenedor-prodDestacado_productos{
+
+    .hipervinculoLogo {
+        width: 40%;
+        margin-top: 2rem;
+    }
+
+    img.logo {
+        width: fit-content;
+    }
+
+    .navbar {
+        width: 100%;
+        display: flex;
+        /* flex-wrap: nowrap;
+        justify-content: center; */
+        margin-top: 1rem;
+    }
+
+    .navbar ul {
+        display: flex;
+        flex-wrap: nowrap;
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    /* .navbar a {
+        margin: 1em 2em;
+    } */
+
+    .iconos {
+        width: 18%;
+        margin-top: 0;
+        /* width: 10vw;
+        justify-content: space-around;
+        flex: 1;
+        padding-right: 1rem; */
+
+    }
+
+
+    .adress-bar input {
+        width: 100%;
+    }
+
+    .adress-bar input,
+    .boton-lupa {
+        height: 5rem;
+    }
+
+    .icon-user i,
+    .icon-cart i {
+        font-size: 3rem;
+    }
+
+    .contenedor-prodDestacado_productos {
         width: 98%;
         height: max-content;
         margin: 15vh auto;
@@ -212,18 +244,22 @@ img.logo{
 }
 
 @media (min-width: 769px) {
+
     .main-header-top-bar {
-        width: 90%;
+        width: 100%;
+        justify-content: space-between;
     }
-    a.hipervinculoLogo{
-        width: 7%;
+
+    a.hipervinculoLogo {
+        width: 27%;
+        margin-left: -4rem;
+        margin-top: 2rem;
     }
 
     img.logo {
-        height: 16rem;
-        margin-left: -9rem;
-        margin-top: -1rem;
+        height: 17rem;
     }
+
     .iconos {
         /* justify-content: space-between; */
         /* width: 100%;
@@ -231,21 +267,40 @@ img.logo{
         /* flex: 0.5;
         padding-left: 12vw; */
     }
+
+    .navbar {
+    margin-top: 0;
+    justify-content: center;
+
+}
     .navbar ul {
         width: 70vw;
         justify-content: space-around;
     }
+    .navbar ul li a {
+        font-size: 2rem;
+    }
+
+    .adress-bar {
+        width: 50%;
+    }
+
     .adress-bar input {
         width: 80rem;
     }
-    .adress-bar input,
+
+    /* .adress-bar input, */
     .boton-lupa {
-height: 5rem;    }
+        /* height: 5rem; */
+        /* width: 30%; */
+    }
+
     .icon-user i,
-.icon-cart i {
-    font-size: 3rem;
-}
-/* .buscador {
+    .icon-cart i {
+        font-size: 3rem;
+    }
+
+    /* .buscador {
     margin: auto;
 } */
 
