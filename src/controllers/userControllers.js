@@ -6,8 +6,8 @@ const comprador = {
     "name": 'Comprador anonimo',
 }
 
-const usersControllers = {
-    loginMain: (req, res) => {
+const userControllers = {
+    login: (req, res) => {
             res.render('users/login');
     },
     loginEnter: async (req, res)=> {
@@ -40,10 +40,10 @@ const usersControllers = {
             console.log({ error });
         }
     },
-    registerOff: async (req, res)=> {
-        res.render('users/register')
+    register: (req, res)=> {
+        res.render("users/register")
     },
-    registerOn: async (req, res)=>{
+    registered: async (req, res)=>{
         try {
             
             const [user, products] = await Promise.all([
@@ -72,4 +72,4 @@ const usersControllers = {
     }
 }
 
-module.exports = usersControllers;
+module.exports = userControllers;
