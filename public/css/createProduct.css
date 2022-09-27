@@ -30,8 +30,17 @@
     font-size: 1.5rem;
 
 }
-
-
+.divForListErrors{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 2rem;
+    justify-content: center;
+}
+.ulErrores{
+    color: rgba(213, 0, 0, 0.886);
+    font-size: 13px;
+}
 @media (min-width: 769px) {
     .form-agregar-producto {
         display: flex;

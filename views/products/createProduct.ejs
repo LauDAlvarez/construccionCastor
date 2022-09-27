@@ -10,53 +10,62 @@
                 enctype="multipart/form-data">
                 <h1 class="encabezado-formularios">Crear Producto</h1>
 
-                    <p class="contenedor-agregar-producto">
-                        <!-- <label>Nombre</label> -->
-                        <input type="text" name="name" placeholder="Nombre" required="">
-                    </p>
-                    <p class="contenedor-agregar-producto">
-                        <!-- <label>Apellido</label> -->
-                        <input type="number" name="price" placeholder="Precio" required="">
-                    </p>
-                    <p class="contenedor-agregar-producto">
-                        <!-- <label>email</label> -->
-                        <input type="text" name="description" placeholder="Descripción" required="">
-                    </p>
-                    <p class="contenedor-agregar-producto">
-                        <!-- <label>email</label> -->
-                        <input type="text" name="brand" placeholder="Marca">
-                    </p>
-                    <p class="contenedor-agregar-producto">
-                        <select name="category_id" placeholder="Categoría">
-                            <option value="">Seleccionar categoría</option>
-                            <option value="">Materiales de construcción</option>
-                            <option value="">Herramientas</option>
-                            <option value="">Máquinas</option>
-                            <option value="">Grifería</option>
-                            <option value="">Sanitarios</option>
-                        </select>
-                    </p>
-                    <p class="contenedor-agregar-producto">
-                        <!-- <label>email</label> -->
-                        <input type="number" name="stock" placeholder="Stock">
-                    </p>
-                    <p class="contenedor-agregar-producto">
-                        <!-- <label>Contraseña</label> -->
-                        <input type="number" name="discount" placeholder="% de descuento" max="100" min="0" required="">
-                    </p>
-                    <!-- FOTO DEL PRODUCTO -->
-                    <p class="contenedor-agregar-producto">
-                        <input type="file" name="photo">
-                    </p>
                     <div class="contenedor-agregar-producto">
-                        <button type="submit" class="boton-registro">Agregar Producto</button>
-
+                        <!-- <label>Nombre</label> -->
+                        <input type="text" name="name" placeholder="Nombre" class="nombreCreate">
+                    </div>
+                    <div class="contenedor-agregar-producto">
+                        <!-- <label>Apellido</label> -->
+                        <input type="number" name="price" placeholder="Precio" class="precioCreate">
+                    </div>
+                    
+                    <div class="contenedor-agregar-producto">
+                        <!-- <label>email</label> -->
+                        <input type="text" name="description" placeholder="Descripción" class="descripcionCreate">
+                    </div>
+                    
+                    <div class="contenedor-agregar-producto">
+                        <!-- <label>email</label> -->
+                        <input type="text" name="brand" placeholder="Marca" class="marcaCreate">
+                    </div>
+                    
+                    <div class="contenedor-agregar-producto">
+                        <select name="category_id" placeholder="Categoría" class="categoriaCreate">
+                            <option value="none">Seleccionar categoría</option>
+                            <option value="Materiales de construcción">Materiales de construcción</option>
+                            <option value="Herramientas">Herramientas</option>
+                            <option value="Máquinas">Máquinas</option>
+                            <option value="Grifería">Grifería</option>
+                            <option value="Sanitarios">Sanitarios</option>
+                        </select>
+                    </div>
+                    
+                    <div class="contenedor-agregar-producto">
+                        <!-- <label>email</label> -->
+                        <input type="number" name="stock" placeholder="Stock" class="stockCreate">
+                    </div>
+                    
+                    <div class="contenedor-agregar-producto">
+                        <!-- <label>Contraseña</label> -->
+                        <input type="number" name="discount" placeholder="% de descuento" max="100" min="0" class="descuentoCreate">
+                    </div>
+                    
+                    <!-- FOTO DEL PRODUCTO -->
+                    <div class="contenedor-agregar-producto">
+                        <input type="file" name="photo" class="imagenCreate">
+                    </div>
+                    <div class="divForListErrors">
+                        <ul class="ulErrores">
+                        </ul>
+                    </div>
+                    <div class="contenedor-agregar-producto">
+                        <button type="submit" class="boton-registro">Agregar Producto</button>  
                     </div>
                 </form>
             </main>
 
             <%- include("../partials/footer")%>
-
+<script src="/js/productCreate.js"></script>
         </body>
 
 </html>

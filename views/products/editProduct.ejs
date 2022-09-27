@@ -11,29 +11,32 @@
             
                     <p class="contenedor-agregar-producto">
                         <!-- <label>Nombre</label> -->
-                        <input type="text" name="name" placeholder="Nombre" required="" value="<%= product.name %>">
+                        <input type="text" name="name" placeholder="Nombre" value="<%= product.name %>" class="nombreEdit">
                     </p>
                     <p class="contenedor-agregar-producto">
                         <!-- <label>Apellido</label> -->
-                        <input type="number" name="price" placeholder="Precio" required="" value="<%= product.price %>">
+                        <input type="number" name="price" placeholder="Precio" value="<%= product.price %>" class="precioEdit">
                     </p>
                     <p class="contenedor-agregar-producto">
                         <!-- <label>email</label> -->
-                        <input type="text" name="description" placeholder="Descripcion" required="" value="<%= product.description %>">
+                        <input type="text" name="description" placeholder="Descripcion" value="<%= product.description %>" class="descripcionEdit">
                     </p>
                     <p class="contenedor-agregar-producto">
                         <!-- <label>email</label> -->
-                        <input type="text" name="brand" placeholder="Marca" value="<%= product.brand %>">
+                        <input type="text" name="brand" placeholder="Marca" value="<%= product.brand %>" class="marcaEdit">
                     </p>
                     <p class="contenedor-agregar-producto">
                         <!-- <label>Contraseña</label> -->
-                        <input type="number" name="discount" placeholder="% de descuento" max="100" min="0" required="" value="<%= product.discount %>">
+                        <input type="number" name="discount" placeholder="% de descuento" max="100" min="0" value="<%= product.discount %>" class="descuentoEdit">
                     </p>
                     <p class="contenedor-agregar-producto">
                         <!-- FOTO DEL PRODUCTO -->
-                        <input type="file" name="photo">
+                        <input type="file" name="photo"  class="imagenEdit">
                     </p>
-
+                    <div class="divForListErrors">
+                        <ul class="ulErrores">
+                        </ul>
+                    </div>
                     <div class="contenedor-bloque">
                         <button type="submit" class="boton-registro">Actualizar Producto</button>
         
@@ -57,7 +60,7 @@
 
                 </section> -->
             </main>
-
+<script src="/js/productDetail.js"></script>
             <%- include("../partials/footer")%>
     </body>
 

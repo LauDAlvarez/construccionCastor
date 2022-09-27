@@ -89,7 +89,7 @@
     font-size:13px;
     font-style:oblique
 }
-.divTextoErrorEmail{
+.divTextoErrorEmail, .divTextoErrorPassword{
     width: 67%;
     margin-top: 1rem;
     color: rgba(213, 0, 0, 0.886);
