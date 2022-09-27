@@ -1,8 +1,13 @@
+.lista-productos {
+    margin-top: 17rem;
+}
+.boton-crear-producto {
+    margin-right: auto;
+}
 .productos {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 17rem;
     background-color: var(--paleta-e);
 }
 

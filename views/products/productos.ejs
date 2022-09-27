@@ -3,15 +3,21 @@
 <%- include("../partials/head")%>
 <%- include("../partials/header")%>
     <body>
-        <section>
-            <h3>Lista de productos</h3>
+        <section class="lista-productos">
+            
+            
+            <div class="administrar-producto">
+                <a href="/create"><button class="boton-crear-producto">Crear nuevo producto</button></a>
+            </div>
+
+
+            <h1 class="encabezado-formularios">Lista de productos</h1>
             <div class="productos">
                 <% products.forEach( (productos)=>{ %>
                     <%- include('../partials/product', { product: productos }) %>
                 <%});%>
             </div>
         </section>
-        <a href="/create">Crear nuevo producto</a>
 
     </body>
 <%- include("../partials/footer")%>
