@@ -163,8 +163,9 @@ img.logo{
     }
 
     img.logo {
-        height: 7rem;
-        padding: 0;
+        height: 13rem;
+        margin-left: -4rem;
+        margin-top: -1rem;
     }
     .navbar {
         width: 100vw;
@@ -219,7 +220,9 @@ img.logo{
     }
 
     img.logo {
-        height: 12rem;
+        height: 16rem;
+        margin-left: -9rem;
+        margin-top: -1rem;
     }
     .iconos {
         /* justify-content: space-between; */
