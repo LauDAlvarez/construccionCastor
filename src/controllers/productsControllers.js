@@ -10,8 +10,16 @@ const Op = Sequelize.Op;
 const controlador = {
 	index: async(req, res) => {
 		try{
-			const data = await db.Product.findAll()
-			res.render('index', {products:data,  notFound: null})
+			const allProduct = await db.Product.findAll()
+			const productFilter = []
+			allProduct.forEach( product => {
+				if(product.logic_delete == 1){
+					productFilter.push(product)
+				}
+			});
+			
+
+			res.render('index', {products: productFilter,  notFound: null})
 		}catch{
 
 		}
@@ -113,8 +121,15 @@ const controlador = {
 	},
 	list: async(req, res)=>{
 		try{
-			const data = await db.Product.findAll()
-			res.render('products/productos', { products:data })
+			const allProduct = await db.Product.findAll()
+			const productFilter = []
+			allProduct.forEach( product => {
+				if(product.logic_delete == 1){
+					productFilter.push(product)
+				}
+			});
+			
+			res.render('products/productos', { products: allProduct })
 		}catch{
 
 		}

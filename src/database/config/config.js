@@ -22,3 +22,10 @@ module.exports = {
     "dialect": "mysql"
   }
 }
+// development": {
+//   //   "username": "uxi74tvfbhml2lus",
+//   //   "password": "h2cBYfInQeDiyXzWY6BO",
+//   //   "database": "btwuucrgayngbcfigu5u",
+//   //   "host": "btwuucrgayngbcfigu5u-mysql.services.clever-cloud.com",
+//   //   "port": "3306",
+//   //   "dialect": "mysql"
