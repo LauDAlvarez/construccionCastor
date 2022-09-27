@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include("../partials/head")%>
-    
+<%- include("../partials/head")%>
+
     <body>
         <%- include("../partials/header")%>
-        <main>
-            <form action="./loggin/checked" class="form-login" method="post">
+            <main>
+                <form action="./loggin/checked" class="form-login" method="post">
                     <h1 class="encabezado-login">Iniciar sesión</h1>
                     <div class="contenedor-bloque-login">
                         <input class="input-login" type="email" name="email" id="email-login" placeholder="email">
                     </div>
-                    <div class="divTextoErrorEmail" >
+                    <div class="divTextoErrorEmail">
                         <label class="textoErrorEmail"></label>
                     </div>
                     <div class="contenedor-bloque-login">
-                        
+
                         <input class="input-login" type="password" name="password" id="password-login"
-                        placeholder="Contraseña"><br>
+                            placeholder="Contraseña"><br>
                     </div>
+<<<<<<< HEAD
                     <div class="divTextoErrorPassword" >
+=======
+                    <div class="divTextoErrorEmail">
+>>>>>>> 9910d74bd2bdaa04a5dbef1642fe3ec71ec3b089
                         <label class="textoErrorPassword"></label>
                     </div>
                     <div class="contenedor-bloque-login">
@@ -40,15 +44,13 @@
                         </p>
                     </div>
                     <div class="contenedor-bloque-login_clienteNuevo contenedor-bloque-login">
-                        <a href="users/registerOff" class="boton-registro">Registrarme</a>
+                        <a href="register" class="boton-registro">Registrarme</a>
                     </div>
                 </div>
-                
+
             </main>
             <%- include("../partials/footer")%>
-            <script src="/js/login.js"></script>
-        </body>
-        
-        
-        
-        </html>
+                <script src="/js/login.js"></script>
+    </body>
+
+</html>

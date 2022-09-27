@@ -1,7 +1,7 @@
 module.exports = {
   "development": {
     "username": "root",
-    "password": "",
+    "password": "root",
     "database": "castor_db",
     "host": "127.0.0.1",
     "port": "3306",
@@ -22,3 +22,10 @@ module.exports = {
     "dialect": "mysql"
   }
 }
+// development": {
+//   //   "username": "uxi74tvfbhml2lus",
+//   //   "password": "h2cBYfInQeDiyXzWY6BO",
+//   //   "database": "btwuucrgayngbcfigu5u",
+//   //   "host": "btwuucrgayngbcfigu5u-mysql.services.clever-cloud.com",
+//   //   "port": "3306",
+//   //   "dialect": "mysql"

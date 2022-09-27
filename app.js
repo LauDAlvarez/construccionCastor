@@ -24,7 +24,7 @@ app.use(methodOverride('_method'));
 
 // Rutas
 const productRoute = require('./src/routes/productsRoutes')
-const userRoute = require('./src/routes/usersRoutes');
+const userRoute = require('./src/routes/userRoutes');
 // const productRoute = require('./src/routes/productsRoutes');
 
 

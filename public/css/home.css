@@ -100,8 +100,8 @@ body .contenedor-carruselImg {
 
 main {
     max-width: 90vw;
-    margin: 27vh auto;
-
+    margin: auto;
+    margin-top: 18rem;
 }
 
 .productos-destacados {
