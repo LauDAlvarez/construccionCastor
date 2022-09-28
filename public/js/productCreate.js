@@ -28,10 +28,10 @@ window.addEventListener('load', ()=>{
             nombreInput.classList.add('is-valid')
             nombreInput.classList.remove('is-invalid')
         }
-        if(descripcionInput.value.length < 20){
+        if(descripcionInput.value == ''){
             descripcionInput.classList.add ('is-invalid')
             descripcionInput.classList.remove ('is-valid')
-            errores.push('Debe escribir una descripcion de al menos 20 caracteres')
+            errores.push('Debe escribir una descripcion')
         }else{
             descripcionInput.classList.add('is-valid')
             descripcionInput.classList.remove('is-invalid')
@@ -76,6 +76,11 @@ window.addEventListener('load', ()=>{
         }else{
             descuentoInput.classList.add('is-valid')
             descuentoInput.classList.remove('is-invalid')
+        }
+        var archivoRuta = imagenInput.value;
+        var extPermitidas = /.jpeg|.jpg/;
+        if(!extPermitidas.exec(archivoRuta)){
+            errores.push('Asegurese de haber seleccionado un JPEG o JPG');
         }
         if(errores.length > 0){
             
