@@ -1,6 +1,10 @@
 const { validationResult }  = require('express-validator');
+
 const db = require('../database/models');
-const User = db.User
+const sequelize = db.sequelize;
+const User = db.User;
+const { Op } = require("sequelize");
+
 const Product = db.Product
 const comprador = {
     "name": 'Comprador anonimo',
@@ -43,26 +47,19 @@ const userControllers = {
     register: (req, res)=> {
         res.render("users/register")
     },
-    registered: async (req, res)=>{
-        try {
-            
-            const [user, products] = await Promise.all([
-                User.create({
-                    first_name: req.body.first_name,
-                    last_name: req.body.last_name,
-                    email: req.body.email,
-                    password: req.bode.password,
-                    // photo: req.body.photo,
-                    category_id: 1,
-                    logic_delete: 1,
-                }),
-                Product.findAll(),
-            ]);
-            
-
-        } catch (error) {
-            console.log(error);
-        }
+    registered: (req, res)=>{
+        User.create({
+                first_name: req.body.first_name,
+                last_name: req.body.last_name,
+                email: req.body.email,
+                password: req.body.password,
+                photo: 'images/users/userDefault.webp',
+                category_id: 1,
+                logic_delete: 1,          
+        })
+        .then((user) => {
+            res.redirect('/users/login');
+        });
     },
     delete: (req, res)=>{
         

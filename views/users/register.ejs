@@ -20,14 +20,14 @@
                     </div>
                     <br><br>
                     <% } %>
-                        <form action="/userIndex" method="POST" class="form-registro">
+                        <form action="/users/registered" method="POST" class="form-registro">
                             <h1 class="encabezado-formularios">Registro</h1>
                             <p class="contenedor-bloque">
-                                <input type="text" name="nombre" placeholder="Nombre" class="inputRegister"
+                                <input type="text" name="first_name" placeholder="Nombre" class="inputRegister"
                                     id="nombreRegister">
                             </p>
                             <p class="contenedor-bloque">
-                                <input type="text" name="apellido" placeholder="Apellido" class="inputRegister"
+                                <input type="text" name="last_name" placeholder="Apellido" class="inputRegister"
                                     id="apellidoRegister">
                             </p>
                             <p class="contenedor-bloque">
@@ -35,12 +35,12 @@
                                     id="emailRegister">
                             </p>
                             <p class="contenedor-bloque">
-                                <input type="password" name="contrasena" placeholder="Contraseña" min-length="8"
+                                <input type="password" name="password" placeholder="Contraseña" min-length="8"
                                     class="inputRegister" id="passwordRegister">
                             </p>
                             <p class="contenedor-bloque">
-                                <input type="password" name="repite-contrasena" placeholder="Repetí la contraseña"
-                                    class="inputRegister" id="passwordRegisterConfirm">
+                                <input type="file" name="photo" 
+                                    class="inputRegister" id="photoRegister">
                             </p>
                             <div class="contenedor-bloque">
                                 <ul class="ulErrores">
@@ -57,13 +57,13 @@
                                 </div>
                             </div>
                             <div class="contenedor-bloque">
-                                <input type="submit" class="boton-registro" value="Registrarme">
+                                <button type="submit" class="boton-registro" >Registrame</button>  
                             </div>
                         </form>
             </main>
 
             <%- include("../partials/footer")%>
-                <script src="/js/register.js"></script>
+                <!-- <script src="/js/register.js"></script> -->
     </body>
 
 </html>
