@@ -25,6 +25,21 @@
                         <!-- <label>email</label> -->
                         <input type="text" name="brand" placeholder="Marca" value="<%= product.brand %>" class="marcaEdit">
                     </p>
+                    <div class="contenedor-agregar-producto">
+                        <select name="category_id" placeholder="Categoría" class="categoriaCreate">
+                            <option value="none">Seleccionar categoría</option>
+                            <option value="Materiales de construcción">Materiales de construcción</option>
+                            <option value="Herramientas">Herramientas</option>
+                            <option value="Máquinas">Máquinas</option>
+                            <option value="Grifería">Grifería</option>
+                            <option value="Sanitarios">Sanitarios</option>
+                        </select>
+                    </div>
+                    <div class="contenedor-agregar-producto">
+                        <!-- <label>email</label> -->
+                        <input type="number" name="stock" placeholder="Stock" class="">
+                    </div>
+
                     <p class="contenedor-agregar-producto">
                         <!-- <label>Contraseña</label> -->
                         <input type="number" name="discount" placeholder="% de descuento" max="100" min="0" value="<%= product.discount %>" class="descuentoEdit">
