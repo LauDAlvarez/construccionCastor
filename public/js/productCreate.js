@@ -87,7 +87,7 @@ window.addEventListener('load', ()=>{
             for(i=0 ; i < errores.length ; i ++)
                 ulListaErrores.innerHTML +='<li>'+ errores[i] +'</li>'
             }else{
-                alert('su registro ha sido satisfactorio')
+                alert('El producto se ha creado satisfactoriamente')
                 formulario.submit()
             }
 

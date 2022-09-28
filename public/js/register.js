@@ -6,12 +6,13 @@ window.addEventListener('load', ()=>{
     let emailInput = document.querySelector('#emailRegister');
     let passwordInput = document.querySelector('#passwordRegister');
     let ulListaErrores= document.querySelector('.ulErrores');
+    let imagenInput = document.querySelector(".inputRegister")
     let errores= []
     formulario.addEventListener('submit',(e)=>{
+        e.preventDefault();
         
         ulListaErrores.innerHTML = "";
 
-        e.preventDefault();
 
         if (errores.length > 0){
             errores = []
@@ -67,6 +68,11 @@ window.addEventListener('load', ()=>{
         }
         if(passwordInput.value.search(/[0-9]/) < 0){
                 errores.push("tu contraseña debe contener al menos un numero")
+        }
+        var archivoRuta = imagenInput.value;
+        var extPermitidas = /.jpeg|.jpg/;
+        if(!extPermitidas.exec(archivoRuta)){
+            errores.push('Asegurese de haber seleccionado un JPEG o JPG');
         }
         
         if(errores.length > 0){

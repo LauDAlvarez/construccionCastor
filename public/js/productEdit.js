@@ -5,7 +5,9 @@ window.addEventListener('load', ()=>{
     let descripcionInput = document.querySelector(".descripcionEdit")
     let marcaInput = document.querySelector(".marcaEdit")
     let descuentoInput = document.querySelector(".descuentoEdit")
+    let categoriaSelect = document.querySelector(".categoriaEdit")
     let imagenInput = document.querySelector(".imagenEdit")
+    let stockInput = document.querySelector(".stockEdit")
     let ulListaErrores= document.querySelector('.ulErrores');
     let errores = []
     formulario.addEventListener('submit',(e)=>{
@@ -50,7 +52,22 @@ window.addEventListener('load', ()=>{
             marcaInput.classList.add('is-valid')
             marcaInput.classList.remove('is-invalid')
         }
-        
+        if(categoriaSelect.value == "none"){
+            categoriaSelect.classList.add ('is-invalid')
+            categoriaSelect.classList.remove ('is-valid')
+            errores.push('Debe seleccionar una categoria')
+        }else{
+            categoriaSelect.classList.add('is-valid')
+            categoriaSelect.classList.remove('is-invalid')
+        }
+        if(stockInput.value==''){
+            stockInput.classList.add ('is-invalid')
+            stockInput.classList.remove ('is-valid')
+            errores.push('Debe determinar un stock')
+        }else{
+            stockInput.classList.add('is-valid')
+            stockInput.classList.remove('is-invalid')
+        }
         if(descuentoInput.value == ''){
             descuentoInput.classList.add ('is-invalid')
             descuentoInput.classList.remove ('is-valid')
@@ -71,7 +88,7 @@ window.addEventListener('load', ()=>{
             for(i=0 ; i < errores.length ; i ++)
                 ulListaErrores.innerHTML +='<li>'+ errores[i] +'</li>'
             }else{
-                alert('su registro ha sido satisfactorio')
+                alert('Se ha editado el producto correctamente')
                 formulario.submit()
             }
 
