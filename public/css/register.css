@@ -10,6 +10,7 @@
     background-color: var(--paleta-f);
     width: 90%;
     margin: auto;
+    margin-top: 24rem;
     padding-bottom: 5rem;
 
 }
@@ -135,7 +136,6 @@ input {
         width: 60rem;
         border: 1px solid #d8d8d8;
         box-shadow: 1px 2px 2px 0 rgba(255 84 0 / 50%);
-        margin-top: 1rem;
     }
     .contenedor-bloque {
         width: 40%;

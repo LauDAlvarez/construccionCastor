@@ -10,6 +10,7 @@
     justify-content: center;
     width: 80%;
     margin: auto;
+    margin-top: 24rem;
     padding-bottom: 5rem;
 }
 
@@ -109,7 +110,6 @@
         border: 1px solid #d8d8d8;
         border-bottom: none;
         box-shadow: 1px 2px 2px 0 rgba(255 84 0 / 50%);
-        margin-top: 1rem;
     }
     .clienteNuevo {
         width: 60rem;
