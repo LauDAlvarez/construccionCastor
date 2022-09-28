@@ -129,7 +129,7 @@ const controlador = {
 				}
 			});
 			
-			res.render('products/productos', { products: allProduct })
+			res.render('products/productos', { products: productFilter })
 		}catch{
 
 		}

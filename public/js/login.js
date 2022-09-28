@@ -18,7 +18,7 @@ window.addEventListener('load', ()=>{
         }
         
         if(passwordInput.value==""){
-            passwordInput.classList.add ('is-invalid')
+            passwordInput.classList.toggle ('is-invalid')
             passwordInput.classList.remove ('is-valid')
             textoErrorPassword.innerHTML='debe escribir su contraseña'
         }else{
