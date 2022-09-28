@@ -5,6 +5,8 @@ const sequelize = db.sequelize;
 const User = db.User;
 const { Op } = require("sequelize");
 
+const bcrypt = require('bcryptjs');
+
 const Product = db.Product
 const comprador = {
     "name": 'Comprador anonimo',
@@ -48,11 +50,13 @@ const userControllers = {
         res.render("users/register")
     },
     registered: (req, res)=>{
+        let pass = req.body.password;
+        let passCrypt = bcrypt.hashSync(pass, 12);
         User.create({
                 first_name: req.body.first_name,
                 last_name: req.body.last_name,
                 email: req.body.email,
-                password: req.body.password,
+                password: passCrypt,
                 photo: 'images/users/userDefault.webp',
                 category_id: 1,
                 logic_delete: 1,          
