@@ -5,7 +5,6 @@ window.addEventListener('load', ()=>{
     let apellidoInput = document.querySelector('#apellidoRegister');
     let emailInput = document.querySelector('#emailRegister');
     let passwordInput = document.querySelector('#passwordRegister');
-    let passwordInputConfirm = document.querySelector('#passwordRegisterConfirm');
     let ulListaErrores= document.querySelector('.ulErrores');
     let errores= []
     formulario.addEventListener('submit',(e)=>{
@@ -68,15 +67,6 @@ window.addEventListener('load', ()=>{
         }
         if(passwordInput.value.search(/[0-9]/) < 0){
                 errores.push("tu contraseña debe contener al menos un numero")
-        }
-            
-        if(passwordInputConfirm.value !== passwordInput.value || passwordInputConfirm.value =="" ){
-            passwordInputConfirm.classList.add ('is-invalid')
-            passwordInputConfirm.classList.remove ('is-valid')
-            errores.push('la confirmacion de su constraseña debe ser la misma que su constraseña')
-        }else{
-            passwordInputConfirm.classList.add('is-valid')
-            passwordInputConfirm.classList.remove('is-invalid')
         }
         
         if(errores.length > 0){

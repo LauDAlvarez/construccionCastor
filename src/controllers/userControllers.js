@@ -1,5 +1,4 @@
 const { validationResult }  = require('express-validator');
-
 const db = require('../database/models');
 const sequelize = db.sequelize;
 const User = db.User;
@@ -16,7 +15,7 @@ const userControllers = {
     login: (req, res) => {
             res.render('users/login');
     },
-    loginEnter: async (req, res)=> {
+    loginEnter: async (req, res) => {
         try {
             const errors = validationResult(req)
             const [user, products] = await Promise.all([
@@ -46,10 +45,10 @@ const userControllers = {
             console.log({ error });
         }
     },
-    register: (req, res)=> {
+    register: (req, res) => {
         res.render("users/register")
     },
-    registered: (req, res)=>{
+    registered: (req, res) => {
         let pass = req.body.password;
         let passCrypt = bcrypt.hashSync(pass, 12);
         User.create({
@@ -65,10 +64,13 @@ const userControllers = {
             res.redirect('/users/login');
         });
     },
-    delete: (req, res)=>{
+    profile: (req, res) => {
+
+    },
+    delete: (req, res) => {
         
     },
-    destroy: (req, res)=>{
+    destroy: (req, res) => {
 
     }
 }

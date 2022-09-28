@@ -20,7 +20,7 @@
                     </div>
                     <br><br>
                     <% } %>
-                        <form action="/users/registered" method="POST" class="form-registro">
+                        <form action="/users/registered" method="POST" class="form-registro" enctype="multipart/form-data">
                             <h1 class="encabezado-formularios">Registro</h1>
                             <p class="contenedor-bloque">
                                 <input type="text" name="first_name" placeholder="Nombre" class="inputRegister"
@@ -39,7 +39,7 @@
                                     class="inputRegister" id="passwordRegister">
                             </p>
                             <p class="contenedor-bloque">
-                                <input type="file" name="photo" 
+                                <input type="file" name="avatar" 
                                     class="inputRegister" id="photoRegister">
                             </p>
                             <div class="contenedor-bloque">
