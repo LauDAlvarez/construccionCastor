@@ -49,12 +49,18 @@ const controlador = {
 	},
     // Create -  Method to store
 	store: async (req, res) => {
-		try{
+		try{ 
+			let picture;
+			if(req.file){
+				picture = req.file.filename;
+			}else{
+				picture = 'default-image.png';
+			}
 			const product  = await db.Product.create({
 					name: req.body.name,
 					brand: req.body.brand,
 					description: req.body.description,
-					photo: '/images/default-image.png',
+					photo:  picture,
 					stock: 500,
 					price: req.body.price,
 					discount: req.body.discount,
@@ -102,7 +108,7 @@ const controlador = {
 			name: req.body.name,
 			brand: req.body.brand,
 			description: req.body.description,
-			photo: '/images/default-image.png',
+			photo: req.body.file,
 			stock: 500,
 			price: req.body.price,
 			discount: req.body.discount,
@@ -163,14 +169,12 @@ const controlador = {
 		product.created_at = `${fullYear}-${month}-${day}`;
 
 
-		console.log(product.created_at);
-
 		try {
 			const productUpd = await db.Product.update({
 					name: req.body.name,
 					brand: req.body.brand,
 					description: req.body.description,
-					photo: '/images/default-image.png',
+					photo: req.body.file,
 					stock: 500,
 					price: req.body.price,
 					discount: req.body.discount,

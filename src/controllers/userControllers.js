@@ -51,12 +51,19 @@ const userControllers = {
     registered: (req, res) => {
         let pass = req.body.password;
         let passCrypt = bcrypt.hashSync(pass, 12);
+        let picture ;
+        if(req.file){
+            picture = req.file.filename;
+        }else{
+            picture = 'userDefault.webp';
+            ;
+        }
         User.create({
                 first_name: req.body.first_name,
                 last_name: req.body.last_name,
                 email: req.body.email,
                 password: passCrypt,
-                photo: 'images/users/userDefault.webp',
+                photo: picture ,
                 category_id: 1,
                 logic_delete: 1,          
         })

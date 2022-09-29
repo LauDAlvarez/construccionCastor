@@ -1,23 +1,25 @@
 window.addEventListener('load', ()=>{
-    const imgsC = ['./images/fotoCarrusel1.jpeg','./images/fotoCarrusel2.jpg','./images/fotoCarrusel4.jpg'];//BASE DE DATOS
-    let contImg = document.querySelector('.contCarrusel .contImg')
+    const imgsC = ['/images/fotoCarrusel1.jpeg','/images/fotoCarrusel2.jpg','/images/fotoCarrusel4.jpg'];//BASE DE DATOS
+    let contImg = document.querySelector('#contImg')
     let contBtns = document.querySelector('ul.btns')
     let cantImg = imgsC.length;
+    
 
     for(let i=0; i < cantImg-1 ; i++){
-        let imgAdd = document.createElement('img');
+        let imgAdd = document.createElement('div');
         imgAdd.classList.add('imgCarrusel');
-        contImg.insertAdjacentElement("beforeend", imgAdd);
+        contImg.appendChild(imgAdd);
     }
 
-    contImg.style.width = 'calc(100%/${cantImg})';
+    
+    contImg.setAttribute('style', "width: calc(100% * "+cantImg+")")
 
     let imgC = document.querySelectorAll('.contImg .imgCarrusel');
     imgC.forEach((img , i) => {
         console.log(img)
-        img.setAttribute('src', imgsC[i])
-        img.style.width = 'calc(100%/${cantImg})' ;
+        img.style.width = '100%';
         img.style.height = '20vh';
+        img.style.backgroundImage = 'url('+ imgsC[i] +')';
     })
 
 

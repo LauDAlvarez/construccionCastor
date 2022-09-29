@@ -39,35 +39,32 @@ body .contenedor-carruselImg {
 /*CARRUSELL INICIO*/
 .contCarrusel{
     width: 90%;
-    height: 20rem;
+    height: 25rem;
     max-width: 120rem;
-    margin: 5rem auto;
-    border: 1px solid var(--paleta-a);
+    margin: 24rem auto 1rem;
+    outline: 1px black;
+    overflow: hidden;
 }
 
 .contCarrusel .contImg{
-    width: 200%;
     display: flex;
     flex-wrap: row nowrap;
-    
     justify-content: flex-start;
     align-items: center;
-    border: 1px solid green;
     margin: .25rem;
 }
 
 .contImg img{
     width: calc(100% / 2);
-    border: 1px solid red;
     margin: .5rem;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .contCarrusel .btns{
     width: 100%;
     height: 25%;
-    border: 1px solid brown;
     padding: 1rem;
-
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
@@ -82,7 +79,6 @@ body .contenedor-carruselImg {
     height: 1rem;
     margin: 0.5rem;
     padding: 1rem;
-    border: 1px solid salmon;
     border-radius: 50%;
 } 
 .contCarrusel .btn.active{
