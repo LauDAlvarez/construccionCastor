@@ -38,7 +38,7 @@ body .contenedor-carruselImg {
 
 /*CARRUSELL INICIO*/
 .contCarrusel{
-    width: 90%;
+    width: 110%;
     height: 25rem;
     max-width: 120rem;
     margin: 24rem auto 1rem;
@@ -80,11 +80,19 @@ body .contenedor-carruselImg {
     margin: 0.5rem;
     padding: 1rem;
     border-radius: 50%;
+    border: 1px solid #2b2b2b15;
 } 
 .contCarrusel .btn.active{
     background-color: #25242257;
-} 
+    border: 1px solid transparent;
+}
 
+.contImg img.see{
+    width: 100%;
+}
+.contImg img.not-see{
+    width: 0%;
+}
 /*CARRUSEL FIN*/
 
 main {

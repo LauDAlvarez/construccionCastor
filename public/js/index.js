@@ -4,14 +4,13 @@ window.addEventListener('load', ()=>{
     let contBtns = document.querySelector('ul.btns')
     let cantImg = imgsC.length;
     
-
+    //IMAGENES CARRUSEL 
     for(let i=0; i < cantImg-1 ; i++){
         let imgAdd = document.createElement('div');
         imgAdd.classList.add('imgCarrusel');
         contImg.appendChild(imgAdd);
     }
 
-    
     contImg.setAttribute('style', "width: calc(100% * "+cantImg+")")
 
     let imgC = document.querySelectorAll('.contImg .imgCarrusel');
@@ -23,15 +22,28 @@ window.addEventListener('load', ()=>{
     })
 
 
-
+    // BOTONES CARRUSEL
     let btns = document.querySelectorAll('.btns li');
     if(btns.length < cantImg){
         for(let i=0; i < cantImg-btns.length ; i++){
             let btnAdd = document.createElement('li');
             btnAdd.classList.add('btn');
-            contBtns.insertAdjacentElement("beforeend", btnAdd);//  <ul class="contBtns"> <li></li> App</ul>
+            contBtns.appendChild(btnAdd);//  <ul class="contBtns"> <li></li> App</ul>
         }
     }
+    let allBtns = document.querySelectorAll('.btns li');
+    
+    allBtns.forEach((bts, i)=>{
+        bts.addEventListener('click',()=>{
+            allBtns.forEach((b , j )=>{
+                b.classList.remove('active');
+                imgC[j].style.width = '0%';
+            })
+            bts.classList.add('active');
+            imgC[i].style.width = '100%';
+        })  
+    })
+    
     
     
 })
