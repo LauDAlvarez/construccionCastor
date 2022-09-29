@@ -28,7 +28,7 @@ window.addEventListener('load', ()=>{
         for(let i=0; i < cantImg-btns.length ; i++){
             let btnAdd = document.createElement('li');
             btnAdd.classList.add('btn');
-            contBtns.appendChild(btnAdd);//  <ul class="contBtns"> <li></li> App</ul>
+            contBtns.appendChild(btnAdd);
         }
     }
     let allBtns = document.querySelectorAll('.btns li');
