@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include("../partials/head")%>
+<body>
 
     <%- include("../partials/header")%>
         <section class="producto-seccion">
@@ -22,10 +23,12 @@
                     <%= product.price %>
                 </h2>
                 <div class="contenedor-botonera">
-                    <button class="btn-izq">-</button>
-                    <label class="cantidad" for="">0</label>
-                    <button class="btn-der">+</button>
-                    <button class="btn-agregar">AGREGAR</button>
+                    <form class="formAddProduct"> 
+                        <button class="btn-izq">-</button>
+                        <input class="cantidad" type="number" value="0">
+                        <button class="btn-der">+</button>
+                        <button class="btn-agregar" type="submit">AGREGAR</button>
+                    </form>
                 </div>
             </div>
             <div class="producto-descripcion">
@@ -48,5 +51,6 @@
         </section>
 
         <%- include("../partials/footer")%>
+</body>
 
 </html>
