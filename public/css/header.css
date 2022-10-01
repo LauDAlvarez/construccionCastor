@@ -10,6 +10,25 @@
     /* Las variables usualmente se declaran de esta manera('--'+nombre de variable) y los espacios se remplazan por '-'*/
 }
 
+.cartAmount {
+    font-size: 16px;
+    background-color: red;
+    color: white;
+    position: absolute;
+    top: -9PX;
+    right: -7px;
+    padding: 0px 3px;
+    border-radius: 3px;
+}
+
+.icon-cart {
+    padding: 5px;
+    font-size: 30px;
+    border-radius: 4px;
+    position: relative;
+    top: -2px;
+}
+
 * {
     margin: 0px;
     padding: 0px;
@@ -93,6 +112,7 @@ img.logo {
     flex-wrap: nowrap;
     justify-content: space-around;
     margin-top: 2rem;
+    align-self: center;
 }
 
 .icon-user a {
@@ -115,7 +135,7 @@ img.logo {
 
 .iconos div:hover i {
     filter: drop-shadow(2px 2px 2px var(--paleta-c));
-    font-size:3rem;
+    font-size: 3rem;
     color: var(--paleta-b);
 }
 
@@ -241,9 +261,21 @@ img.logo {
         height: max-content;
         margin: 15vh auto;
     }
+
+    .icon-cart {
+        padding: 5px;
+        font-size: 30px;
+        border-radius: 4px;
+        position: relative;
+        top: 3px;
+    }
 }
 
 @media (min-width: 769px) {
+    .icon-cart {
+        position: relative;
+        top: 5px;
+    }
 
     .main-header-top-bar {
         width: 100%;
@@ -260,23 +292,25 @@ img.logo {
         height: 17rem;
     }
 
-    .iconos {
+    /* .iconos {
         /* justify-content: space-between; */
-        /* width: 100%;
+    /* width: 100%;
         flex-wrap: nowrap; */
-        /* flex: 0.5;
+    /* flex: 0.5;
         padding-left: 12vw; */
-    }
+    /* } */
 
     .navbar {
-    margin-top: 0;
-    justify-content: center;
+        margin-top: 0;
+        justify-content: center;
 
-}
+    }
+
     .navbar ul {
         width: 70vw;
         justify-content: space-around;
     }
+
     .navbar ul li a {
         font-size: 2rem;
     }
@@ -290,10 +324,10 @@ img.logo {
     }
 
     /* .adress-bar input, */
-    .boton-lupa {
+    /* .boton-lupa {
         /* height: 5rem; */
-        /* width: 30%; */
-    }
+    /* width: 30%; */
+    /* }  */
 
     .icon-user i,
     .icon-cart i {
@@ -303,6 +337,4 @@ img.logo {
     /* .buscador {
     margin: auto;
 } */
-
-
 }

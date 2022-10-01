@@ -51,7 +51,7 @@
     border-radius: 50% 0 0 50%;
 }
 
-.cantidad {
+.quantity {
     width: 3rem;
     font-size: 2rem;
     text-align: center;
@@ -140,7 +140,7 @@
         height: 5rem;
         margin-left: 3rem;
         max-width: 20rem;
-        justify-content: space-around;
+        justify-content: flex-start;
     }
 
     .producto-descripcion {

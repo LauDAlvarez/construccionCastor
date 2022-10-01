@@ -12,6 +12,8 @@
   Actualmente trabajando como scheduler en una fábrica papelera y estudiando Desarrollo web conel fin de cambiar de carrera profesional, sumando a que siempre me ha     interesado explorar nuevos mundos tecnológicos y que a su vez me den libertad de locación para viajar y trabajar desde cualquier sitio.
 
   - Mariano Alonso
+  
+  -Juan Fragueiro
 
 3. Páginas web de referencia:
   Las siguientes referencias fueron seleccionadas por tener que ver 100% con el tipo de comercio que abordamos en el proyecto.
