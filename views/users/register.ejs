@@ -44,7 +44,7 @@
                     <div class="contenedor-bloque">
                         <input type="password" name="password" placeholder="* Contraseña" min-length="8"
                             class="inputRegister <%= locals.errors && errors.password ? 'is-invalid' : null%>"
-                            id="passwordRegister" value="<%= locals.oldData ? oldData.password : null%>">
+                            id="passwordRegister">
                         <% if (locals.errors && errors.password) { %>
                             <div class="contenedor-errors">
                                 <%= errors.password.msg %>
