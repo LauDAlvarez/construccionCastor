@@ -1,65 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <%- include("../partials/head")%>
 
     <body>
-
         <%- include("../partials/header")%>
             <main>
-                <% if( locals && locals.errors ){ %>
-                    <div class="contenedor-errors">
-                        <ul style="text-align: center;">
-                            <% errors.forEach( (elemento)=> { %>
-                                <li>
-                                    <%= elemento.msg %>
-                                </li>
-                                <% }) %>
+                <form action="/users/registered" method="POST" class="form-registro" enctype="multipart/form-data">
+                    <h1 class="encabezado-formularios">Registro</h1>
+                    <div class="contenedor-bloque">
+                        <input type="text" name="first_name" placeholder="* Nombre"
+                            class="inputRegister <%= locals.errors && errors.first_name ? 'is-invalid' : null%>"
+                            id="nombreRegister" value="<%= locals.oldData ? oldData.first_name : null%>">
+                        <% if (locals.errors && errors.first_name) { %>
+                            <div class="contenedor-errors">
+                                <%= errors.first_name.msg %>
+                            </div>
+                            <% } %>
+                    </div>
+
+                    <div class="contenedor-bloque">
+                        <input type="text" name="last_name" placeholder="* Apellido"
+                            class="inputRegister <%= locals.errors && errors.last_name ? 'is-invalid' : null%>"
+                            id="apellidoRegister" value="<%= locals.oldData ? oldData.last_name : null%>">
+                        <% if (locals.errors && errors.last_name) { %>
+                            <div class="contenedor-errors">
+                                <%= errors.last_name.msg %>
+                            </div>
+                            <% } %>
+                    </div>
+
+                    <div class="contenedor-bloque">
+                        <input type="email" name="email" placeholder="* email"
+                            class="inputRegister <%= locals.errors && errors.email ? 'is-invalid' : null%>"
+                            id="emailRegister" value="<%= locals.oldData ? oldData.email : null%>">
+                        <% if (locals.errors && errors.email) { %>
+                            <div class="contenedor-errors">
+                                <%= errors.email.msg %>
+                            </div>
+                            <% } %>
+                    </div>
+
+                    <div class="contenedor-bloque">
+                        <input type="password" name="password" placeholder="* Contraseña" min-length="8"
+                            class="inputRegister <%= locals.errors && errors.password ? 'is-invalid' : null%>"
+                            id="passwordRegister" value="<%= locals.oldData ? oldData.password : null%>">
+                        <% if (locals.errors && errors.password) { %>
+                            <div class="contenedor-errors">
+                                <%= errors.password.msg %>
+                            </div>
+                            <% } %>
+                    </div>
+
+                    <div class="contenedor-bloque">
+                        <label for="avatar" class="labelRegister">Imagen de perfil:</label>
+                        <input type="file" name="avatar"
+                            class="inputRegister <%= locals.errors && errors.avatar ? 'is-invalid' : null%>"
+                            id="photoRegister">
+                        <% if (locals.errors && errors.avatar) { %>
+                            <div class="contenedor-errors">
+                                <%= errors.avatar.msg %>
+                            </div>
+                            <% } %>
+                    </div>
+
+                    <div class="contenedor-bloque">
+                        <ul class="ulErrores">
+                            <li>1 mayúscula</li>
+                            <li>8 caracteres mínimo</li>
+                            <li>1 número</li>
                         </ul>
                     </div>
-                    <br><br>
-                    <% } %>
-                        <form action="/users/registered" method="POST" class="form-registro" enctype="multipart/form-data">
-                            <h1 class="encabezado-formularios">Registro</h1>
-                            <p class="contenedor-bloque">
-                                <input type="text" name="first_name" placeholder="Nombre" class="inputRegister"
-                                    id="nombreRegister">
-                            </p>
-                            <p class="contenedor-bloque">
-                                <input type="text" name="last_name" placeholder="Apellido" class="inputRegister"
-                                    id="apellidoRegister">
-                            </p>
-                            <p class="contenedor-bloque">
-                                <input type="email" name="email" placeholder="email" class="inputRegister"
-                                    id="emailRegister">
-                            </p>
-                            <p class="contenedor-bloque">
-                                <input type="password" name="password" placeholder="Contraseña" min-length="8"
-                                    class="inputRegister" id="passwordRegister">
-                            </p>
-                            <p class="contenedor-bloque">
-                                <input type="file" name="avatar" 
-                                    class="inputRegister" id="photoRegister">
-                            </p>
-                            <div class="contenedor-bloque">
-                                <ul class="ulErrores">
-                                    <li>1 mayúscula</li>
-                                    <li>8 caracteres mínimo</li>
-                                    <li>1 número</li>
-                                </ul>
-                            </div>
-                            <div class="contenedor-bloque">
-                                <div class="politica-privacidad">
-                                    <input type="checkbox" value="Registrarme" class="check-acepta">
-                                    <label class="labelRegister"> He leído y acepto el Aviso Legal y la Política de
-                                        Privacidad </label>
-                                </div>
-                            </div>
-                            <div class="contenedor-bloque">
-                                <button type="submit" class="boton-registro" >Registrame</button>  
-                            </div>
-                        </form>
+                    <div class="contenedor-bloque">
+                        <div class="politica-privacidad">
+                            <input type="checkbox" value="Registrarme" class="check-acepta">
+                            <label class="labelRegister"> He leído y acepto el Aviso Legal y la Política de Privacidad
+                                <br>
+                                <br>
+                                <p>(*) Campos obligatorios</p>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="contenedor-bloque">
+                        <button type="submit" class="boton-registro">Registrame</button>
+                    </div>
+                </form>
             </main>
 
             <%- include("../partials/footer")%>

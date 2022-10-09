@@ -16,7 +16,7 @@
 }
 
 .contenedor-bloque {
-    display: flex;
+    /* display: flex; */
     flex-wrap: wrap;
     width: 90%;
     margin-top: 2rem;
@@ -25,7 +25,7 @@
 
 label.labelRegister,
 input.inputRegister {
-    display: flex;
+    /* display: flex; */
     flex-wrap: wrap;
     width: 100%;
     justify-content: center;
@@ -61,6 +61,11 @@ input {
     border-radius: 10px;
     list-style-position: inside;
     width: 100%;
+}
+.contenedor-errors{
+    color: rgba(213, 0, 0, 0.707);
+    text-align: left;
+    font-size: 1.4rem;
 }
 
 .contenedor-bloque li {
@@ -115,7 +120,7 @@ input {
 }
 
 .is-invalid {
-    background-color: #fae9e9;
+    border: 1px solid rgba(213, 0, 0, 0.707);
 }
 
 
