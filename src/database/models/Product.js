@@ -1,5 +1,3 @@
-
-
 module.exports = (sequelize, dataTypes) => {
     let alias = 'Product';
     let cols = {
@@ -65,6 +63,10 @@ module.exports = (sequelize, dataTypes) => {
             through:"user_x_product",
             foreignKey:"product_id",
             otherKey:"user_id"
+        })
+        Product.belongsTo( models.Product_Category, {
+            foreignKey:'id',
+            as:'productCategory'
         })
     }
 

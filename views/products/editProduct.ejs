@@ -28,11 +28,16 @@
                     <div class="contenedor-agregar-producto">
                         <select name="category_id" placeholder="Categoría" class="categoriaEdit">
                             <option value="none">Seleccionar categoría</option>
-                            <option value="Materiales de construcción">Materiales de construcción</option>
-                            <option value="Herramientas">Herramientas</option>
-                            <option value="Máquinas">Máquinas</option>
-                            <option value="Grifería">Grifería</option>
-                            <option value="Sanitarios">Sanitarios</option>
+                            <%if(locals.category){%>
+                                    <% category.forEach( cat => { %>
+                                        <option value="<%=cat.id%>" ><%=cat.name_category%></option>
+                                    <%})%>
+                            <%}%>
+                            <!-- <option value="1" >Materiales de construcción</option>
+                            <option value="2" >Herramientas</option>
+                            <option value="3" >Máquinas</option>
+                            <option value="4" >Grifería</option>
+                            <option value='5'>Sanitarios</option> -->
                         </select>
                     </div>
                     <div class="contenedor-agregar-producto">

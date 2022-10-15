@@ -4,6 +4,7 @@ const Sequelize = require('sequelize');
 const { where } = require('sequelize');
 const { render } = require('ejs');
 const Product = require('../database/models/Product');
+const { Console } = require('console');
 const Op = Sequelize.Op;
 
 
@@ -127,7 +128,10 @@ const controlador = {
 	},
 	list: async(req, res)=>{
 		try{
-			const allProduct = await db.Product.findAll()
+			const category = await db.Product_Category.findAll() 
+			const allProduct = await db.Product.findAll({
+				include: [{association: 'productCategory'}]
+			})
 			const productFilter = []
 			allProduct.forEach( product => {
 				if(product.logic_delete == 1){
@@ -135,7 +139,7 @@ const controlador = {
 				}
 			});
 			
-			res.render('products/productos', { products: productFilter })
+			res.render('products/productos', { products: productFilter, category })
 		}catch{
 
 		}
@@ -144,19 +148,22 @@ const controlador = {
 //COMO PONER UN CAMPO DEFAULT PARA HACER UN UPDATE ASI NO OCURRE ESTO 'realseDate' y 'photo'?
 	edit: async(req, res) => {
 		try {
+			const category = await db.Product_Category.findAll()
 			const product = await db.Product.findOne({
+				include: [{association: 'productCategory'}],
 				where:{
 					id: req.params.id
 				}
 			})
-			
-			res.render('products/editProduct', {product});
+
+			res.render('products/editProduct', {product, category});
 		} catch (error) {
 			
 		}
 	},
 	// Update - Method to update
 	update:  async(req, res) => {
+		
 		const product = await db.Product.findOne({
 			where:{
 				id: req.params.id
@@ -166,21 +173,21 @@ const controlador = {
 		const day = date.getDate() < 10 ? `0${date.getDate()}` : date.getDate();
 		const month = date.getMonth() < 10 ? `0${date.getMonth() + 1}` : date.getMonth() + 1;
 		const fullYear = date.getFullYear();
-		product.created_at = `${fullYear}-${month}-${day}`;
-
+		const data  = `${fullYear}-${month}-${day}T00:00:00.000Z`;
+		console.log(data)
 
 		try {
 			const productUpd = await db.Product.update({
 					name: req.body.name,
 					brand: req.body.brand,
 					description: req.body.description,
-					photo: req.body.file,
-					stock: 500,
+					photo: req.file.filename,
+					stock: req.body.stock,
 					price: req.body.price,
 					discount: req.body.discount,
-					created_at: product.created_at ,
+					created_at: data ,
 					updated_at: Date.now(),
-					category_id:'1',
+					category_id: req.body.category_id,
 					logic_delete: 1
 			},
 			{

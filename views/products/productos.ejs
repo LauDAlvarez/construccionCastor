@@ -4,12 +4,18 @@
 <%- include("../partials/header")%>
     <body>
         <section class="lista-productos">
+            <%if(locals.category){%>
+                <ul class="administrar-producto">
+                    <% category.forEach( cat => { %>
+                        <li><%= cat.name_category %></li>
+                    <%})%>
+                </ul>
+            <%}%>
             
-            
+                
             <div class="administrar-producto">
                 <a href="/create"><button class="boton-crear-producto">Crear nuevo producto</button></a>
             </div>
-
 
             <h1 class="encabezado-formularios">Lista de productos</h1>
             <div class="productos">
