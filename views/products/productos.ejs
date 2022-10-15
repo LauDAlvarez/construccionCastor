@@ -5,9 +5,9 @@
     <body>
         <section class="lista-productos">
             <%if(locals.category){%>
-                <ul class="administrar-producto">
+                <ul class="contenedor-category">
                     <% category.forEach( cat => { %>
-                        <li><%= cat.name_category %></li>
+                        <a href=""><li><%= cat.name_category %></li></a>
                     <%})%>
                 </ul>
             <%}%>

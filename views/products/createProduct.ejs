@@ -31,12 +31,12 @@
                     
                     <div class="contenedor-agregar-producto">
                         <select name="category_id" placeholder="Categoría" class="categoriaCreate">
-                            <option value="none">Seleccionar categoría</option>
-                            <option value="Materiales de construcción">Materiales de construcción</option>
-                            <option value="Herramientas">Herramientas</option>
-                            <option value="Máquinas">Máquinas</option>
-                            <option value="Grifería">Grifería</option>
-                            <option value="Sanitarios">Sanitarios</option>
+                            <option value="0">Seleccionar categoría</option>
+                            <%if(locals.category){%>
+                                <% category.forEach( cat => { %>
+                                    <option value="<%=cat.id%>" > <%= cat.name_category %> </option>
+                                <%})%>
+                            <%}%>
                         </select>
                     </div>
                     

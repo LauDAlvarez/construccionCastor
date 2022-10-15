@@ -45,8 +45,9 @@ const controlador = {
 			
     },
     // Create - Form to create
-	create: (req, res) => {
-		res.render('products/createProduct');
+	create: async(req, res) => {
+		const category = await db.Product_Category.findAll()
+		res.render('products/createProduct', {category});
 	},
     // Create -  Method to store
 	store: async (req, res) => {
@@ -57,6 +58,8 @@ const controlador = {
 			}else{
 				picture = 'default-image.png';
 			}
+			
+
 			const product  = await db.Product.create({
 					name: req.body.name,
 					brand: req.body.brand,

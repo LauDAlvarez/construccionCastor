@@ -27,10 +27,10 @@
                     </p>
                     <div class="contenedor-agregar-producto">
                         <select name="category_id" placeholder="Categoría" class="categoriaEdit">
-                            <option value="none">Seleccionar categoría</option>
+                            <option value="0">Seleccionar categoría</option>
                             <%if(locals.category){%>
                                     <% category.forEach( cat => { %>
-                                        <option value="<%=cat.id%>" ><%=cat.name_category%></option>
+                                        <option value="<%=cat.id%>" > <%= cat.name_category %> </option>
                                     <%})%>
                             <%}%>
                             <!-- <option value="1" >Materiales de construcción</option>
