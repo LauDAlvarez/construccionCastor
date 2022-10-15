@@ -78,9 +78,9 @@ window.addEventListener('load', ()=>{
             descuentoInput.classList.remove('is-invalid')
         }
         var archivoRuta = imagenInput.value;
-        var extPermitidas = /.jpeg|.jpg/;
+        var extPermitidas = /.jpeg|.jpg/|.webp/;
         if(!extPermitidas.exec(archivoRuta)){
-            errores.push('Asegurese de haber seleccionado un JPEG o JPG');
+            errores.push('Asegurese de haber seleccionado un JPEG, JPG o WEBP');
         }
         if(errores.length > 0){
             
