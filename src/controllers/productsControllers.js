@@ -46,8 +46,13 @@ const controlador = {
     },
     // Create - Form to create
 	create: async(req, res) => {
-		const category = await db.Product_Category.findAll()
-		res.render('products/createProduct', {category});
+		try {
+			const category = await db.Product_Category.findAll();
+
+			res.render('products/createProduct', { category: category });
+		} catch (error) {
+			
+		}
 	},
     // Create -  Method to store
 	store: async (req, res) => {
@@ -201,6 +206,32 @@ const controlador = {
 			console.log(productUpd)
 
 			res.redirect('/') 
+		} catch (error) {
+			
+		}
+	},
+	categoryFilter: async(req, res)=>{
+		try {
+			const category = await db.Product_Category.findAll();
+			let idCat;
+			const categoryFilter = [];
+			category.forEach( cat =>{
+				if(cat.name_category == req.params.category){
+					idCat = cat.id;
+				}else{
+					categoryFilter.push(cat);
+				}
+				
+			})
+			const productFilter = await db.Product.findAll({
+				where:{
+					category_id: idCat
+				}
+			});
+
+
+
+			res.render('products/productos', { products: productFilter, category: categoryFilter })
 		} catch (error) {
 			
 		}
