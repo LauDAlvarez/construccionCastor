@@ -7,7 +7,7 @@
             <%if(locals.category){%>
                 <ul class="contenedor-category">
                     <% category.forEach( cat => { %>
-                        <a href="<%= cat.name_category %>"><li><%= cat.name_category %></li></a>
+                        <a href="/productList/<%= cat.name_category %>"><li><%= cat.name_category %></li></a>
                     <%})%>
                 </ul>
             <%}%>

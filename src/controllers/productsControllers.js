@@ -70,12 +70,12 @@ const controlador = {
 					brand: req.body.brand,
 					description: req.body.description,
 					photo:  picture,
-					stock: 500,
+					stock: req.body.stock,
 					price: req.body.price,
 					discount: req.body.discount,
 					created_at: Date.now(),
 					updated_at:'',
-					category_id:'1',
+					category_id: req.body.category_id,
 					logic_delete: 1
 				})
 
@@ -93,6 +93,16 @@ const controlador = {
 					id: req.params.id
 				}
 			});
+			let vw = product.views + 1;
+			
+			const productViews = await db.Product.update({
+				views: vw
+			},{
+				where:{
+					id: req.params.id
+				}
+			});
+			
 
 			console.log(product)
 			res.render('products/productDetail',{ product: product }  ); //renderiza el elemento que se encuentra!!
@@ -110,7 +120,8 @@ const controlador = {
 		const day = date.getDate() < 10 ? `0${date.getDate()}` : date.getDate();
 		const month = date.getMonth() < 10 ? `0${date.getMonth() + 1}` : date.getMonth() + 1;
 		const fullYear = date.getFullYear();
-		product.created_at = `${fullYear}-${month}-${day}`;
+		const data = `${fullYear}-${month}-${day}`;
+		
 
 
 		const productDel = await db.Product.update({
@@ -118,21 +129,23 @@ const controlador = {
 			brand: req.body.brand,
 			description: req.body.description,
 			photo: req.body.file,
-			stock: 500,
+			stock: req.body.stock,
 			price: req.body.price,
 			discount: req.body.discount,
-			created_at: product.created_at ,
+			views: product.views,
+			sales: product.sales,
+			created_at: data,
 			updated_at: Date.now(),
-			category_id:'1',
-			logic_delete: 0
-	},
-	{
+			category_id: req.body.category_id,
+				logic_delete: 0
+		},
+		{
 		where:{
 			id: req.params.id
 		}
-	})
+		})
 
-	res.redirect('/') 
+		res.redirect('/') 
 	},
 	list: async(req, res)=>{
 		try{

@@ -33,8 +33,8 @@ router.get('/search', productsControllers.search);
 
 // Ruta verProuctos
 router.get('/', productsControllers.index)
+router.get('/productList/:category', productsControllers.categoryFilter)
 router.get('/productList', productsControllers.list)
-router.get('/:category', productsControllers.categoryFilter)
 
 // Obtener producto
 router.get('/products/:id', productsControllers.detail); 

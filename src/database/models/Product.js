@@ -34,6 +34,14 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.DECIMAL(5,2).UNSIGNED,
             allowNull: false
         },
+        views:{
+            type: dataTypes.INTEGER(11).UNSIGNED,
+            allowNull: false
+        },
+        sales:{
+            type: dataTypes.INTEGER(11).UNSIGNED,
+            allowNull: false
+        },
         created_at: {
             type: dataTypes.DATEONLY,
             allowNull: true
