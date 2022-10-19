@@ -45,7 +45,7 @@ router.post('/createSuccessful', upload.single('photo') , productsControllers.st
 
 // Modificar Producto
 router.get('/:id/edit', productsControllers.edit) 
-router.put('/:id', productsControllers.update) 
+router.put('/:id',  upload.single('photo') ,productsControllers.update) 
 
 // DELETE
 

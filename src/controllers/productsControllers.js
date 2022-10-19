@@ -128,7 +128,7 @@ const controlador = {
 			name: req.body.name,
 			brand: req.body.brand,
 			description: req.body.description,
-			photo: req.body.file,
+			photo: req.file.filename,
 			stock: req.body.stock,
 			price: req.body.price,
 			discount: req.body.discount,
@@ -184,32 +184,37 @@ const controlador = {
 	},
 	// Update - Method to update
 	update:  async(req, res) => {
-		
-		const product = await db.Product.findOne({
-			where:{
-				id: req.params.id
-			}
-		})
-		const date = new Date(product.created_at);
-		const day = date.getDate() < 10 ? `0${date.getDate()}` : date.getDate();
-		const month = date.getMonth() < 10 ? `0${date.getMonth() + 1}` : date.getMonth() + 1;
-		const fullYear = date.getFullYear();
-		const data  = `${fullYear}-${month}-${day}T00:00:00.000Z`;
-		console.log(data)
-
 		try {
+			let picture;
+			if(req.file){
+				picture = req.file.filename;
+			}else{
+				picture = 'default-image.png';
+			}
+			const product = await db.Product.findOne({
+				where:{
+					id: req.params.id
+				}
+			})
+			const date = new Date(product.created_at);
+			const day = date.getDate() < 10 ? `0${date.getDate()}` : date.getDate();
+			const month = date.getMonth() < 10 ? `0${date.getMonth() + 1}` : date.getMonth() + 1;
+			const fullYear = date.getFullYear();
+			const data  = `${fullYear}-${month}-${day}`;
+			console.log(data)
 			const productUpd = await db.Product.update({
-					name: req.body.name,
-					brand: req.body.brand,
-					description: req.body.description,
-					photo: req.file.filename,
-					stock: req.body.stock,
-					price: req.body.price,
-					discount: req.body.discount,
-					created_at: data ,
-					updated_at: Date.now(),
-					category_id: req.body.category_id,
-					logic_delete: 1
+				name: req.body.name,
+				brand: req.body.brand,
+				description: req.body.description,
+				photo: picture,
+				stock: req.body.stock,
+				price: req.body.price,
+				discount: req.body.discount,
+				views: product.views,
+				sales: product.sales,
+				created_at: data,
+				category_id: req.body.category_id,
+				logic_delete: 1
 			},
 			{
 				where:{
@@ -227,6 +232,7 @@ const controlador = {
 		try {
 			const category = await db.Product_Category.findAll();
 			let idCat;
+			let nameCat = req.params.category;
 			const categoryFilter = [];
 			category.forEach( cat =>{
 				if(cat.name_category == req.params.category){
@@ -244,7 +250,7 @@ const controlador = {
 
 
 
-			res.render('products/productos', { products: productFilter, category: categoryFilter })
+			res.render('products/productos', { products: productFilter, category: categoryFilter , nameCat})
 		} catch (error) {
 			
 		}

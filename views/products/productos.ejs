@@ -17,7 +17,11 @@
                 <a href="/create"><button class="boton-crear-producto">Crear nuevo producto</button></a>
             </div>
 
-            <h1 class="encabezado-formularios">Lista de productos</h1>
+            <% if(locals.nameCat){ %>
+                <h1 class="encabezado-formularios">Lista de productos  <span>  >>  </span>  <%= nameCat %></h1>
+            <%}else{%>
+                <h1 class="encabezado-formularios">Lista de productos</h1>
+            <%};%>
             <div class="productos">
                 <% products.forEach( (productos)=>{ %>
                     <%- include('../partials/product', { product: productos }) %>
