@@ -256,6 +256,15 @@ const controlador = {
 		} catch (error) {
 			
 		}
+	},
+	cart: async(req, res)=>{
+		try {
+			const products= await db.Product.findAll()
+
+			res.render('products/cart', {products})
+		} catch (error) {
+			
+		}
 	}
 }
 

@@ -9,6 +9,7 @@
     justify-content: center;
     flex-wrap: wrap;
     background-color: var(--paleta-e);
+    margin-top: 23rem;
 }
 
 .producto {
