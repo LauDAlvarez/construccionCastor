@@ -137,6 +137,17 @@ main {
     height: 12rem;
 }
 
+.secciones{
+    margin-top: 5px;
+    border-bottom: 1px solid var(--paleta-a);
+    text-align: center;
+}
+.contenedor-product{
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-around;
+}
 
 body .contenedor-novedades {
     background-image: url(/images/fotoCarrusel3.webp);

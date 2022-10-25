@@ -14,17 +14,31 @@
                         <li class="btn active"></li>
                     </ul>
                 </div>
-                <h3>Productos Destacados</h3>
-                <h2>Resultados de la Busqueda:</h2>
-
-                <div class="productos-destacados">
-                    <% if(products) {%>
-                        <% products.forEach( (product)=>{ %>
-                            <%- include('partials/product', { product }) %>
-                        <%});%>
-                    <%}%>
-
+                <div class="productos-destacados"> 
+                    <div>
+                        <div class="masVistos">
+                            <h2 class="secciones" >Mas Vistos!</h2>
+                        </div>
+                        <% if(locals.mostViews && locals.mostSales) {%>
+                        <div class="contenedor-product">    
+                            <% mostViews.forEach( (product)=>{ %>
+                                <%- include('partials/product', { product }) %>
+                            <%});%>
+                        </div>        
+                    </div>
+                    <div> 
+                        <div class="masComprados">
+                            <h2 class="secciones" >Mas Comprados!</h2>
+                        </div>
+                        <div class="contenedor-product">    
+                            <% mostSales.forEach( (producto)=>{ %>
+                                <%- include('partials/product', { product: producto }) %>
+                            <%});%>
+                        </div>
+                        <%}%>
+                    </div>
                 </div>
+                
 
                 <section class="contenedor-marcas">
                     <article class="contenido-marcas"><img src="./images/marcas/marca_fv.webp" alt=""></article>

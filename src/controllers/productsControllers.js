@@ -1,26 +1,25 @@
-const path = require('path');
 const db = require('../database/models');
 const Sequelize = require('sequelize');
-const { where } = require('sequelize');
-const { render } = require('ejs');
-const Product = require('../database/models/Product');
-const { Console } = require('console');
 const Op = Sequelize.Op;
 
 
 const controlador = {
 	index: async(req, res) => {
 		try{
-			const allProduct = await db.Product.findAll()
-			const productFilter = []
-			allProduct.forEach( product => {
-				if(product.logic_delete == 1){
-					productFilter.push(product)
-				}
-			});
+			const mostViews = await db.Product.findAll({
+				order:[
+					[ 'views', 'DESC' ]
+				],
+				limit: 4
+			})
+			const mostSales = await db.Product.findAll({
+				order:[
+					[ 'sales', 'DESC' ]
+				],
+				limit: 4
+			})
 			
-
-			res.render('index', {products: productFilter,  notFound: null})
+			res.render('index', {mostViews: mostViews,mostSales: mostSales,notFound: null} )
 		}catch{
 
 		}
@@ -66,17 +65,19 @@ const controlador = {
 			
 
 			const product  = await db.Product.create({
-					name: req.body.name,
-					brand: req.body.brand,
-					description: req.body.description,
-					photo:  picture,
-					stock: req.body.stock,
-					price: req.body.price,
-					discount: req.body.discount,
-					created_at: Date.now(),
-					updated_at:'',
-					category_id: req.body.category_id,
-					logic_delete: 1
+				name: req.body.name,
+				brand: req.body.brand,
+				description: req.body.description,
+				photo: picture,
+				stock: req.body.stock,
+				price: req.body.price,
+				discount: req.body.discount,
+				views: 0,
+				sales: 0,
+				created_at: new Date(Date.now()),
+				updated_at: '',
+				category_id: req.body.category_id,
+				logic_delete: 1
 				})
 
 			console.log(product)
@@ -87,6 +88,7 @@ const controlador = {
 		}
 	},
 	detail: async (req, res) => {
+
 		try{
 			const product = await db.Product.findOne({
 				where:{
@@ -109,43 +111,43 @@ const controlador = {
 		}catch{
 
 		}
+
 	},
 	delete:async(req, res)=>{
-		const product = await db.Product.findOne({
-			where:{
-				id: req.params.id
-			}
-		})
-		const date = new Date(product.created_at);
-		const day = date.getDate() < 10 ? `0${date.getDate()}` : date.getDate();
-		const month = date.getMonth() < 10 ? `0${date.getMonth() + 1}` : date.getMonth() + 1;
-		const fullYear = date.getFullYear();
-		const data = `${fullYear}-${month}-${day}`;
-		
+
+	try	{
+			const product = await 
+				db.Product
+					.findOne({
+						where:{
+							id: req.params.id
+						}
+					})
+			const date = new Date(product.created_at);
+			const day = date.getDate() < 10 ? `0${date.getDate()}` : date.getDate();
+			const month = date.getMonth() < 10 ? `0${date.getMonth() + 1}` : date.getMonth() + 1;
+			const fullYear = date.getFullYear();
+			const data = `${fullYear}-${month}-${day}`;
+			
 
 
-		const productDel = await db.Product.update({
-			name: req.body.name,
-			brand: req.body.brand,
-			description: req.body.description,
-			photo: req.file.filename,
-			stock: req.body.stock,
-			price: req.body.price,
-			discount: req.body.discount,
-			views: product.views,
-			sales: product.sales,
-			created_at: data,
-			updated_at: Date.now(),
-			category_id: req.body.category_id,
-				logic_delete: 0
-		},
-		{
-		where:{
-			id: req.params.id
+			const productDel = await 
+				db.Product
+					.update({
+						updated_at: new Date(Date.now()),
+						logic_delete: 0
+					},
+					{
+						where:{
+							id: req.params.id
+						}
+					})
+
+			res.redirect('/') 
+		}catch(errors){
+
 		}
-		})
-
-		res.redirect('/') 
+		
 	},
 	list: async(req, res)=>{
 		try{

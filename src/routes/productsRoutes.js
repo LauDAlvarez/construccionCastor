@@ -48,7 +48,6 @@ router.get('/:id/edit', productsControllers.edit)
 router.put('/:id',  upload.single('photo') ,productsControllers.update) 
 
 // DELETE
-
 router.put('/delete/:id', productsControllers.delete)
 
 

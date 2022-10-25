@@ -1,3 +1,4 @@
+
 window.addEventListener('load', ()=>{
     const imgsC = ['/images/fotoCarrusel1.jpeg','/images/fotoCarrusel2.jpg','/images/fotoCarrusel4.jpg'];//BASE DE DATOS
     let contImg = document.querySelector('#contImg')
@@ -43,6 +44,7 @@ window.addEventListener('load', ()=>{
             imgC[i].style.width = '100%';
         })  
     })
+
     
-    
+
 })
