@@ -5,6 +5,7 @@ const { where } = require('sequelize');
 const { render } = require('ejs');
 const Product = require('../database/models/Product');
 const { Console } = require('console');
+const { CLIENT_RENEG_LIMIT } = require('tls');
 const Op = Sequelize.Op;
 
 
@@ -254,7 +255,33 @@ const controlador = {
 		} catch (error) {
 			
 		}
+	},
+	cart: async(req, res) => {
+		try {
+			const data = localStorage.getItem("data")
+
+			const product = await db.Product.findAll()
+			console.log(data)
+			// const cartList = [];
+
+			// product.forEach((productCart, j) => {
+			// 	data.forEach((pC, i) => {
+			// 		if(productCart.id == pC.id) {
+			// 			cartList.push(productCart)
+			// 		}
+			// 	} )
+			// 	console.log(cartList)
+
+			// })
+			res.render('products/cart', {products:product})
+		} catch (error) {
+			
+		}
+
+
+
 	}
+
 }
 
 

@@ -31,7 +31,7 @@ var upload = multer({ storage: storage, fileFilter: fileFilter})
 //BUSCADOR
 router.get('/search', productsControllers.search);
 
-// Ruta verProuctos
+// Ruta verProductos
 router.get('/', productsControllers.index)
 router.get('/productList/:category', productsControllers.categoryFilter)
 router.get('/productList', productsControllers.list)
@@ -48,8 +48,10 @@ router.get('/:id/edit', productsControllers.edit)
 router.put('/:id',  upload.single('photo') ,productsControllers.update) 
 
 // DELETE
-
 router.put('/delete/:id', productsControllers.delete)
+
+// Carrito
+router.get('/cart', productsControllers.cart)
 
 
 module.exports = router;
