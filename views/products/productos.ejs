@@ -22,7 +22,7 @@
             <%}else{%>
                 <h1 class="encabezado-formularios">Lista de productos</h1>
             <%};%>
-            <div class="productos">
+            <div class="productosLista">
                 <% products.forEach( (productos)=>{ %>
                     <%- include('../partials/product', { product: productos }) %>
                 <%});%>
