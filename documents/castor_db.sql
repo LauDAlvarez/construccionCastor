@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Generation Time: Oct 15, 2022 at 07:21 PM
+-- Generation Time: Oct 27, 2022 at 01:35 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -50,15 +50,15 @@ CREATE TABLE `products` (
 
 INSERT INTO `products` (`id`, `name`, `brand`, `description`, `photo`, `stock`, `price`, `discount`, `views`, `sales`, `created_at`, `updated_at`, `category_id`, `logic_delete`) VALUES
 (1, 'Arena', NULL, 'Arena fina embolsada 50kg', 'arenaEmbolsada.webp', 500, '350.00', '0.00', 0, 0, NULL, NULL, 1, 1),
-(2, 'Cemento', 'Loma Negra', '50kg', 'cemento.webp', 1000, '1500.00', '0.00', 0, 0, NULL, NULL, 1, 1),
+(2, 'Cemento', 'Loma Negra', '50kg', 'cemento.webp', 1000, '1500.00', '0.00', 2, 0, NULL, NULL, 1, 1),
 (3, 'Andamio', NULL, 'Cuerpo de andamio, modular', 'andamios.webp', 200, '31000.00', '0.00', 0, 0, NULL, NULL, 1, 1),
 (4, 'Inodoro', 'Roca', 'Inodoro', 'Inodoro Roca.jpg', 500, '23000.00', '0.00', 0, 0, '0000-00-00 00:00:00', '2022-09-28 00:00:00', 4, 1),
-(5, 'Lavatorio Italiana 3 Agujeros Grande', 'Roca', 'Lavatorio Italiana 3 Agujeros Grande', '304618-800-800.webp', 5, '5894.00', '10.00', 0, 0, NULL, NULL, 4, 1),
+(5, 'Lavatorio Italiana 3 Agujeros Grande', 'Roca', 'Lavatorio Italiana 3 Agujeros Grande', '304618-800-800.webp', 5, '5894.00', '10.00', 1, 0, NULL, NULL, 4, 1),
 (6, 'Grifería Bañera Embutir Con Transferencia Bimando Allegro', 'FV', 'Grifería Bañera Embutir Con Transferencia Bimando Allegro', '280311-800-800.webp', 150, '12500.00', '0.00', 0, 0, NULL, NULL, 4, 1),
 (7, 'Martillo neumático', 'Stanley', 'Exclusivo para uso doméstico', 'Martillo neumático Stanley.jpg', 500, '50000.00', '10.40', 0, 0, '0000-00-00 00:00:00', '2022-09-28 00:00:00', 3, 1),
 (8, 'Hormigonera', NULL, 'Exclusivo para uso doméstico', 'hormigonera.webp', 8, '30000.00', '0.00', 0, 0, NULL, NULL, 3, 1),
 (9, 'Inodoro Monaco Largo Blanco', 'Roca', 'Inodoro Monaco Largo Blanco', 'Inodoro Monaco Largo Blanco.jpg', 500, '27500.00', '0.00', 0, 0, '2022-09-28 00:00:00', '0000-00-00 00:00:00', 4, 1),
-(10, 'Lámpara colgante globo 4l g9 49cm bronce', 'Roca', 'Lámpara colgante globo 4l g9 49cm bronce', 'Lampara colgante.webp', 500, '27996.00', '0.00', 0, 0, '2022-09-28 00:00:00', '0000-00-00 00:00:00', 2, 1),
+(10, 'Lámpara colgante globo 4l g9 49cm bronce', 'Roca', 'Lámpara colgante globo 4l g9 49cm bronce', 'Lampara colgante.webp', 500, '27996.00', '0.00', 1, 0, '2022-09-28 00:00:00', '0000-00-00 00:00:00', 2, 1),
 (11, 'Lámpara Pie Carilux Madera Paraíso Beige 50x55x30 Cm', 'Carilux', 'Lámpara Pie Carilux Madera Paraíso Beige 50x55x30 Cm', 'Lampa_pie_carilux.webp', 500, '29596.00', '0.00', 0, 0, '2022-09-28 00:00:00', '0000-00-00 00:00:00', 2, 1),
 (12, 'Led bulbo 12w fría E27', 'Candela', 'Led bulbo 12w fría E27', '312142-800-800.webp', 500, '319.20', '0.00', 0, 0, '2022-09-28 00:00:00', '0000-00-00 00:00:00', 2, 1),
 (13, 'Led Plafon Cuadrado Embutible Fría Candela 18W', 'Candela', 'Led Plafon Cuadrado Embutible Fría Candela 18W', '312116-1600-1600.webp', 30, '1596.00', '0.00', 0, 0, '2022-09-28 00:00:00', '0000-00-00 00:00:00', 2, 1),
