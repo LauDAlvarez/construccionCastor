@@ -2,22 +2,48 @@ const db = require('../database/models');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 
+const fristFive = (arg)=>{
+	const allProduct = [];
+	arg.forEach((product, i) =>{
+		if(i<5){
+			allProduct.push(product)
+		}
+	})
+
+return allProduct
+}
+const deleteLogic = (arg)=>{
+	const allProduct = [];
+	arg.forEach(product =>{
+		if(product.logic_delete == 1){
+			allProduct.push(product)
+		}
+	})
+
+return allProduct
+} 
 
 const controlador = {
 	index: async(req, res) => {
 		try{
-			const mostViews = await db.Product.findAll({
-				order:[
-					[ 'views', 'DESC' ]
-				],
-				limit: 4
-			})
-			const mostSales = await db.Product.findAll({
-				order:[
-					[ 'sales', 'DESC' ]
-				],
-				limit: 4
-			})
+			
+			const products = await Promise.all([
+					db.Product.findAll({
+						order:[
+							[ 'views', 'DESC' ]
+						]
+					}),	
+					db.Product.findAll({
+						order:[
+							[ 'sales', 'DESC' ]
+						]
+					})
+				])
+				const views = deleteLogic( products[0]);
+				const sales = deleteLogic( products[1]);
+				const mostViews = fristFive(views)
+				const mostSales= fristFive(sales)
+			
 			
 			res.render('index', {mostViews: mostViews,mostSales: mostSales,notFound: null} )
 		}catch{
@@ -88,7 +114,6 @@ const controlador = {
 		}
 	},
 	detail: async (req, res) => {
-
 		try{
 			const product = await db.Product.findOne({
 				where:{
@@ -104,10 +129,16 @@ const controlador = {
 					id: req.params.id
 				}
 			});
+			const category = await db.Product_Category.findOne({
+				where:{
+					id: product.category_id
+				}
+			}) 
+
 			
 
 			console.log(product)
-			res.render('products/productDetail',{ product: product }  ); //renderiza el elemento que se encuentra!!
+			res.render('products/productDetail',{ product: product , category}  ); //renderiza el elemento que se encuentra!!
 		}catch{
 
 		}
