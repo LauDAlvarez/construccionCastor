@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("../partials/head")%>
+<%- include("../partials/header")%>
+
+    <body>
+        <div class="contCreateCategory">
+            <form action="" method="POST" class="form-agregar-producto" enctype="multipart/form-data">
+                <p class="contenedor-agregar-producto">
+                    <input type="text" name="name_category" placeholder="Nombre Categoria" class="precioEdit">
+                </p>
+                <p class="contenedor-agregar-producto">
+                    <!-- FOTO DEL CATEGORIA -->
+                    <label for="photo">Foto de Categoria</label>
+                    <input type="file" name="photo"  class="imagenEdit">
+                </p>
+                <p class="contenedor-agregar-producto ">
+                        <input type="checkbox" name="logic_delete" class="precioEdit">
+                        <label for="logic_delete">Delete</label>  
+                </p>
+                <p class="contenedor-agregar-producto">
+                    <button class="boton-registro" type="submit">Crear</button>
+                </p>
+            </form>
+        </div>
+    </body>
+
+
+<%- include("../partials/footer")%>
+</html>

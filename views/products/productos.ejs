@@ -5,23 +5,41 @@
     <body>
         <section class="lista-productos">
             <%if(locals.category){%>
-                <ul class="contenedor-category">
-                    <% category.forEach( cat => { %>
-                        <a href="/productList/<%= cat.name_category %>"><li><%= cat.name_category %></li></a>
-                    <%})%>
+                <ul class="categorys">
+                    <div class="contenedor-category">
+                        <% category.forEach( cat => { %>
+                            <a class="categoryBtn" href="/productList/<%= cat.name_category %>"><li><%= cat.name_category %></li></a>
+                        <%})%>
+                    </div>  
+                <%if(locals.catUser){%>
+                    <%if(catUser == 1){%>
+                        <div class="addCat">
+                            <a class="" href="/createCategory"><button class="btnAddCat categoryBtn">Crear Categoria</button></a>
+                        </div>
+                    <%}%>
+
+                <%}%>
                 </ul>
             <%}%>
             
-                
-            <div class="administrar-producto">
-                <a href="/create"><button class="boton-crear-producto">Crear nuevo producto</button></a>
-            </div>
+            <%if(locals.catUser){%>
+                <%if(catUser == 1){%>
+                    <div class="administrar-producto">
+                        <a href="/create"><button class="boton-crear-producto">Crear nuevo producto</button></a>
+                    </div>
+                <%}%>
 
-            <% if(locals.nameCat){ %>
-                <h1 class="encabezado-formularios">Lista de productos  <span>  >>  </span>  <%= nameCat %></h1>
+            <%}%>   
+            
+            <%if(locals.localSearch){%>
+                <h1 class="encabezado-formularios">Resultados de la busqueda: <%= localSearch %> </h1>
             <%}else{%>
-                <h1 class="encabezado-formularios">Lista de productos</h1>
-            <%};%>
+                <% if(locals.nameCat){ %>
+                    <h1 class="encabezado-formularios">Lista de productos  <span>  >>  </span>  <%= nameCat %></h1>
+                <%}else{%>
+                    <h1 class="encabezado-formularios">Lista de productos</h1>
+                <%};%>
+            <%}%>
             <div class="productosLista">
                 <% products.forEach( (productos)=>{ %>
                     <%- include('../partials/product', { product: productos }) %>

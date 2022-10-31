@@ -2,7 +2,7 @@ const db = require('../database/models');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 
-const fristFive = (arg)=>{
+const firstFive = (arg)=>{
 	const allProduct = [];
 	arg.forEach((product, i) =>{
 		if(i<5){
@@ -25,9 +25,11 @@ return allProduct
 
 const controlador = {
 	index: async(req, res) => {
+
 		try{
 			
-			const products = await Promise.all([
+			const products = 
+				await Promise.all([
 					db.Product.findAll({
 						order:[
 							[ 'views', 'DESC' ]
@@ -41,14 +43,15 @@ const controlador = {
 				])
 				const views = deleteLogic( products[0]);
 				const sales = deleteLogic( products[1]);
-				const mostViews = fristFive(views)
-				const mostSales= fristFive(sales)
+				const mostViews = firstFive(views)
+				const mostSales= firstFive(sales)
 			
 			
 			res.render('index', {mostViews: mostViews,mostSales: mostSales,notFound: null} )
 		}catch{
 
 		}
+
     },
     search:	(req, res) => {
 		const notFound = 'No hay productos que coincidan con tu busqueda!'
@@ -65,7 +68,7 @@ const controlador = {
 					res.render('index', {notFound: notFound})
 				}
 
-				res.render('index', {products: data, notFound: nameProduct}) 
+				res.render('products/productos', {products: data, notFound: nameProduct, localSearch: nameProduct}) 
 			})
 			
     },
@@ -81,6 +84,7 @@ const controlador = {
 	},
     // Create -  Method to store
 	store: async (req, res) => {
+
 		try{ 
 			let picture;
 			if(req.file){
@@ -88,7 +92,6 @@ const controlador = {
 			}else{
 				picture = 'default-image.png';
 			}
-			
 
 			const product  = await db.Product.create({
 				name: req.body.name,
@@ -100,20 +103,17 @@ const controlador = {
 				discount: req.body.discount,
 				views: 0,
 				sales: 0,
-				created_at: new Date(Date.now()),
-				updated_at: '',
 				category_id: req.body.category_id,
 				logic_delete: 1
 				})
-
-			console.log(product)
-
 			res.redirect('/') 
 		}catch{
 
 		}
+
 	},
 	detail: async (req, res) => {
+		
 		try{
 			const product = await db.Product.findOne({
 				where:{
@@ -193,7 +193,7 @@ const controlador = {
 				}
 			});
 			
-			res.render('products/productos', { products: productFilter, category })
+			res.render('products/productos', { products: productFilter, category , catUser: 1})
 		}catch{
 
 		}
@@ -234,6 +234,8 @@ const controlador = {
 			const month = date.getMonth() < 10 ? `0${date.getMonth() + 1}` : date.getMonth() + 1;
 			const fullYear = date.getFullYear();
 			const data  = `${fullYear}-${month}-${day}`;
+
+
 			console.log(data)
 			const productUpd = await db.Product.update({
 				name: req.body.name,
@@ -245,7 +247,7 @@ const controlador = {
 				discount: req.body.discount,
 				views: product.views,
 				sales: product.sales,
-				created_at: data,
+				updated_at: new Date(),
 				category_id: req.body.category_id,
 				logic_delete: 1
 			},
@@ -293,6 +295,42 @@ const controlador = {
 			const products= await db.Product.findAll()
 
 			res.render('products/cart', {products})
+		} catch (error) {
+			
+		}
+	},
+	sales: async(req, res)=>{
+		try {
+			const products = await db.Product.findAll()
+			const allSales = []
+			const allProducts = deleteLogic( products );
+			
+			allProducts.forEach( product => {
+				if(product.discount > 0 ){
+					allSales.push(product)
+				}
+			})
+
+			res.render('products/sales', {products: allSales})
+		} catch (error) {
+			
+		}
+	},
+	createCategory: async(req, res)=>{
+		try {
+
+			res.render('products/createCategory')
+		} catch (error) {
+			
+		}
+	},
+	createCategorySuccessful: async(req, res)=>{
+		try {
+			const newCategory  = await db.Product_Category.create({
+				name_category: req.body.name_category
+			})
+
+			req.render('')
 		} catch (error) {
 			
 		}

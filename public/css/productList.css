@@ -62,7 +62,7 @@ border-radius: 0.5rem;
     height: auto;
     list-style: none;
 }
-.contenedor-category a{
+.categoryBtn{
     text-decoration: none;
     background-color: var(--paleta-a);
     color: var(--paleta-e);
@@ -73,6 +73,9 @@ border-radius: 0.5rem;
     border: 1px solid black;
 }
 
+.categorys{
+    display: flex;
+}
 
 .descripcion-producto {
     text-align: center;

@@ -53,5 +53,12 @@ router.put('/delete/:id', productsControllers.delete)
 // Carrito
 router.get('/cart', productsControllers.cart)
 
+// Ofertas
+router.get('/sales', productsControllers.sales)
+
+// Crear categorias
+router.get('/createCategory', productsControllers.createCategory)
+router.post('/createCategorySuccessful', productsControllers.createCategorySuccessful)
+
 
 module.exports = router;
