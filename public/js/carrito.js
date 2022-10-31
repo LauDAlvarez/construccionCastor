@@ -1,5 +1,4 @@
 window.addEventListener('load', () => {
-    console.log()
     let basket = JSON.parse(localStorage.getItem("data")) || []
     let cartAmount = document.querySelector('.cartAmount');
     
