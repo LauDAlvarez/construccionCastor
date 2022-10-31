@@ -180,6 +180,23 @@ const controlador = {
 		}
 		
 	},
+	cart: async(req, res)=>{
+		try{
+			const category = await db.Product_Category.findAll() 
+			const allProduct = await db.Product.findAll({
+				include: [{association: 'productCategory'}]
+			})
+			const productFilter = []
+			allProduct.forEach( product => {
+				if(product.logic_delete == 1){
+					productFilter.push(product)
+				}
+			});
+			res.render('products/cart', { products: productFilter, category })
+		}catch{
+
+		}
+	},
 	list: async(req, res)=>{
 		try{
 			const category = await db.Product_Category.findAll() 
@@ -192,7 +209,6 @@ const controlador = {
 					productFilter.push(product)
 				}
 			});
-			
 			res.render('products/productos', { products: productFilter, category })
 		}catch{
 
@@ -288,15 +304,7 @@ const controlador = {
 			
 		}
 	},
-	cart: async(req, res)=>{
-		try {
-			const products= await db.Product.findAll()
-
-			res.render('products/cart', {products})
-		} catch (error) {
-			
-		}
-	}
+	
 
 }
 
