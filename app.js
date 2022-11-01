@@ -7,7 +7,6 @@ const publicPath = path.resolve(__dirname, './public')
 const session = require('express-session');
 const methodOverride =  require('method-override');
 
-
 var app = express();
 
 // view engine setup
@@ -27,10 +26,15 @@ const productRoute = require('./src/routes/productsRoutes')
 const userRoute = require('./src/routes/userRoutes');
 // const productRoute = require('./src/routes/productsRoutes');
 
+// Rutas API's
+const apiUserRoutes = require('./src/routes/api/apiUserRoutes');
+const apiProductRoutes = require('./src/routes/api/apiProductRoutes');
 
 app.use('/', productRoute);
 app.use('/users', userRoute);
 // app.use('/products', productRoute);
+app.use('/api/v1/users', apiUserRoutes);
+app.use('/api/v1/products', apiProductRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
