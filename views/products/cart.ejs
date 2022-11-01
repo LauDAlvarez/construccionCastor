@@ -4,44 +4,52 @@
     <%- include("../partials/header")%>
 
         <body>
-            <div class="productsCart">
-                <% products.forEach( (productos)=>{ %>
-                    <div class="cartProduct" >
-                        <div class="cartProductContainer" >
-                            <div class="pepe sku" style="display:none;">
-                                <%= productos.id %>
-                            </div>
-                            <a href="/products/<%= productos.id %>" class="links-prduct-contenedor-cartPage">
-                                <div class="descriptionCartProducts">
-                                    <img src="../images/products/<%= productos.photo %>" alt="<%= productos.name %>"
-                                        class="imgCartItem">
-                                    <article class="articleCartItem">
-                                        <p class="nombre-producto">
-                                            <%= productos.name %>
-                                        </p>
-                                        <p class="marca-producto">
-                                            <%= productos.brand %>
-                                        </p>
-                                        <p class="descripcion-producto">
-                                            <%= productos.description %>
-                                        </p>
-                                    </article>
+            <div class="bodyContainer">
+                <div class="productsCart">
+                    <% products.forEach( (productos)=>{ %>
+                        <div class="cartProduct">
+                            <div class="cartProductContainer">
+                                <div class="pepe sku" style="display:none;">
+                                    <%= productos.id %>
                                 </div>
+                                <a href="/products/<%= productos.id %>" class="links-prduct-contenedor-cartPage">
+                                    <div class="descriptionCartProducts">
+                                        <img src="../images/products/<%= productos.photo %>" alt="<%= productos.name %>"
+                                            class="imgCartItem">
+                                        <article class="articleCartItem">
+                                            <p class="nombre-producto">
+                                                <%= productos.name %>
+                                            </p>
+                                            <p class="marca-producto">
+                                                <%= productos.brand %>
+                                            </p>
+                                            <p class="descripcion-producto">
+                                                <%= productos.description %>
+                                            </p>
+                                        </article>
+                                    </div>
 
-                            </a>
-                            <div class="cartButtonsContainer">
-                                <i class="bi bi-dash-lg btn-izq" ></i>
-                                <div class="quantity">0</div>
-                                <i class="bi bi-plus-lg btn-der" ></i>
-                                <p class="precio" id="precio">
-                                    <%= productos.price %>
-                                </p>
+                                </a>
+                                <div class="cartButtonsContainer">
+                                    <i class="bi bi-dash-lg btn-izq"></i>
+                                    <div class="quantity">0</div>
+                                    <i class="bi bi-plus-lg btn-der"></i>
+                                    <p class="precio" id="precio">
+                                        <%= productos.price %>
+                                    </p>
+                                </div>
                             </div>
                         </div>
+                        <%});%>
+                </div>
+                <div class="totalPriceContainer">
+                    <h3 class="titlePriceToPay">TOTAL A PAGAR</h3>
+                    <div class="priceToPay">
                     </div>
-                    <%});%>
+                </div>
+
             </div>
-            
+
 
 
 

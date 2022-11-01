@@ -28,26 +28,25 @@ updateItems = () => {
 }
 
 updateItems()
-//funcion para sumar todos los items de la canasta
+//funcion para sumar todos los items de la canasta priceToPay
+let totalPriceToPay = document.querySelector('.priceToPay')
 let calculateTotalAmount = () => {
-    searchBasketId()
+    let totalApagar = []
     idItemsLocalStorage.forEach(id => {
         let search = basket.find((x) => x.id === id);
         Array.from(producto).forEach((product) => {
             if (product.children[0].children[0].innerHTML == id) {
-                //agrego numero de cantidad
-                product.children[0].children[2].children[1].innerHTML = search.item
                 //modifico numero de precio
-                product.children[0].children[2].children[3].innerHTML =
-                    (product.children[0].children[2].children[1].textContent
-                        *
-                        product.children[0].children[2].children[3].textContent)
-                product.style.display = 'block';
+                let pricePerProduct = product.children[0].children[2].children[3].textContent 
+                totalApagar.push(parseInt(pricePerProduct));
             }
         })
     })
-
+    let tootal = totalApagar.reduce((x, y) => x + y, 0)
+    totalPriceToPay.innerHTML= tootal
 }
+calculateTotalAmount()
+
 
 
 
@@ -97,7 +96,8 @@ for (var i = 0; i < buttonIncrement.length; i++) {
 
         //actualizacion numero en el icono carrito calculation()
         calculation()
-        // updatePrices()
+        calculateTotalAmount()
+        
     });
 }
 //funcion boton RESTAR
@@ -126,14 +126,9 @@ for (var i = 0; i < buttonDecrement.length; i++) {
         let productPrice = event.target.parentElement.children[3]
         let updatePrice = () => {
             let realProductPrice = productPrice.textContent/(selectedItemQuantity.textContent)
-            // (event.target.parentElement.children[3].textContent/event.target.parentElement.children[1].textContent)*event.target.parentElement.children[1].textContent
             let finalPrice = realProductPrice*(selectedItemQuantity.textContent-1)
             event.target.parentElement.children[3].innerHTML= finalPrice
-            // event.target.parentElement.children[3].innerHTML = (event.target.parentElement.children[3].textContent/event.target.parentElement.children[1].textContent*event.target.parentElement.children[1].textContent)
             
-            // console.log(finalPrice);
-            // console.log(productPrice.textContent);
-            // console.log(selectedItemQuantity.textContent - 1);
             console.log(realProductPrice); 
         }
         
@@ -146,6 +141,7 @@ for (var i = 0; i < buttonDecrement.length; i++) {
         localStorage.setItem("data", JSON.stringify(basket));
         //actualizacion numero en el icono carrito calculation()
         calculation();
+        calculateTotalAmount()
     });
 }
 
