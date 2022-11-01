@@ -1,4 +1,16 @@
-
+:root {
+    /* El root se utiliza para declarar variables dentro del Css */
+    --paleta-a: #ff5400;
+    --paleta-b: #252422;
+    --paleta-c: #403d39;
+    --paleta-d: #ccc5b9;
+    --paleta-e: #ebebeb;
+    --paleta-f: #ffffff;
+    --fuente-principal: 'Hind Madurai', sans-serif;
+    --curva-de-bordeado: 1.5rem;
+    --separador-elementos: 1rem;
+    /* Las variables usualmente se declaran de esta manera('--'+nombre de variable) y los espacios se remplazan por '-'*/
+}
 .bodyContainer{
     display: flex;
     margin-left: 5%;
@@ -6,6 +18,8 @@
 }
 .priceToPay{
     font-size: 30px;
+    align-self: center;
+    margin-top: 20px;
 }
 .titlePriceToPay{
     align-self: center;
@@ -74,4 +88,41 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.cardNumberAndCvc{
+    display: flex;
+    margin: 15px;
+}
+.cardNumber{
+    width: 80%;
+    margin-right: 5px;
+}
+.cardCvc{
+    width: 20%;
+    margin-left: 5px;
+}
+.boxesCartPayment{
+    margin: 15px;
+    display: flex;
+}
+.paymentButton{
+    margin: auto;
+    border:none;
+    border-radius: .5rem;
+    width: 80%;
+    max-width: 35rem;
+    background-color:var(--paleta-d);
+    color: #ff5400;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 1.5rem;
+    cursor: pointer;
+    margin-top: 3rem;
+    transition-property: all;
+    transition: .3s;
+}
+.paymentButton:hover{
+    background-color: #403d39;
+    color: #ebebeb;
+    box-shadow: 1px 2px 2px 0 rgba(255 84 0 / 50%);
 }

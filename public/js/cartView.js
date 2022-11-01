@@ -6,7 +6,7 @@ let idItemsLocalStorage = []
 // let productPrice = document.querySelectorAll('.precio')
 
 //mostrar los productos que corresponden
-let searchBasketId = () => {basket.forEach((x) => idItemsLocalStorage.push(x.id)) }
+let searchBasketId = () => { basket.forEach((x) => idItemsLocalStorage.push(x.id)) }
 //funcion para solo mostrar los productos de la canasta
 updateItems = () => {
     searchBasketId()
@@ -37,13 +37,13 @@ let calculateTotalAmount = () => {
         Array.from(producto).forEach((product) => {
             if (product.children[0].children[0].innerHTML == id) {
                 //modifico numero de precio
-                let pricePerProduct = product.children[0].children[2].children[3].textContent 
+                let pricePerProduct = product.children[0].children[2].children[3].textContent
                 totalApagar.push(parseInt(pricePerProduct));
             }
         })
     })
     let tootal = totalApagar.reduce((x, y) => x + y, 0)
-    totalPriceToPay.innerHTML= tootal
+    totalPriceToPay.innerHTML = '$'+ tootal
 }
 calculateTotalAmount()
 
@@ -80,16 +80,16 @@ for (var i = 0; i < buttonIncrement.length; i++) {
 
         let productPrice = event.target.parentElement.children[3]
         let updatePrice = () => {
-            let realProductPrice = productPrice.textContent/(selectedItemQuantity.textContent)
-            let finalPrice = (realProductPrice)*(selectedItemQuantity.textContent)+realProductPrice
-            event.target.parentElement.children[3].innerHTML= finalPrice
+            let realProductPrice = productPrice.textContent / (selectedItemQuantity.textContent)
+            let finalPrice = (realProductPrice) * (selectedItemQuantity.textContent) + realProductPrice
+            event.target.parentElement.children[3].innerHTML = finalPrice
         }
         //funcion para el precio
         updatePrice()
         //funcion para la cantidad de item
         updateItem()
-        
-        
+
+
         //actualizo localstorage
         localStorage.setItem("data", JSON.stringify(basket));
 
@@ -97,7 +97,7 @@ for (var i = 0; i < buttonIncrement.length; i++) {
         //actualizacion numero en el icono carrito calculation()
         calculation()
         calculateTotalAmount()
-        
+
     });
 }
 //funcion boton RESTAR
@@ -116,6 +116,10 @@ for (var i = 0; i < buttonDecrement.length; i++) {
         } else {
             search.item -= 1;
         }
+        // if(event.target.parentElement.children[1].textContent == 0){
+        //     event.target.parentElement.parentElement.parentElement.style.display = 'none'
+        // }
+        
         //actualizo cantidad del producto
         let selectedItemQuantity = event.target.parentElement.children[1]
         let updateItem = () => {
@@ -125,16 +129,17 @@ for (var i = 0; i < buttonDecrement.length; i++) {
 
         let productPrice = event.target.parentElement.children[3]
         let updatePrice = () => {
-            let realProductPrice = productPrice.textContent/(selectedItemQuantity.textContent)
-            let finalPrice = realProductPrice*(selectedItemQuantity.textContent-1)
-            event.target.parentElement.children[3].innerHTML= finalPrice
-            
-            console.log(realProductPrice); 
+            let realProductPrice = productPrice.textContent / (selectedItemQuantity.textContent)
+            let finalPrice = realProductPrice * (selectedItemQuantity.textContent - 1)
+            event.target.parentElement.children[3].innerHTML = finalPrice
+
         }
-        
+
         updatePrice()
         updateItem();
-
+        if(event.target.parentElement.children[1].textContent == 0){
+            event.target.parentElement.parentElement.parentElement.style.display = 'none'
+        }
         //saco del localstorage los elementos que tienen 0
         basket = basket.filter((x) => x.item != 0)
         //actualizo localstorage
@@ -144,86 +149,4 @@ for (var i = 0; i < buttonDecrement.length; i++) {
         calculateTotalAmount()
     });
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let productPrice = document.querySelectorAll('.precio')
-// let updatePrice = () => {
-//     for (let index = 0; index < productPrice.length; index++) {
-//         const element = productPrice[index];
-//         element=element.parentElement.children[1].innerHTML;
-//         // element.innerHTML = element*()
-//     }
-// }
-
-// })
-
-// let cantidad = document.querySelectorAll('.quantity')
-
-// console.log(cantidad)
-// let productSearch = producto.find((x) => x.children[0].children[0].innerHTML == 1)
-// console.log(productSearch)
-
-
-// let search = basket.find((x) => x.id === );
-// console.log(search)
-
-
-
-
-
-
-
-
-// updateItems()
-// };
 
