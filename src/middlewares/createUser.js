@@ -1,9 +1,9 @@
-const fs = require('fs')
-function createUser(req, res, next){
-    const userCreate = JSON.stringify(req.body)
-    fs.appendFileSync('userDataBase', userCreate);
+// const fs = require('fs')
+// function createUser(req, res, next){
+//     const userCreate = JSON.stringify(req.body)
+//     fs.appendFileSync('userDataBase', userCreate);
 
-    next();
-}
+//     next();
+// }
 
-module.exports = createUser;
+// module.exports = createUser;

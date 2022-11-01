@@ -5,29 +5,28 @@
     <body>
         <%- include("../partials/header")%>
             <main>
-                <form action="./loggin/checked" class="form-login" method="post">
+                <form action="/users/logined" class="form-login" method="POST">
                     <h1 class="encabezado-login">Iniciar sesión</h1>
                     <div class="contenedor-bloque-login">
                         <input class="input-login" type="email" name="email" id="email-login" placeholder="email">
-                    </div>
-                    <div class="divTextoErrorEmail">
-                        <label class="textoErrorEmail"></label>
+                        <% if (locals.errors && errors.email) { %>
+                            <div class="contenedor-errors">
+                                <%= errors.email.msg %>
+                            </div>
+                            <% } %>
                     </div>
                     <div class="contenedor-bloque-login">
-
                         <input class="input-login" type="password" name="password" id="password-login"
                             placeholder="Contraseña"><br>
                     </div>
-                    <div class="divTextoErrorEmail">
-                        <label class="textoErrorPassword"></label>
-                    </div>
                     <div class="contenedor-bloque-login">
                         <div class="politica-privacidad">
-                            <input type="checkbox" id="cbox1" value="first_checkbox" class="check-acepta">
-                            <label class="labelRegister">Recordar</label>
+                            <label class="labelRegister">
+                                <input type="checkbox" id="cbox1" class="check-acepta" name="remember_user">Recordar
+                            </label>
                         </div>
                         <div class="contenedor-bloque-login">
-                            <button class="boton-login" type="submit">Iniciar Sesión</button>
+                            <button type="submit" class="boton-login">Iniciar Sesión</button>
                         </div>
                     </div>
                 </form>
@@ -46,7 +45,7 @@
 
             </main>
             <%- include("../partials/footer")%>
-                <script src="/js/login.js"></script>
+                <!-- <script src="/js/login.js"></script> -->
     </body>
 
 </html>

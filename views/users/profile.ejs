@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("../partials/head")%>
+    <body>
+        <%- include("../partials/header")%>
+            <main>
+                <!-- Container -->
+                <div class="container" style="margin-top: 40px;">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="alert alert-success">
+                                Hi <%= user.first_name%>
+                            </div>
+                            <img src="/images/users/<%= user.photo%>" style="width: 180px;">
+                            <br>
+                            <br>
+                            <div class="alert alert-success">
+                                <%= user.email%>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //Container -->
+
+
+            </main>
+            <%- include("../partials/footer")%>
+
+    </body>
+
+</html>

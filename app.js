@@ -9,6 +9,8 @@ const methodOverride =  require('method-override');
 
 var app = express();
 
+const userLoggedMiddleware = require('./src/middlewares/userLoggedMiddleware');
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -17,14 +19,17 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(publicPath));
-app.use(session({secret: 'secretitoCastor', resave: false,
-saveUninitialized: false}));
+app.use(session({
+  secret: 'secretitoCastor', 
+  resave: false,
+  saveUninitialized: false,
+}));
+app.use(userLoggedMiddleware);
 app.use(methodOverride('_method'));
 
 // Rutas
 const productRoute = require('./src/routes/productsRoutes')
 const userRoute = require('./src/routes/userRoutes');
-// const productRoute = require('./src/routes/productsRoutes');
 
 // Rutas API's
 const apiUserRoutes = require('./src/routes/api/apiUserRoutes');
@@ -32,7 +37,6 @@ const apiProductRoutes = require('./src/routes/api/apiProductRoutes');
 
 app.use('/', productRoute);
 app.use('/users', userRoute);
-// app.use('/products', productRoute);
 app.use('/api/v1/users', apiUserRoutes);
 app.use('/api/v1/products', apiProductRoutes);
 
