@@ -7,9 +7,24 @@
                 <button class="boton-lupa" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
             <div class="iconos">
+                <% if (locals.isLogged) { %>
+<!-- inicio acceso a perfil -->
+                <div class="dropdown ">
+                    <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                      <img src="../../images/users/<%= locals.userLogged.photo%>" alt="mdo" width="50" height="50" class="rounded-circle">Hola <%= locals.userLogged.first_name%>
+                    </a>
+                    <ul class="dropdown-menu text-small">
+                      <li><a class="dropdown-item" href="/users/profile">Mi perfil</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="/users/logout">Cerrar sesión</a></li>
+                    </ul>
+                  </div>
+<!-- fin acceso a perfil -->
+                <% } else { %>
                 <div class="icon-user">
                     <a href="/users/login"><i class="fa-regular fa-circle-user"></i></a>
                 </div>
+                <% } %>
                 <a href="#">
                     <div class="icon-cart">
                         <a href="/cart"><i class="fa-solid fa-cart-shopping"></i>
