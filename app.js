@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var cors = require('cors');
 const publicPath = path.resolve(__dirname, './public')
 const session = require('express-session');
 const methodOverride =  require('method-override');
@@ -26,6 +27,7 @@ app.use(session({
 }));
 app.use(userLoggedMiddleware);
 app.use(methodOverride('_method'));
+app.use(cors());
 
 // Rutas
 const productRoute = require('./src/routes/productsRoutes')
