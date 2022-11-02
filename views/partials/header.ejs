@@ -11,7 +11,7 @@
 <!-- inicio acceso a perfil -->
                 <div class="dropdown ">
                     <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 14px;">
-                      <img src="../../images/users/<%= locals.userLogged.photo%>" alt="mdo" width="50" height="50" class="rounded-circle" style="margin-right: 7px;"> Hola <%= locals.userLogged.first_name%><%= locals.userLogged.category_id%>
+                      <img src="../../images/users/<%= locals.userLogged.photo%>" alt="mdo" width="50" height="50" class="rounded-circle" style="margin-right: 7px;"> Hola <%= locals.userLogged.first_name%>
                     </a>
                     <ul class="dropdown-menu text-small">
                       <li><a class="dropdown-item" href="/users/profile">Mi perfil</a></li>
@@ -25,12 +25,14 @@
                     <a href="/users/login"><i class="fa-regular fa-circle-user"></i></a>
                 </div>
                 <% } %>
+                <% if (!(locals.isLogged && locals.userLogged.category_id == 2)) { %>
                 <a href="#">
                     <div class="icon-cart">
                         <a href="/cart"><i class="fa-solid fa-cart-shopping"></i>
                         <div class="cartAmount">0</div></a>
                     </div>
                 </a>
+                <% } %>
 
             </div>
         </div>

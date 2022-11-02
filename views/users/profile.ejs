@@ -24,7 +24,11 @@
 
 
             </main>
-            <%- include("../partials/footer")%>
+            <% if (!(locals.isLogged && locals.userLogged.category_id == 2)) { %>
+            
+                <%- include("../partials/footer")%>
+            
+            <% } %>
 
     </body>
 

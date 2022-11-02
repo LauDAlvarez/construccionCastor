@@ -3,6 +3,7 @@ const router = express.Router();
 const multer = require('multer');
 
 const productsControllers = require('../controllers/productsControllers');
+const userCat2Middleware = require('../middlewares/userCat2Middleware');
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -51,7 +52,7 @@ router.put('/:id',  upload.single('photo') ,productsControllers.update)
 router.put('/delete/:id', productsControllers.delete)
 
 // Carrito
-router.get('/cart', productsControllers.cart)
+router.get('/cart', userCat2Middleware, productsControllers.cart)
 
 // Ofertas
 router.get('/sales', productsControllers.sales)
