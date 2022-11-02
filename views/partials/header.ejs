@@ -10,8 +10,8 @@
                 <% if (locals.isLogged) { %>
 <!-- inicio acceso a perfil -->
                 <div class="dropdown ">
-                    <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                      <img src="../../images/users/<%= locals.userLogged.photo%>" alt="mdo" width="50" height="50" class="rounded-circle">Hola <%= locals.userLogged.first_name%>
+                    <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 14px;">
+                      <img src="../../images/users/<%= locals.userLogged.photo%>" alt="mdo" width="50" height="50" class="rounded-circle" style="margin-right: 7px;"> Hola <%= locals.userLogged.first_name%><%= locals.userLogged.category_id%>
                     </a>
                     <ul class="dropdown-menu text-small">
                       <li><a class="dropdown-item" href="/users/profile">Mi perfil</a></li>
