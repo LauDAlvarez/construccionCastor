@@ -4,6 +4,7 @@ const apiProductControllers = require('../../controllers/api/apiProductControlle
 
 router.get('/', apiProductControllers.list);
 router.get('/detail/:id', apiProductControllers.detail);
+router.get('/search', apiProductControllers.search);
 router.post('/create', apiProductControllers.create);
 router.delete('/delete/:id', apiProductControllers.delete);
 

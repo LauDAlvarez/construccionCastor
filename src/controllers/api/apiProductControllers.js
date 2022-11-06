@@ -35,17 +35,17 @@ const apiUserControllers = {
         Product
             .create(
                 {
-					name: req.body.name,
-					brand: req.body.brand,
-					description: req.body.description,
-					photo:  picture,
-					stock: 500,
-					price: req.body.price,
-					discount: req.body.discount,
-					created_at: Date.now(),
-					updated_at:'',
-					category_id:'1',
-					logic_delete: 1
+                    name: req.body.name,
+                    brand: req.body.brand,
+                    description: req.body.description,
+                    photo: picture,
+                    stock: 500,
+                    price: req.body.price,
+                    discount: req.body.discount,
+                    created_at: Date.now(),
+                    updated_at: '',
+                    category_id: '1',
+                    logic_delete: 1
                 }
             )
             .then((product) => {
@@ -65,7 +65,12 @@ const apiUserControllers = {
     'delete': (req, res) => {
         let productId = req.params.id;
         Product
-            .destroy({ where: { id: productId }, force: true })
+            .destroy({
+                where: {
+                    id: productId
+                },
+                force: true
+            })
             .then((product) => {
                 return res.status(200).json({
                     meta: {
@@ -74,6 +79,25 @@ const apiUserControllers = {
                     },
                     data: product
                 })
+            })
+            .catch(error => {
+                console.log(error)
+                res.status(500).json({ mensaje: 'Error de conexion' })
+            })
+    },
+    'search': (req, res) => {
+        Product
+            .findAll({
+                where: {
+                    name: { [Op.like]: '%' + req.query.keyword + '%' }
+                }
+            })
+            .then((product) => {
+                if (product.length > 0) {
+                    return res.status(200).json(product);
+                } else {
+                    return res.status(200).json('No hay productos que coincidan con tu busqueda!');
+                }
             })
             .catch(error => {
                 console.log(error)

@@ -15,15 +15,14 @@ function userLoggedMiddleware (req, res, next) {
         })
         .then((userFromCookie) => {
             console.log(userFromCookie)
-            // req.session.userLogged = userFromCookie
+            req.session.userLogged = userFromCookie
+            if (req.session.userLogged) {
+                res.locals.isLogged = true;
+                res.locals.userLogged = req.session.userLogged;
+                }
         })
     }
     console.log(emailInCookie)
-
-    if (req.session.userLogged) {
-    res.locals.isLogged = true;
-    res.locals.userLogged = req.session.userLogged;
-    }
 
     next();
 }
