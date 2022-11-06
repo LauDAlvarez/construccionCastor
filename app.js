@@ -7,7 +7,6 @@ var cors = require('cors');
 const publicPath = path.resolve(__dirname, './public')
 const session = require('express-session');
 const methodOverride =  require('method-override');
-
 var app = express();
 
 const userLoggedMiddleware = require('./src/middlewares/userLoggedMiddleware');
