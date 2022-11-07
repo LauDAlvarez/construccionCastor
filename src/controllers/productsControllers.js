@@ -186,12 +186,7 @@ const controlador = {
 			const allProduct = await db.Product.findAll({
 				include: [{association: 'productCategory'}]
 			})
-			const productFilter = []
-			allProduct.forEach( product => {
-				if(product.logic_delete == 1){
-					productFilter.push(product)
-				}
-			});
+			const productFilter = deleteLogic(allProduct)
 			res.render('products/cart', { products: productFilter, category })
 		}catch{
 
@@ -210,7 +205,7 @@ const controlador = {
 				}
 			});
 			
-			res.render('products/productos', { products: productFilter, category , catUser: 1})
+		res.render('products/productos', { products: productFilter, category , /*catUser: 1*/})
 		}catch{
 
 		}
@@ -235,17 +230,7 @@ const controlador = {
 	// Update - Method to update
 	update:  async(req, res) => {
 		try {
-			let picture;
-			if(req.file){
-				picture = req.file.filename;
-			}else{
-				picture = 'default-image.png';
-			}
-			const product = await db.Product.findOne({
-				where:{
-					id: req.params.id
-				}
-			})
+
 			const date = new Date(product.created_at);
 			const day = date.getDate() < 10 ? `0${date.getDate()}` : date.getDate();
 			const month = date.getMonth() < 10 ? `0${date.getMonth() + 1}` : date.getMonth() + 1;
@@ -258,7 +243,7 @@ const controlador = {
 				name: req.body.name,
 				brand: req.body.brand,
 				description: req.body.description,
-				photo: picture,
+				photo: (req.file)? req.file.filename :'default-image.png',
 				stock: req.body.stock,
 				price: req.body.price,
 				discount: req.body.discount,
@@ -319,14 +304,10 @@ const controlador = {
 	sales: async(req, res)=>{
 		try {
 			const products = await db.Product.findAll()
-			const allSales = []
+			
 			const allProducts = deleteLogic( products );
 			
-			allProducts.forEach( product => {
-				if(product.discount > 0 ){
-					allSales.push(product)
-				}
-			})
+			const allSales = allProducts.filter( product => product.discount > 0 )
 
 			res.render('products/sales', {products: allSales})
 		} catch (error) {
@@ -344,10 +325,12 @@ const controlador = {
 	createCategorySuccessful: async(req, res)=>{
 		try {
 			const newCategory  = await db.Product_Category.create({
-				name_category: req.body.name_category
+				name_category: req.body.name_category,
+				photo: (req.file)? req.file.filename :'default-image.png',
+				logic_delete: (req.body.logic_delete)?1:0
 			})
 
-			req.render('')
+			req.redirect('/')
 		} catch (error) {
 			
 		}

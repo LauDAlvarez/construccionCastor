@@ -92,9 +92,10 @@ for (var i = 0; i < buttonIncrement.length; i++) {
 
         //actualizo localstorage
         localStorage.setItem("data", JSON.stringify(basket));
-
+     
 
         //actualizacion numero en el icono carrito calculation()
+        
         calculation()
         calculateTotalAmount()
 
@@ -145,7 +146,13 @@ for (var i = 0; i < buttonDecrement.length; i++) {
         //actualizo localstorage
         localStorage.setItem("data", JSON.stringify(basket));
         //actualizacion numero en el icono carrito calculation()
-        calculation();
+        if (basket.length==0) {
+            cartAmount.style.display = 'none'
+        }else{
+            cartAmount.style.display = 'block'
+            calculation();
+        }
+        
         calculateTotalAmount()
     });
 }

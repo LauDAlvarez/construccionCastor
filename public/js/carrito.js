@@ -6,5 +6,11 @@ window.addEventListener('load', () => {
     let calculation = () => {
         cartAmount.innerHTML = basket.map((x) => x.item).reduce((x, y) => x + y, 0);
     }
-    calculation()
+    if (basket.length==0) {
+        cartAmount.style.display = 'none'
+    }else{
+        cartAmount.style.display = 'block'
+        calculation()
+    }
+    
 })
